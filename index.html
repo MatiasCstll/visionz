@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visión Z — Descargas de Juegos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#07090e; --bg2:#0b0e16; --card:#0f1320; --card2:#131828;
+      --border:#1c2236; --border2:#242d44; --accent:#e8272a; --accent2:#ff6b00;
+      --gold:#f5c518; --green:#22c55e; --blue:#3b82f6;
+      --text:#cdd4e8; --text2:#8a95b0; --muted:#4a5470; --white:#f0f4ff;
+      --glow:rgba(232,39,42,0.3); --shadow:0 20px 60px rgba(0,0,0,0.6);
+    }
+    html { scroll-behavior:smooth; }
+    body { background:var(--bg); color:var(--text); font-family:'Barlow',sans-serif; font-weight:300; min-height:100vh; overflow-x:hidden; }
+    body::after { content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E"); pointer-events:none; z-index:9998; opacity:.5; }
+
+    /* HEADER */
+    header { position:sticky; top:0; z-index:500; background:rgba(7,9,14,.95); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); height:66px; display:flex; align-items:center; padding:0 2.5rem; gap:1.2rem; }
+    .logo { font-family:'Bebas Neue',sans-serif; font-size:1.9rem; letter-spacing:.1em; color:var(--white); white-space:nowrap; flex-shrink:0; cursor:pointer; }
+    .logo span { color:var(--accent); }
+    .search-wrap { flex:1; max-width:420px; position:relative; }
+    .search-wrap input { width:100%; background:var(--card2); border:1px solid var(--border); color:var(--text); font-family:'Barlow',sans-serif; font-size:.88rem; font-weight:300; padding:.6rem 1rem .6rem 2.6rem; outline:none; transition:border-color .2s; border-radius:2px; }
+    .search-wrap input::placeholder { color:var(--muted); }
+    .search-wrap input:focus { border-color:var(--border2); }
+    .search-icon { position:absolute; left:.75rem; top:50%; transform:translateY(-50%); color:var(--muted); font-size:1rem; pointer-events:none; }
+    .search-results { position:absolute; top:calc(100% + 6px); left:0; right:0; background:var(--card2); border:1px solid var(--border2); z-index:600; display:none; box-shadow:var(--shadow); }
+    .search-results.open { display:block; }
+    .sri { display:flex; align-items:center; gap:.8rem; padding:.7rem 1rem; cursor:pointer; transition:background .15s; border:none; background:none; width:100%; text-align:left; color:var(--text); }
+    .sri:hover { background:var(--card); }
+    .sri-thumb { width:38px; height:38px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:.75rem; color:rgba(255,255,255,.25); }
+    .sri-name { font-size:.88rem; font-weight:600; color:var(--white); }
+    .sri-genre { font-size:.72rem; color:var(--muted); letter-spacing:.07em; }
+    .search-empty { padding:1rem; text-align:center; font-size:.82rem; color:var(--muted); }
+    nav { display:flex; gap:.1rem; flex-shrink:0; }
+    nav button { background:none; border:none; color:var(--muted); cursor:pointer; font-family:'Barlow',sans-serif; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; font-weight:600; padding:.4rem .75rem; transition:color .2s; }
+    nav button:hover, nav button.active { color:var(--white); }
+    nav button.active { color:var(--accent); }
+    .user-area { display:flex; align-items:center; gap:.7rem; margin-left:auto; flex-shrink:0; }
+    .btn-auth { font-family:'Barlow Condensed',sans-serif; font-size:.78rem; letter-spacing:.15em; text-transform:uppercase; padding:.45rem 1rem; cursor:pointer; border:none; transition:all .2s; }
+    .btn-login { background:transparent; border:1px solid var(--border2); color:var(--text2); }
+    .btn-login:hover { border-color:var(--text2); color:var(--white); }
+    .btn-register { background:var(--accent); color:#fff; clip-path:polygon(0 0,100% 0,96% 100%,4% 100%); }
+    .btn-register:hover { background:#c01f22; }
+    .user-dd-wrap { position:relative; }
+    .avatar-btn { width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#ff6b00); border:2px solid var(--border2); color:#fff; font-family:'Bebas Neue',sans-serif; font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:border-color .2s,transform .15s; }
+    .avatar-btn:hover { border-color:var(--accent); transform:scale(1.05); }
+    .user-dd { position:absolute; top:calc(100% + 8px); right:0; background:var(--card2); border:1px solid var(--border2); min-width:200px; z-index:600; box-shadow:var(--shadow); display:none; }
+    .user-dd.open { display:block; }
+    .ud-head { padding:1rem 1.2rem .8rem; border-bottom:1px solid var(--border); }
+    .ud-name { font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:var(--white); letter-spacing:.05em; }
+    .ud-email { font-size:.72rem; color:var(--muted); margin-top:.1rem; }
+    .ud-badge { display:inline-block; margin-top:.4rem; background:var(--accent); color:#fff; font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; padding:.15rem .5rem; }
+    .ud-item { display:flex; align-items:center; gap:.6rem; padding:.65rem 1.2rem; font-size:.82rem; color:var(--text2); cursor:pointer; transition:background .15s,color .15s; background:none; border:none; width:100%; text-align:left; }
+    .ud-item:hover { background:var(--card); color:var(--white); }
+    .ud-item.danger:hover { color:var(--accent); }
+    .ud-divider { height:1px; background:var(--border); margin:.3rem 0; }
+
+    /* PAGES */
+    .page { display:none; }
+    .page.active { display:block; }
+
+    /* HERO */
+    .hero { position:relative; overflow:hidden; padding:6rem 2.5rem 4rem; text-align:center; }
+    .hero-glow { position:absolute; top:-30%; left:50%; transform:translateX(-50%); width:800px; height:800px; background:radial-gradient(circle,rgba(232,39,42,.1) 0%,transparent 65%); pointer-events:none; }
+    .hero-lines { position:absolute; inset:0; pointer-events:none; background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,.011) 60px); }
+    .hero-eyebrow { font-family:'Barlow Condensed',sans-serif; font-size:.72rem; letter-spacing:.35em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .hero h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(4.5rem,12vw,10rem); letter-spacing:.06em; line-height:.88; color:var(--white); }
+    .hero h1 .z { color:var(--accent); display:inline-block; animation:glowZ 3s ease-in-out infinite; }
+    @keyframes glowZ { 0%,100%{text-shadow:0 0 30px var(--glow);}50%{text-shadow:0 0 70px var(--glow),0 0 130px rgba(232,39,42,.15);} }
+    .hero-tagline { margin-top:1.4rem; color:var(--text2); font-size:1rem; letter-spacing:.07em; }
+    .hero-stats { display:flex; justify-content:center; gap:3rem; margin-top:3rem; padding-top:3rem; border-top:1px solid var(--border); }
+    .stat-num { font-family:'Bebas Neue',sans-serif; font-size:2.5rem; color:var(--white); letter-spacing:.05em; line-height:1; }
+    .stat-num span { color:var(--accent); }
+    .stat-label { font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-top:.3rem; }
+
+    /* NOVEDADES */
+    .novedades-section { padding:0 2.5rem 3.5rem; }
+    .novedades-section h2 { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; letter-spacing:.08em; color:var(--white); margin-bottom:1.2rem; display:flex; align-items:center; gap:.8rem; }
+    .novedades-section h2 span { color:var(--accent); }
+    .novedades-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:1.5px; background:var(--border); }
+    .nov-card { background:var(--card2); position:relative; overflow:hidden; cursor:pointer; transition:filter .3s; }
+    .nov-card:hover { filter:brightness(1.1); }
+    .nov-cover { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:4rem; color:rgba(255,255,255,.05); transition:transform .4s ease; position:relative; overflow:hidden; }
+    .nov-card:hover .nov-cover { transform:scale(1.04); }
+    .nov-cover.tall { aspect-ratio:4/5; font-size:5rem; }
+    .nov-cover img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.8); }
+    .nov-cover span { position:relative; z-index:1; }
+    .nov-info { padding:1rem 1.2rem 1.2rem; }
+    .nov-badge { font-family:'Barlow Condensed',sans-serif; font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; background:var(--green); color:#fff; padding:.15rem .55rem; display:inline-block; margin-bottom:.5rem; }
+    .nov-badge.upd { background:var(--blue); }
+    .nov-title { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; color:var(--white); letter-spacing:.05em; }
+    .nov-desc { font-size:.78rem; color:var(--muted); margin-top:.3rem; line-height:1.5; }
+    .nov-big .nov-cover { aspect-ratio:16/7; font-size:7rem; }
+    .nov-big .nov-title { font-size:1.8rem; }
+    .nov-big .nov-desc { font-size:.85rem; }
+
+    /* FILTER */
+    .filter-bar { display:flex; align-items:center; gap:.5rem; padding:0 2.5rem 1.5rem; flex-wrap:wrap; }
+    .filter-label { font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-right:.5rem; }
+    .filter-btn { background:transparent; border:1px solid var(--border); color:var(--muted); font-family:'Barlow Condensed',sans-serif; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; padding:.35rem .9rem; cursor:pointer; transition:all .18s; }
+    .filter-btn:hover { border-color:var(--border2); color:var(--text); }
+    .filter-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+    .section-label { display:flex; align-items:center; gap:1rem; padding:0 2.5rem 1.5rem; font-family:'Barlow Condensed',sans-serif; font-size:.68rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); }
+    .section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+
+    /* GRID */
+    .games-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:1.5px; background:var(--border); margin:0 2.5rem 5rem; }
+    .game-card { background:var(--card); cursor:pointer; position:relative; overflow:hidden; aspect-ratio:3/4; opacity:0; animation:cardIn .5s ease forwards; }
+    @keyframes cardIn { from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)} }
+    .cover-ph { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:3.5rem; color:rgba(255,255,255,.05); letter-spacing:.08em; transition:transform .5s ease,filter .4s ease; }
+    .game-card:hover .cover-ph { transform:scale(1.06); filter:brightness(.65); }
+    .c-badge { position:absolute; top:.9rem; left:.9rem; color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; padding:.22rem .65rem; clip-path:polygon(0 0,100% 0,94% 100%,0 100%); background:var(--accent); }
+    .c-badge.new { background:var(--green); }
+    .c-badge.hot { background:var(--accent2); }
+    .c-rating { position:absolute; top:.9rem; right:.9rem; background:rgba(5,7,14,.75); border:1px solid var(--gold); color:var(--gold); font-family:'Barlow Condensed',sans-serif; font-size:.8rem; font-weight:700; padding:.18rem .5rem; }
+    .c-title-bar { position:absolute; bottom:0; left:0; right:0; padding:2.5rem 1.1rem 1rem; background:linear-gradient(to top,rgba(4,6,11,.97) 0%,transparent 100%); transition:opacity .3s; }
+    .game-card:hover .c-title-bar { opacity:0; }
+    .c-title-bar h2 { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; color:var(--white); line-height:1; }
+    .c-title-bar .c-yr { font-size:.72rem; color:var(--muted); margin-top:.2rem; }
+    .c-hover { position:absolute; bottom:0; left:0; right:0; padding:2rem 1.1rem 1.1rem; background:linear-gradient(to top,rgba(4,6,11,.98) 0%,rgba(4,6,11,.65) 55%,transparent 100%); opacity:0; transform:translateY(10px); transition:opacity .35s ease,transform .35s ease; }
+    .game-card:hover .c-hover { opacity:1; transform:translateY(0); }
+    .c-hover h2 { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; color:var(--white); line-height:1; }
+    .c-hover p { font-size:.78rem; color:var(--text2); margin:.45rem 0 1rem; line-height:1.55; }
+    .c-cta { display:inline-block; background:var(--accent); color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:.73rem; letter-spacing:.15em; text-transform:uppercase; padding:.45rem 1.1rem; clip-path:polygon(0 0,100% 0,96% 100%,0 100%); }
+    .no-results { grid-column:1/-1; padding:4rem 2rem; text-align:center; background:var(--bg); }
+    .no-results h3 { font-family:'Bebas Neue',sans-serif; font-size:2rem; color:var(--text2); }
+    .no-results p { color:var(--muted); font-size:.85rem; margin-top:.5rem; }
+
+    /* GAME DETAIL */
+    .ghb { position:relative; min-height:380px; overflow:hidden; display:flex; align-items:flex-end; }
+    .ghb-bg { position:absolute; inset:0; transition:background .3s; }
+    .ghb-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,var(--bg) 0%,rgba(7,9,14,.55) 50%,transparent 100%); }
+    .ghb-art { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:9rem; color:rgba(255,255,255,.04); letter-spacing:.08em; z-index:1; }
+    .ghb-content { position:relative; z-index:2; padding:0 2.5rem 2.5rem; width:100%; }
+    .breadcrumb { font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:.8rem; }
+    .ghb-content h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(3rem,7vw,5.5rem); letter-spacing:.04em; color:var(--white); line-height:1; }
+    .ghb-meta { display:flex; gap:.8rem; margin-top:.7rem; flex-wrap:wrap; align-items:center; }
+    .m-badge { background:var(--accent); color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; padding:.22rem .65rem; clip-path:polygon(0 0,100% 0,94% 100%,0 100%); }
+    .m-badge.b2 { background:rgba(255,255,255,.1); clip-path:none; }
+    .m-rat { border:1px solid var(--gold); color:var(--gold); font-family:'Barlow Condensed',sans-serif; font-size:.82rem; font-weight:700; padding:.18rem .6rem; }
+    .m-txt { font-size:.78rem; color:var(--muted); }
+    .gd-body { display:grid; grid-template-columns:1fr 300px; gap:2rem; padding:2.5rem; max-width:1100px; }
+    .gd-stitle { font-family:'Barlow Condensed',sans-serif; font-size:.68rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem; padding-bottom:.5rem; border-bottom:1px solid var(--border); }
+    .gd-desc { font-size:.95rem; line-height:1.85; color:var(--text); margin-bottom:2.5rem; }
+    .req-grid { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-bottom:2.5rem; }
+    .req-item { background:var(--card2); border:1px solid var(--border); padding:.8rem 1rem; }
+    .req-l { font-size:.62rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); font-family:'Barlow Condensed',sans-serif; }
+    .req-v { font-size:.9rem; color:var(--white); font-weight:600; margin-top:.2rem; }
+    .dl-box { background:var(--card2); border:1px solid var(--border); padding:1.6rem; position:sticky; top:80px; }
+    .dl-box h3 { font-family:'Bebas Neue',sans-serif; font-size:1.2rem; color:var(--white); margin-bottom:1.2rem; }
+    .dl-line { display:flex; justify-content:space-between; align-items:center; padding:.55rem 0; border-bottom:1px solid var(--border); font-size:.8rem; }
+    .dl-line:last-of-type { border-bottom:none; margin-bottom:1.2rem; }
+    .dl-line span:first-child { color:var(--muted); }
+    .dl-line span:last-child { color:var(--text); font-weight:600; }
+    .dl-btn { display:block; width:100%; text-align:center; background:var(--accent); color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:.95rem; letter-spacing:.2em; text-transform:uppercase; padding:.9rem; cursor:pointer; border:none; clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:background .2s,transform .15s; text-decoration:none; }
+    .dl-btn:hover { background:#c01f22; transform:scale(1.02); }
+    .dl-btn.locked { background:var(--border2); color:var(--muted); cursor:default; pointer-events:none; }
+    .dl-note { font-size:.72rem; color:var(--muted); text-align:center; margin-top:.7rem; }
+    .dl-note button { background:none; border:none; color:var(--accent); cursor:pointer; font-size:.72rem; font-family:'Barlow',sans-serif; padding:0; }
+    .dl-note button:hover { text-decoration:underline; }
+
+    /* SCREENSHOTS */
+    .screenshots { display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; margin-bottom:2.5rem; }
+    .ss-item { background:var(--card); aspect-ratio:16/9; overflow:hidden; border:1px solid var(--border); position:relative; transition:border-color .2s; }
+    .ss-item.has-img { cursor:zoom-in; }
+    .ss-item.has-img:hover { border-color:var(--border2); }
+    .ss-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease,filter .3s ease; filter:brightness(.85); }
+    .ss-item.has-img:hover img { transform:scale(1.05); filter:brightness(1); }
+    .ss-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.4rem; font-size:.65rem; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; }
+    .ss-placeholder span { font-size:1.6rem; opacity:.25; }
+
+    /* LIGHTBOX */
+    .lightbox { position:fixed; inset:0; z-index:3000; background:rgba(0,0,0,.93); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .25s; }
+    .lightbox.open { opacity:1; pointer-events:all; }
+    .lightbox img { max-width:88vw; max-height:82vh; object-fit:contain; box-shadow:0 0 80px rgba(0,0,0,.9); display:block; }
+    .lb-close { position:absolute; top:1.5rem; right:1.5rem; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:#fff; font-size:1.4rem; width:42px; height:42px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background .2s; }
+    .lb-close:hover { background:rgba(255,255,255,.22); }
+    .lb-nav { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); color:#fff; font-size:2rem; width:52px; height:52px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background .2s; user-select:none; line-height:1; }
+    .lb-nav:hover { background:rgba(255,255,255,.18); }
+    .lb-prev { left:1.5rem; }
+    .lb-next { right:1.5rem; }
+    .lb-counter { position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%); font-family:'Barlow Condensed',sans-serif; font-size:.75rem; letter-spacing:.2em; color:rgba(255,255,255,.45); }
+
+    /* ADMIN */
+    .admin-wrap { padding:2.5rem; max-width:960px; }
+    .admin-title { font-family:'Bebas Neue',sans-serif; font-size:2.5rem; letter-spacing:.08em; color:var(--white); margin-bottom:.3rem; }
+    .admin-title span { color:var(--accent); }
+    .admin-sub { font-size:.82rem; color:var(--muted); margin-bottom:2rem; }
+    .admin-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:2.5rem; }
+    .admin-stat { background:var(--card2); border:1px solid var(--border); padding:1.2rem 1.5rem; border-left:3px solid var(--accent); }
+    .as-num { font-family:'Bebas Neue',sans-serif; font-size:2.5rem; color:var(--white); }
+    .as-label { font-size:.72rem; color:var(--muted); letter-spacing:.12em; text-transform:uppercase; margin-top:.2rem; }
+    .admin-section-title { font-family:'Barlow Condensed',sans-serif; font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); padding-bottom:.5rem; border-bottom:1px solid var(--border); margin-bottom:1rem; }
+    .admin-table { width:100%; border-collapse:collapse; margin-bottom:2.5rem; font-size:.84rem; }
+    .admin-table th { background:var(--card2); padding:.7rem 1rem; text-align:left; font-family:'Barlow Condensed',sans-serif; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--border); }
+    .admin-table td { padding:.7rem 1rem; border-bottom:1px solid var(--border); color:var(--text); vertical-align:middle; }
+    .admin-table tr:hover td { background:rgba(255,255,255,.02); }
+    .tbl-badge { font-family:'Barlow Condensed',sans-serif; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; padding:.18rem .55rem; }
+    .tbl-badge.ok { background:rgba(34,197,94,.15); color:var(--green); border:1px solid rgba(34,197,94,.3); }
+    .tbl-badge.admin { background:rgba(232,39,42,.15); color:var(--accent); border:1px solid rgba(232,39,42,.3); }
+    .admin-form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .af-group { margin-bottom:1rem; }
+    .af-group label { display:block; font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); font-family:'Barlow Condensed',sans-serif; margin-bottom:.4rem; }
+    .af-group input, .af-group select, .af-group textarea { width:100%; background:var(--card); border:1px solid var(--border); color:var(--text); font-family:'Barlow',sans-serif; font-size:.88rem; font-weight:300; padding:.65rem .9rem; outline:none; transition:border-color .2s; }
+    .af-group textarea { resize:vertical; min-height:80px; }
+    .af-group input:focus, .af-group select:focus, .af-group textarea:focus { border-color:var(--border2); }
+    .af-group select option { background:var(--card2); }
+    .af-full { grid-column:1/-1; }
+    .admin-btn { font-family:'Barlow Condensed',sans-serif; font-size:.85rem; letter-spacing:.15em; text-transform:uppercase; padding:.65rem 1.5rem; cursor:pointer; border:none; transition:all .2s; clip-path:polygon(0 0,100% 0,96% 100%,4% 100%); }
+    .admin-btn.primary { background:var(--accent); color:#fff; }
+    .admin-btn.primary:hover { background:#c01f22; }
+    .admin-btn.secondary { background:var(--card2); border:1px solid var(--border); color:var(--text2); clip-path:none; }
+    .admin-btn.secondary:hover { color:var(--white); border-color:var(--border2); }
+    .admin-btn.danger { background:rgba(232,39,42,.15); border:1px solid var(--accent); color:var(--accent); clip-path:none; font-size:.72rem; padding:.35rem .8rem; }
+    .admin-btn.danger:hover { background:var(--accent); color:#fff; }
+    .admin-success { background:rgba(34,197,94,.1); border:1px solid rgba(34,197,94,.3); color:var(--green); padding:.7rem 1rem; font-size:.82rem; margin-bottom:1rem; display:none; }
+    .admin-success.show { display:block; }
+
+    /* MODAL */
+    .modal-overlay { position:fixed; inset:0; z-index:1000; background:rgba(3,4,8,.88); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .25s; }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal { background:var(--card2); border:1px solid var(--border2); width:100%; max-width:420px; padding:2.5rem; position:relative; transform:translateY(20px) scale(.97); box-shadow:var(--shadow); transition:transform .3s cubic-bezier(.22,.68,0,1.2); }
+    .modal-overlay.open .modal { transform:translateY(0) scale(1); }
+    .modal-close { position:absolute; top:1rem; right:1rem; background:none; border:none; color:var(--muted); font-size:1.3rem; cursor:pointer; line-height:1; transition:color .2s; }
+    .modal-close:hover { color:var(--white); }
+    .modal-logo { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; letter-spacing:.12em; color:var(--white); margin-bottom:.4rem; }
+    .modal-logo span { color:var(--accent); }
+    .modal-tabs { display:flex; border-bottom:1px solid var(--border); margin-bottom:1.8rem; }
+    .modal-tab { flex:1; text-align:center; font-family:'Barlow Condensed',sans-serif; font-size:.8rem; letter-spacing:.15em; text-transform:uppercase; padding:.7rem; cursor:pointer; color:var(--muted); border-bottom:2px solid transparent; margin-bottom:-1px; transition:color .2s,border-color .2s; background:none; border-top:none; border-left:none; border-right:none; font-weight:normal; }
+    .modal-tab.active { color:var(--white); border-bottom:2px solid var(--accent); }
+    .fg { margin-bottom:1.1rem; }
+    .fg label { display:block; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); font-family:'Barlow Condensed',sans-serif; margin-bottom:.45rem; }
+    .fg input { width:100%; background:var(--card); border:1px solid var(--border); color:var(--text); font-family:'Barlow',sans-serif; font-size:.9rem; font-weight:300; padding:.65rem .9rem; outline:none; transition:border-color .2s; }
+    .fg input:focus { border-color:var(--border2); }
+    .fg input.err-field { border-color:var(--accent); }
+    .fg-err { font-size:.75rem; color:var(--accent); margin-top:.35rem; display:none; }
+    .fg-err.show { display:block; }
+    .global-err { background:rgba(232,39,42,.12); border:1px solid rgba(232,39,42,.3); color:var(--accent); font-size:.82rem; padding:.65rem .9rem; margin-bottom:1.1rem; display:none; }
+    .global-err.show { display:block; }
+    .form-submit { width:100%; background:var(--accent); color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:.95rem; letter-spacing:.2em; text-transform:uppercase; padding:.85rem; border:none; cursor:pointer; clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:background .2s,transform .15s; margin-top:.5rem; }
+    .form-submit:hover { background:#c01f22; transform:scale(1.01); }
+    .modal-fn { text-align:center; font-size:.78rem; color:var(--muted); margin-top:1.2rem; }
+    .modal-fn button { background:none; border:none; color:var(--accent); cursor:pointer; font-size:.78rem; font-family:'Barlow',sans-serif; }
+    .modal-fn button:hover { text-decoration:underline; }
+    .modal-success { text-align:center; padding:1rem 0; display:none; }
+    .modal-success.show { display:block; }
+    .ms-icon { font-size:3rem; margin-bottom:1rem; }
+    .ms-msg { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:var(--white); letter-spacing:.08em; }
+    .ms-sub { font-size:.85rem; color:var(--muted); margin-top:.5rem; }
+
+    /* TOAST */
+    .toast-cont { position:fixed; bottom:2rem; right:2rem; z-index:2000; display:flex; flex-direction:column; gap:.6rem; }
+    .toast { background:var(--card2); border:1px solid var(--border2); color:var(--text); font-size:.83rem; padding:.8rem 1.2rem; min-width:240px; display:flex; align-items:center; gap:.6rem; animation:toastIn .3s ease; box-shadow:var(--shadow); }
+    .toast.success { border-left:3px solid var(--green); }
+    .toast.error   { border-left:3px solid var(--accent); }
+    .toast.info    { border-left:3px solid var(--blue); }
+    @keyframes toastIn { from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)} }
+
+    /* FOOTER */
+    footer { border-top:1px solid var(--border); padding:2rem 2.5rem; display:flex; justify-content:space-between; align-items:center; font-size:.73rem; color:var(--muted); letter-spacing:.06em; flex-wrap:wrap; gap:1rem; }
+    .fl { font-family:'Bebas Neue',sans-serif; font-size:1.2rem; color:var(--white); cursor:pointer; }
+    .fl span { color:var(--accent); }
+    .footer-links { display:flex; gap:1.5rem; }
+    .footer-links button { background:none; border:none; color:var(--muted); cursor:pointer; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-family:'Barlow',sans-serif; transition:color .2s; }
+    .footer-links button:hover { color:var(--text); }
+
+    /* COVERS */
+    .cov-gta { background:linear-gradient(150deg,#1a0808 0%,#4a1010 50%,#1a0000 100%); }
+    .cov-mc  { background:linear-gradient(150deg,#081408 0%,#1a4a10 50%,#051005 100%); }
+    .cov-cs  { background:linear-gradient(150deg,#080d1a 0%,#0f224a 50%,#050a14 100%); }
+    .cov-pes { background:linear-gradient(150deg,#060810 0%,#0a1230 50%,#040608 100%); }
+    .cov-re  { background:linear-gradient(150deg,#100808 0%,#3a0a0a 50%,#140505 100%); }
+    .cov-cod { background:linear-gradient(150deg,#0a0a08 0%,#2a2810 50%,#0a0a05 100%); }
+    .cover-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease,filter .4s ease; filter:saturate(.75) brightness(.85); }
+    .game-card:hover .cover-img { transform:scale(1.06); filter:saturate(1.1) brightness(.55); }
+    .ghb-bg-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; filter:brightness(.5) saturate(.8); }
+
+    .hidden { display:none !important; }
+
+    /* ══ EYE TOGGLE (contraseña) ══ */
+    .pass-wrap { position:relative; }
+    .pass-wrap input { padding-right:2.6rem !important; }
+    .eye-btn { position:absolute; right:.75rem; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--muted); cursor:pointer; font-size:1rem; line-height:1; transition:color .2s; padding:0; }
+    .eye-btn:hover { color:var(--text); }
+
+    /* ══ STAR RATING ══ */
+    .star-section { margin-bottom:2.5rem; }
+    .star-row { display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+    .stars-display { display:flex; gap:.2rem; }
+    .star { font-size:1.4rem; cursor:pointer; color:var(--muted); transition:color .15s, transform .15s; line-height:1; }
+    .star.filled { color:var(--gold); }
+    .star:hover { transform:scale(1.2); }
+    .star-avg { font-family:'Bebas Neue',sans-serif; font-size:2rem; color:var(--white); letter-spacing:.05em; line-height:1; }
+    .star-count { font-size:.75rem; color:var(--muted); }
+    .star-your { font-size:.75rem; color:var(--text2); margin-top:.5rem; }
+    .star-your span { color:var(--gold); }
+
+    /* ══ TOP DESCARGADOS (home) ══ */
+    .top-section { padding:0 2.5rem 1rem; }
+    .top-section-title { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:.08em; color:var(--white); margin-bottom:1rem; display:flex; align-items:center; gap:.8rem; }
+    .top-section-title span { color:var(--accent); }
+    .top-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:.6rem; }
+    .top-item { background:var(--card2); border:1px solid var(--border); display:flex; align-items:center; gap:1rem; padding:.8rem 1rem; cursor:pointer; transition:background .15s,border-color .15s; }
+    .top-item:hover { background:var(--card); border-color:var(--border2); }
+    .top-rank { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; color:var(--muted); letter-spacing:.05em; width:24px; text-align:center; flex-shrink:0; }
+    .top-rank.gold { color:var(--gold); }
+    .top-rank.silver { color:#aaa; }
+    .top-rank.bronze { color:#cd7f32; }
+    .top-thumb { width:44px; height:44px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:.7rem; color:rgba(255,255,255,.2); border-radius:2px; overflow:hidden; position:relative; }
+    .top-thumb img { width:100%; height:100%; object-fit:cover; }
+    .top-info { flex:1; min-width:0; }
+    .top-name { font-size:.88rem; font-weight:600; color:var(--white); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .top-meta { font-size:.72rem; color:var(--muted); margin-top:.15rem; }
+    .top-dl-count { font-family:'Barlow Condensed',sans-serif; font-size:.7rem; letter-spacing:.1em; color:var(--green); flex-shrink:0; }
+
+    /* ══ PERFIL ══ */
+    .perfil-wrap { padding:2.5rem; max-width:800px; }
+    .perfil-header { display:flex; align-items:flex-end; gap:2rem; margin-bottom:2.5rem; padding-bottom:2rem; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+    .avatar-upload-wrap { position:relative; flex-shrink:0; }
+    .avatar-big { width:100px; height:100px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#ff6b00); border:3px solid var(--border2); display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:2.5rem; color:#fff; overflow:hidden; cursor:pointer; transition:border-color .2s; }
+    .avatar-big:hover { border-color:var(--accent); }
+    .avatar-big img { width:100%; height:100%; object-fit:cover; }
+    .avatar-change-label { position:absolute; bottom:0; right:0; background:var(--card2); border:1px solid var(--border2); border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:.85rem; cursor:pointer; transition:background .2s; }
+    .avatar-change-label:hover { background:var(--accent); }
+    .perfil-meta { flex:1; }
+    .perfil-username { font-family:'Bebas Neue',sans-serif; font-size:2.2rem; letter-spacing:.06em; color:var(--white); line-height:1; }
+    .perfil-since { font-size:.75rem; color:var(--muted); letter-spacing:.1em; margin-top:.3rem; }
+    .perfil-form { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .pf-group { margin-bottom:1rem; }
+    .pf-group label { display:block; font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); font-family:'Barlow Condensed',sans-serif; margin-bottom:.4rem; }
+    .pf-group input, .pf-group textarea { width:100%; background:var(--card); border:1px solid var(--border); color:var(--text); font-family:'Barlow',sans-serif; font-size:.9rem; font-weight:300; padding:.65rem .9rem; outline:none; transition:border-color .2s; }
+    .pf-group textarea { resize:vertical; min-height:80px; }
+    .pf-group input:focus, .pf-group textarea:focus { border-color:var(--border2); }
+    .pf-full { grid-column:1/-1; }
+    .pf-save { font-family:'Barlow Condensed',sans-serif; font-size:.88rem; letter-spacing:.18em; text-transform:uppercase; padding:.7rem 1.8rem; background:var(--accent); color:#fff; border:none; cursor:pointer; clip-path:polygon(0 0,100% 0,96% 100%,4% 100%); transition:background .2s; }
+    .pf-save:hover { background:#c01f22; }
+    .perfil-stats-row { display:flex; gap:1.5rem; margin-bottom:2rem; flex-wrap:wrap; }
+    .pf-stat { background:var(--card2); border:1px solid var(--border); padding:.8rem 1.2rem; flex:1; min-width:100px; }
+    .pf-stat-num { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:var(--white); }
+    .pf-stat-label { font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); }
+
+    /* ══ MIS DESCARGAS ══ */
+    .descargas-wrap { padding:2.5rem; max-width:900px; }
+    .descargas-title { font-family:'Bebas Neue',sans-serif; font-size:2rem; letter-spacing:.08em; color:var(--white); margin-bottom:.3rem; }
+    .descargas-title span { color:var(--accent); }
+    .descargas-sub { font-size:.82rem; color:var(--muted); margin-bottom:2rem; }
+    .dl-history { display:flex; flex-direction:column; gap:.5rem; }
+    .dl-hist-item { background:var(--card2); border:1px solid var(--border); display:flex; align-items:center; gap:1rem; padding:.9rem 1.1rem; transition:background .15s; cursor:pointer; }
+    .dl-hist-item:hover { background:var(--card); }
+    .dl-hist-thumb { width:48px; height:48px; flex-shrink:0; border-radius:2px; overflow:hidden; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:.7rem; color:rgba(255,255,255,.2); }
+    .dl-hist-thumb img { width:100%; height:100%; object-fit:cover; }
+    .dl-hist-info { flex:1; }
+    .dl-hist-name { font-size:.92rem; font-weight:600; color:var(--white); }
+    .dl-hist-date { font-size:.72rem; color:var(--muted); margin-top:.15rem; }
+    .dl-hist-again { font-family:'Barlow Condensed',sans-serif; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); flex-shrink:0; }
+    .descargas-empty { text-align:center; padding:4rem 2rem; }
+    .descargas-empty h3 { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:var(--text2); }
+    .descargas-empty p { color:var(--muted); font-size:.85rem; margin-top:.5rem; }
+
+    @media(max-width:768px){
+      header { padding:0 1rem; gap:.8rem; }
+      nav { display:none; }
+      .hero { padding:4rem 1.5rem 3rem; }
+      .hero-stats { gap:1.5rem; }
+      .games-grid { margin:0 1rem 3rem; }
+      .filter-bar,.section-label,.novedades-section { padding-left:1rem; padding-right:1rem; }
+      .novedades-grid { grid-template-columns:1fr; }
+      .gd-body { grid-template-columns:1fr; padding:1.5rem; }
+      .admin-grid { grid-template-columns:1fr 1fr; }
+      .admin-form-grid { grid-template-columns:1fr; }
+      .screenshots { grid-template-columns:1fr 1fr; }
+      footer { flex-direction:column; text-align:center; padding:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="goPage('home')">Visión <span>Z</span></div>
+  <div class="search-wrap">
+    <span class="search-icon">⌕</span>
+    <input type="text" id="searchInput" placeholder="Buscar juegos..." autocomplete="off">
+    <div class="search-results" id="searchDD"></div>
+  </div>
+  <nav>
+    <button class="active" onclick="goPage('home')">Inicio</button>
+    <button onclick="goPage('home'); setFilter('todos')">Juegos</button>
+    <button onclick="goPage('novedades')">Novedades</button>
+  </nav>
+  <div class="user-area">
+    <div id="authBtns">
+      <button class="btn-auth btn-login"    onclick="openModal('login')">Ingresar</button>
+      <button class="btn-auth btn-register" onclick="openModal('register')">Registrarse</button>
+    </div>
+    <div class="user-dd-wrap hidden" id="userArea">
+      <button class="avatar-btn" id="avatarBtn" onclick="toggleDD()">?</button>
+      <div class="user-dd" id="userDD">
+        <div class="ud-head">
+          <div class="ud-name" id="udName"></div>
+          <div class="ud-email" id="udEmail"></div>
+          <span class="ud-badge hidden" id="udAdminBadge">Admin</span>
+        </div>
+        <button class="ud-item" onclick="goPage('perfil');closeDD()">👤 Mi perfil</button>
+        <button class="ud-item" onclick="goPage('descargas');closeDD()">📥 Mis descargas</button>
+        <button class="ud-item admin-only hidden" onclick="goPage('admin'); closeDD()">⚙️ Panel Admin</button>
+        <div class="ud-divider"></div>
+        <button class="ud-item danger" onclick="logout()">🚪 Cerrar sesión</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-glow"></div><div class="hero-lines"></div>
+    <p class="hero-eyebrow">Tu sitio de descargas gratuitas</p>
+    <h1>VISION <span class="z">Z</span></h1>
+    <p class="hero-tagline">Los mejores juegos clásicos, listos para descargar.</p>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num" id="statGames">6<span>+</span></div><div class="stat-label">Juegos</div></div>
+      <div class="stat-item"><div class="stat-num" id="statUsers">0</div><div class="stat-label">Usuarios</div></div>
+      <div class="stat-item"><div class="stat-num">100<span>%</span></div><div class="stat-label">Gratis</div></div>
+    </div>
+  </section>
+  <div class="filter-bar">
+    <span class="filter-label">Género:</span>
+    <button class="filter-btn active" onclick="setFilter('todos',this)">Todos</button>
+    <button class="filter-btn" onclick="setFilter('accion',this)">Acción</button>
+    <button class="filter-btn" onclick="setFilter('sandbox',this)">Sandbox</button>
+    <button class="filter-btn" onclick="setFilter('fps',this)">FPS</button>
+    <button class="filter-btn" onclick="setFilter('deportes',this)">Deportes</button>
+    <button class="filter-btn" onclick="setFilter('terror',this)">Terror</button>
+  </div>
+  <div class="section-label" id="gridLabel">Todos los juegos</div>
+  <div class="games-grid" id="gamesGrid"></div>
+
+  <!-- MÁS DESCARGADOS -->
+  <div class="top-section" id="topSection">
+    <div class="section-label" style="padding:0 0 1.5rem">Lo más descargado</div>
+    <div class="top-list" id="topList"></div>
+  </div>
+</div>
+
+<!-- NOVEDADES -->
+<div id="page-novedades" class="page">
+  <section class="hero" style="padding:4rem 2.5rem 3rem">
+    <div class="hero-glow"></div>
+    <p class="hero-eyebrow">Lo más reciente</p>
+    <h1 style="font-size:clamp(3rem,8vw,7rem)">NOVEDA<span class="z">DES</span></h1>
+    <p class="hero-tagline">Últimas incorporaciones y actualizaciones del catálogo.</p>
+  </section>
+  <div class="novedades-section">
+    <h2 id="novTitle">🔥 Destacados de <span id="novMes">este mes</span></h2>
+    <div class="novedades-grid" id="novGrid"></div>
+  </div>
+  <div class="section-label" style="padding:1rem 2.5rem 1.5rem">Todos los juegos nuevos</div>
+  <div class="games-grid" id="novAllGrid"></div>
+</div>
+
+<!-- GAME DETAIL -->
+<div id="page-game" class="page">
+  <div class="ghb">
+    <div class="ghb-bg" id="dBg"><div class="ghb-art" id="dArt"></div></div>
+    <div class="ghb-content">
+      <p class="breadcrumb">
+        <button onclick="goPage('home')" style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.07);border:1px solid var(--border2);color:var(--text2);padding:.35rem .9rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'Barlow Condensed',sans-serif;transition:all .2s" onmouseover="this.style.background='rgba(255,255,255,.13)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.07)';this.style.color='var(--text2)'">← Inicio</button>
+        <span style="color:var(--muted);margin:0 .4rem">/</span><span id="dBread"></span>
+      </p>
+      <h1 id="dTitle"></h1>
+      <div class="ghb-meta" id="dMeta"></div>
+    </div>
+  </div>
+  <div class="gd-body">
+    <main>
+      <p class="gd-stitle">Descripción</p>
+      <p class="gd-desc" id="dDesc"></p>
+
+      <!-- RATING -->
+      <p class="gd-stitle">Calificación de usuarios</p>
+      <div class="star-section">
+        <div class="star-row">
+          <div class="star-avg" id="dStarAvg">—</div>
+          <div>
+            <div class="stars-display" id="dStarsDisplay"></div>
+            <div class="star-count" id="dStarCount">Sin calificaciones aún</div>
+          </div>
+        </div>
+        <div class="star-your" id="dYourRating" style="margin-top:.8rem"></div>
+        <div style="margin-top:.7rem;font-size:.75rem;color:var(--muted)" id="dRatePrompt"></div>
+      </div>
+      <p class="gd-stitle">Capturas de pantalla</p>
+      <div class="screenshots" id="dScreenshots"></div>
+      <p class="gd-stitle">Requisitos mínimos</p>
+      <div class="req-grid" id="dReqs"></div>
+    </main>
+    <aside>
+      <div class="dl-box">
+        <h3>Descargar juego</h3>
+        <div id="dInfo"></div>
+        <a id="dlBtn" class="dl-btn" href="#">↓ Descargar ahora</a>
+        <p class="dl-note" id="dlNote"></p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div id="page-admin" class="page">
+  <div class="admin-wrap">
+    <div class="admin-title">Panel <span>Admin</span></div>
+    <p class="admin-sub">Gestión de usuarios, juegos y contenido de Visión Z</p>
+    <div class="admin-grid">
+      <div class="admin-stat"><div class="as-num" id="aStatJuegos">6</div><div class="as-label">Juegos publicados</div></div>
+      <div class="admin-stat" style="border-left-color:var(--blue)"><div class="as-num" id="aStatUsers">0</div><div class="as-label">Usuarios registrados</div></div>
+      <div class="admin-stat" style="border-left-color:var(--green)"><div class="as-num" id="aStatAdmins">1</div><div class="as-label">Administradores</div></div>
+    </div>
+    <p class="admin-section-title">Usuarios registrados</p>
+    <table class="admin-table"><thead><tr><th>#</th><th>Usuario</th><th>Email</th><th>Registrado</th><th>Rol</th><th>Acciones</th></tr></thead><tbody id="adminUsersTbody"></tbody></table>
+    <p class="admin-section-title">Agregar nuevo juego</p>
+    <div class="admin-success" id="adminSuccess">✅ Juego agregado exitosamente al catálogo.</div>
+    <div class="admin-form-grid">
+      <div class="af-group"><label>Título del juego</label><input type="text" id="af-title" placeholder="Ej: Half-Life 2"></div>
+      <div class="af-group"><label>Desarrolladora</label><input type="text" id="af-dev" placeholder="Ej: Valve"></div>
+      <div class="af-group"><label>Año</label><input type="number" id="af-year" placeholder="2004" min="1990" max="2030"></div>
+      <div class="af-group"><label>Género</label><select id="af-genre"><option value="accion">Acción</option><option value="fps">FPS</option><option value="sandbox">Sandbox</option><option value="deportes">Deportes</option><option value="terror">Terror</option><option value="aventura">Aventura</option><option value="rpg">RPG</option></select></div>
+      <div class="af-group"><label>Versión</label><input type="text" id="af-version" placeholder="Ej: 1.0 Original"></div>
+      <div class="af-group"><label>Tamaño</label><input type="text" id="af-size" placeholder="Ej: 4.7 GB"></div>
+      <div class="af-group"><label>Calificación (0-10)</label><input type="text" id="af-rating" placeholder="9.5"></div>
+      <div class="af-group"><label>Link de descarga</label><input type="text" id="af-link" placeholder="https://..."></div>
+      <div class="af-group af-full"><label>Descripción corta (card)</label><input type="text" id="af-cardesc" placeholder="Ej: Mundo abierto épico..."></div>
+      <div class="af-group af-full"><label>Descripción completa</label><textarea id="af-desc" placeholder="Descripción detallada..."></textarea></div>
+    </div>
+    <button class="admin-btn primary" onclick="adminAddGame()">+ Agregar juego al catálogo</button>&nbsp;
+    <button class="admin-btn secondary" onclick="clearAdminForm()">Limpiar</button>
+  </div>
+</div>
+
+<!-- PERFIL -->
+<div id="page-perfil" class="page">
+  <div class="perfil-wrap">
+    <div class="perfil-header">
+      <div class="avatar-upload-wrap">
+        <div class="avatar-big" id="pfAvatarBig" onclick="document.getElementById('pfAvatarInput').click()">?</div>
+        <label class="avatar-change-label" onclick="document.getElementById('pfAvatarInput').click()">📷</label>
+        <input type="file" id="pfAvatarInput" accept="image/*" style="display:none" onchange="handleAvatarUpload(event)">
+      </div>
+      <div class="perfil-meta">
+        <div class="perfil-username" id="pfUsername"></div>
+        <div class="perfil-since" id="pfSince"></div>
+      </div>
+    </div>
+    <div class="perfil-stats-row">
+      <div class="pf-stat"><div class="pf-stat-num" id="pfStatDl">0</div><div class="pf-stat-label">Descargas</div></div>
+      <div class="pf-stat"><div class="pf-stat-num" id="pfStatRated">0</div><div class="pf-stat-label">Juegos calificados</div></div>
+      <div class="pf-stat"><div class="pf-stat-num" id="pfStatMember"></div><div class="pf-stat-label">Miembro desde</div></div>
+    </div>
+    <div class="gd-stitle">Editar perfil</div>
+    <div class="perfil-form">
+      <div class="pf-group"><label>Nombre de usuario</label><input type="text" id="pfName" placeholder="Tu nombre de usuario"></div>
+      <div class="pf-group"><label>País / Ciudad</label><input type="text" id="pfLocation" placeholder="Ej: Buenos Aires, AR"></div>
+      <div class="pf-group pf-full"><label>Bio</label><textarea id="pfBio" placeholder="Contá algo sobre vos..."></textarea></div>
+    </div>
+    <button class="pf-save" onclick="saveProfile()">Guardar cambios</button>
+  </div>
+</div>
+
+<!-- MIS DESCARGAS -->
+<div id="page-descargas" class="page">
+  <div class="descargas-wrap">
+    <div class="descargas-title">Mis <span>Descargas</span></div>
+    <p class="descargas-sub">Historial de todos los juegos que descargaste.</p>
+    <div id="dlHistoryContainer"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="fl" onclick="goPage('home')">Visión <span>Z</span></div>
+  <div class="footer-links">
+    <button onclick="goPage('home')">Inicio</button>
+    <button onclick="goPage('home');setFilter('todos')">Juegos</button>
+    <button onclick="goPage('novedades')">Novedades</button>
+    <button>Contacto</button><button>Privacidad</button>
+  </div>
+  <span>© 2025 Visión Z · Todos los derechos reservados</span>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-logo">Visión <span>Z</span></div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tabL" onclick="switchTab('login')">Ingresar</button>
+      <button class="modal-tab" id="tabR" onclick="switchTab('register')">Registrarse</button>
+    </div>
+    <div class="global-err" id="gErr"></div>
+    <div id="fLogin">
+      <div class="fg"><label>Email</label><input type="email" id="lEmail" placeholder="tu@email.com"><div class="fg-err" id="lEmailErr">Email inválido.</div></div>
+      <div class="fg"><label>Contraseña</label><div class="pass-wrap"><input type="password" id="lPass" placeholder="••••••••"><button type="button" class="eye-btn" onclick="togglePass('lPass',this)">👁</button></div><div class="fg-err" id="lPassErr">Ingresá tu contraseña.</div></div>
+      <button class="form-submit" onclick="doLogin()">Ingresar</button>
+      <div class="modal-fn">¿No tenés cuenta? <button onclick="switchTab('register')">Registrate gratis</button></div>
+    </div>
+    <div id="fRegister" class="hidden">
+      <div class="fg"><label>Nombre de usuario</label><input type="text" id="rUser" placeholder="gamer123"><div class="fg-err" id="rUserErr">Mínimo 3 caracteres.</div></div>
+      <div class="fg"><label>Email</label><input type="email" id="rEmail" placeholder="tu@email.com"><div class="fg-err" id="rEmailErr">Email inválido.</div></div>
+      <div class="fg"><label>Contraseña</label><div class="pass-wrap"><input type="password" id="rPass" placeholder="Mínimo 6 caracteres"><button type="button" class="eye-btn" onclick="togglePass('rPass',this)">👁</button></div><div class="fg-err" id="rPassErr">Mínimo 6 caracteres.</div></div>
+      <div class="fg"><label>Confirmar contraseña</label><div class="pass-wrap"><input type="password" id="rPass2" placeholder="Repetí la contraseña"><button type="button" class="eye-btn" onclick="togglePass('rPass2',this)">👁</button></div><div class="fg-err" id="rPass2Err">Las contraseñas no coinciden.</div></div>
+      <button class="form-submit" onclick="doRegister()">Crear cuenta</button>
+      <div class="modal-fn">¿Ya tenés cuenta? <button onclick="switchTab('login')">Iniciá sesión</button></div>
+    </div>
+    <div class="modal-success" id="mSuccess">
+      <div class="ms-icon">✅</div>
+      <div class="ms-msg" id="mSuccessMsg"></div>
+      <div class="ms-sub" id="mSuccessSub"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-nav lb-prev" onclick="lbNav(-1)">‹</button>
+  <img id="lbImg" src="" alt="Screenshot">
+  <button class="lb-nav lb-next" onclick="lbNav(1)">›</button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<div class="toast-cont" id="toastCont"></div>
+
+<script>
+/* ════════════════════════════════════════════════════
+   JUEGOS — Editá solo las propiedades de cada juego:
+   
+   img         → portada: aparece en la card de la grilla
+                 y en el banner de la página de detalle
+                 Rutas locales: 'imagenes/gta.jpg'
+                 URLs externas: 'https://...'
+   
+   screenshots → array de 3 imágenes para la sección
+                 "Capturas de pantalla" dentro del detalle
+                 Si dejás '' en un slot → muestra un placeholder
+                 Si ponés una URL/ruta → muestra la imagen
+                 Al hacer click en una imagen se abre un
+                 lightbox con navegación (← →)
+════════════════════════════════════════════════════ */
+let GAMES = [
+  {
+    id:'gta', title:'GTA San Andreas', short:'GTA',
+    genre:'accion', genreLabel:'Acción', year:2004, dev:'Rockstar Games',
+    rating:'9.5', size:'3.6 GB', version:'1.0 Original', lang:'Español', platform:'PC',
+    cov:'cov-gta',
+    img:'https://e0.pxfuel.com/wallpapers/903/128/desktop-wallpaper-gta-san-andreas-wp-v9-ryder-cj-smoke.jpg',
+    screenshots:[
+      'https://www.gta-growth.com/secciones/gtasa/screenshots/oficiales-android-07.jpg',  // ← reemplazá con tu imagen: 'imagenes/gta_ss1.jpg' o URL
+      'https://www.gta-growth.com/secciones/gtasa/screenshots/oficiales-android-03.jpg',  // ← screenshot 2
+      'https://www.gta-growth.com/secciones/gtasa/screenshots/oficiales-android-08.jpg',  // ← screenshot 3
+    ],
+    desc:'GTA San Andreas es uno de los juegos de mundo abierto más icónicos. Seguís la historia de Carl "CJ" Johnson que regresa a Los Santos tras la muerte de su madre. El mapa incluye tres ciudades enormes con libertad total para explorar, cientos de misiones y actividades secundarias.',
+    cardDesc:'Mundo abierto épico. Libertad total en Los Santos.',
+    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    reqs:[{l:'RAM',v:'256MB'},{l:'CPU',v:'1 Ghz Pentium III ó AMD Athlon'},{l:'GPU',v:'64MB Video Card (Geforce 3 ó superior)'},{l:'Disco',v:'3.6 GB'},{l:'SO',v:'Microsoft Windows 2000/XP'},{l:'DirectX',v:'v9.0c'}]
+  },
+  {
+    id:'minecraft', title:'Minecraft', short:'MC',
+    genre:'sandbox', genreLabel:'Sandbox', year:2011, dev:'Mojang Studios',
+    rating:'9.8', size:'1.2 GB', version:'1.12.2', lang:'Español', platform:'PC',
+    cov:'cov-mc',
+    img:'https://acf.geeknetic.es/imgri/imagenes/noticias/2019/17832-minecraft-playstation-4-muestra.jpg?f=webp',
+    screenshots:[
+      '',  // ← screenshot 1
+      '',  // ← screenshot 2
+      '',  // ← screenshot 3
+    ],
+    desc:'Minecraft es el juego de sandbox más vendido de la historia. Construí estructuras, explorá biomas infinitos, sobreviví a la noche y enfrentá criaturas únicas. Modo creativo sin límites y modo supervivencia desafiante.',
+    cardDesc:'Bloques infinitos. Creá, sobreviví, explorá.',
+    link:'LINK_DEL_JUEGO', hot:true, isNew:false,
+    reqs:[{l:'RAM',v:'4 GB'},{l:'CPU',v:'Intel i3'},{l:'GPU',v:'GeForce 400'},{l:'Disco',v:'1.5 GB'},{l:'SO',v:'Windows 7+'},{l:'Java',v:'Java 8+'}]
+  },
+  {
+    id:'cs16', title:'Counter-Strike 1.6', short:'CS',
+    genre:'fps', genreLabel:'FPS', year:2000, dev:'Valve Corporation',
+    rating:'9.2', size:'600 MB', version:'v48 Completo', lang:'Español', platform:'PC',
+    cov:'cov-cs',
+    img:'https://e0.pxfuel.com/wallpapers/843/828/desktop-wallpaper-counter-strike-1-6-pc-game-full-version-from-online-to-here-fantastic-this-shooting-video-game-pla-video-game-posters-game-counter-cs-1-6.jpg',
+    screenshots:[
+      '',  // ← screenshot 1
+      '',  // ← screenshot 2
+      '',  // ← screenshot 3
+    ],
+    desc:'Counter-Strike 1.6 es el shooter táctico más icónico de todos los tiempos. Terroristas contra contraterroristas en mapas clásicos como de_dust2, cs_assault. Un juego que definió el género FPS competitivo.',
+    cardDesc:'El shooter táctico que definió una generación.',
+    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    reqs:[{l:'RAM',v:'512 MB'},{l:'CPU',v:'800 MHz'},{l:'GPU',v:'32 MB'},{l:'Disco',v:'600 MB'},{l:'SO',v:'Windows XP+'},{l:'Red',v:'Recomendada'}]
+  },
+  {
+    id:'pes2021', title:'PES 2021', short:'PES',
+    genre:'deportes', genreLabel:'Deportes', year:2020, dev:'Konami',
+    rating:'8.7', size:'8.5 GB', version:'Edición Temporada', lang:'Español', platform:'PC',
+    cov:'cov-pes',
+    img:'https://e1.pxfuel.com/desktop-wallpaper/761/74/desktop-wallpaper-watch-ubisoft-s-e3-2017-press-conference-livestream-right-here-dualshockers-pes-21.jpg',
+    screenshots:[
+      '',  // ← screenshot 1
+      '',  // ← screenshot 2
+      '',  // ← screenshot 3
+    ],
+    desc:'PES 2021 es la entrega definitiva de fútbol de simulación. Con el mejor control de balón, física realista y modos como Master League y myClub. Incluye las mejores ligas y equipos del mundo.',
+    cardDesc:'Fútbol de simulación. El control de balón perfecto.',
+    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    reqs:[{l:'RAM',v:'4 GB'},{l:'CPU',v:'Core i5-3470'},{l:'GPU',v:'GTX 670'},{l:'Disco',v:'8.5 GB'},{l:'SO',v:'Windows 7+'},{l:'DirectX',v:'v11'}]
+  },
+  {
+    id:'re4', title:'Resident Evil 4', short:'RE4',
+    genre:'terror', genreLabel:'Terror', year:2005, dev:'Capcom',
+    rating:'9.7', size:'7.7 GB', version:'HD Project', lang:'Español', platform:'PC',
+    cov:'cov-re',
+    img:'https://e0.pxfuel.com/wallpapers/691/697/desktop-wallpaper-resident-evil-iphone-resident-evil-4-iphone.jpg',
+    screenshots:[
+      '',  // ← screenshot 1
+      '',  // ← screenshot 2
+      '',  // ← screenshot 3
+    ],
+    desc:'Leon S. Kennedy viaja a un remoto pueblo de España para rescatar a la hija del presidente. Con una cámara sobre el hombro que revolucionó los shooters, combate intenso y atmósfera opresiva. Una obra maestra absoluta.',
+    cardDesc:'Tensión pura. Leon S. Kennedy en su peor pesadilla.',
+    link:'LINK_DEL_JUEGO', hot:false, isNew:true,
+    reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'2.0 GHz'},{l:'GPU',v:'256 MB'},{l:'Disco',v:'7.7 GB'},{l:'SO',v:'Windows XP+'},{l:'DirectX',v:'v9.0c'}]
+  },
+  {
+    id:'cod4', title:'Call of Duty Modern Warfare 4', short:'COD',
+    genre:'fps', genreLabel:'FPS', year:2007, dev:'Infinity Ward',
+    rating:'9.4', size:'6.0 GB', version:'Modern Warfare', lang:'Español', platform:'PC',
+    cov:'cov-cod',
+    img:'https://e1.pxfuel.com/desktop-wallpaper/588/161/desktop-wallpaper-call-of-duty-call-of-duty-4-modern-warfare-games-cod-4.jpg',
+    screenshots:[
+      '',  // ← screenshot 1
+      '',  // ← screenshot 2
+      '',  // ← screenshot 3
+    ],
+    desc:'Call of Duty 4: Modern Warfare cambió para siempre los shooters en primera persona. Campaña cinematográfica y multijugador competitivo adictivo que marcó una era y sentó las bases de los CoD modernos.',
+    cardDesc:'El FPS que cambió todo. Campaña épica y multi brutal.',
+    link:'LINK_DEL_JUEGO', hot:true, isNew:false,
+    reqs:[{l:'RAM',v:'512 MB'},{l:'CPU',v:'P4 2.4GHz'},{l:'GPU',v:'nVidia 6600GT'},{l:'Disco',v:'6 GB'},{l:'SO',v:'Windows XP+'},{l:'DirectX',v:'v9.0c'}]
+  },
+];
+
+/* ── STATE ── */
+let currentUser=null, currentFilter='todos', lbImages=[], lbIndex=0;
+
+/* ── STORAGE HELPERS ── */
+const getUsers   =()=>{try{return JSON.parse(localStorage.getItem('vz_users')||'[]')}catch{return[]}};
+const saveUsers  =u=>localStorage.setItem('vz_users',JSON.stringify(u));
+const getSession =()=>{try{return JSON.parse(localStorage.getItem('vz_session')||'null')}catch{return null}};
+const saveSession=u=>localStorage.setItem('vz_session',JSON.stringify(u));
+const clearSess  =()=>localStorage.removeItem('vz_session');
+
+/* ── STATS STORAGE ── */
+const getViews    =()=>{try{return JSON.parse(localStorage.getItem('vz_views')||'{}')}catch{return{}}};
+const saveViews   =v=>localStorage.setItem('vz_views',JSON.stringify(v));
+const getDownloads=()=>{try{return JSON.parse(localStorage.getItem('vz_dlcount')||'{}')}catch{return{}}};
+const saveDownloads=d=>localStorage.setItem('vz_dlcount',JSON.stringify(d));
+const getRatings  =()=>{try{return JSON.parse(localStorage.getItem('vz_ratings')||'{}')}catch{return{}}};
+const saveRatings =r=>localStorage.setItem('vz_ratings',JSON.stringify(r));
+const getUserRatings=()=>{try{return JSON.parse(localStorage.getItem('vz_user_ratings')||'{}')}catch{return{}}};
+const saveUserRatings=r=>localStorage.setItem('vz_user_ratings',JSON.stringify(r));
+const getProfile  =uid=>{try{return JSON.parse(localStorage.getItem('vz_profile_'+uid)||'{}')}catch{return{}}};
+const saveProfile2=(uid,p)=>localStorage.setItem('vz_profile_'+uid,JSON.stringify(p));
+const getUserDl   =uid=>{try{return JSON.parse(localStorage.getItem('vz_udl_'+uid)||'[]')}catch{return[]}};
+const saveUserDl  =(uid,d)=>localStorage.setItem('vz_udl_'+uid,JSON.stringify(d));
+
+/* ── TRACK VIEW ── */
+function trackView(id){
+  const v=getViews(); v[id]=(v[id]||0)+1; saveViews(v);
+}
+
+/* ── TRACK DOWNLOAD ── */
+function trackDownload(game){
+  // contador global
+  const d=getDownloads(); d[game.id]=(d[game.id]||0)+1; saveDownloads(d);
+  // historial del usuario logueado
+  if(currentUser){
+    const hist=getUserDl(currentUser.id);
+    hist.unshift({id:game.id,title:game.title,img:game.img||'',cov:game.cov,date:new Date().toISOString()});
+    // máximo 50 entradas, sin duplicados consecutivos
+    const deduped=hist.filter((x,i)=>i===0||x.id!==hist[i-1].id).slice(0,50);
+    saveUserDl(currentUser.id,deduped);
+  }
+  renderTopDownloaded();
+}
+
+/* ── EYE TOGGLE ── */
+function togglePass(inputId,btn){
+  const inp=document.getElementById(inputId);
+  if(inp.type==='password'){inp.type='text';btn.textContent='🙈';}
+  else{inp.type='password';btn.textContent='👁';}
+}
+
+/* ── STAR RATING ── */
+function renderStarRating(gameId){
+  const ratings=getRatings();
+  const userRatings=getUserRatings();
+  const data=ratings[gameId]||{sum:0,count:0};
+  const avg=data.count>0?(data.sum/data.count).toFixed(1):null;
+  const userKey=currentUser?`${currentUser.id}_${gameId}`:null;
+  const myRating=userKey?userRatings[userKey]||0:0;
+
+  // promedio y conteo
+  document.getElementById('dStarAvg').textContent=avg||'—';
+  document.getElementById('dStarCount').textContent=
+    data.count>0?`${data.count} calificaci${data.count===1?'ón':'ones'}`:'Sin calificaciones aún';
+
+  // estrellas de display (promedio)
+  const disp=document.getElementById('dStarsDisplay');
+  disp.innerHTML='';
+  for(let i=1;i<=5;i++){
+    const s=document.createElement('span');
+    s.className='star'+(avg&&i<=Math.round(parseFloat(avg))?' filled':'');
+    s.textContent='★';
+    disp.appendChild(s);
+  }
+
+  // tu calificación / prompt
+  const yr=document.getElementById('dYourRating');
+  const rp=document.getElementById('dRatePrompt');
+  if(!currentUser){
+    yr.innerHTML='';
+    rp.innerHTML=`<button onclick="openModal('login')" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:.75rem;font-family:'Barlow',sans-serif;padding:0">Iniciá sesión para calificar</button>`;
+  } else if(myRating>0){
+    yr.innerHTML=`Tu calificación: <span>${'★'.repeat(myRating)}${'☆'.repeat(5-myRating)}</span>
+      <button onclick="clearMyRating('${gameId}')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:.7rem;margin-left:.5rem;font-family:'Barlow',sans-serif">✕ quitar</button>`;
+    rp.innerHTML='';
+  } else {
+    yr.innerHTML='Calificá este juego:';
+    rp.innerHTML=buildRateStars(gameId);
+  }
+}
+
+function buildRateStars(gameId){
+  let html='<div class="stars-display" style="margin-top:.4rem">';
+  for(let i=1;i<=5;i++){
+    html+=`<span class="star" onclick="rateGame('${gameId}',${i})"
+      onmouseover="hoverStars(${i})" onmouseout="resetStars('${gameId}')">★</span>`;
+  }
+  return html+'</div>';
+}
+
+function hoverStars(n){
+  const stars=document.getElementById('dRatePrompt').querySelectorAll('.star');
+  stars.forEach((s,i)=>s.classList.toggle('filled',i<n));
+}
+function resetStars(gameId){
+  const stars=document.getElementById('dRatePrompt').querySelectorAll('.star');
+  stars.forEach(s=>s.classList.remove('filled'));
+}
+
+function rateGame(gameId,value){
+  if(!currentUser){openModal('login');return;}
+  const ratings=getRatings();
+  const userRatings=getUserRatings();
+  const key=`${currentUser.id}_${gameId}`;
+  const prev=userRatings[key]||0;
+  const data=ratings[gameId]||{sum:0,count:0};
+
+  if(prev>0){data.sum-=prev;data.count--;} // quitar voto anterior
+  data.sum+=value; data.count++;
+  userRatings[key]=value;
+
+  // actualizar rating del juego en GAMES array
+  const g=GAMES.find(x=>x.id===gameId);
+  if(g) g.rating=(data.sum/data.count).toFixed(1);
+
+  saveRatings({...getRatings(),[gameId]:data});
+  saveUserRatings(userRatings);
+  renderStarRating(gameId);
+  renderGrid(GAMES); // actualizar cards
+  toast('¡Gracias por calificar! ⭐','success');
+}
+
+function clearMyRating(gameId){
+  const ratings=getRatings();
+  const userRatings=getUserRatings();
+  const key=`${currentUser.id}_${gameId}`;
+  const prev=userRatings[key]||0;
+  if(!prev)return;
+  const data=ratings[gameId]||{sum:0,count:0};
+  data.sum-=prev; data.count=Math.max(0,data.count-1);
+  delete userRatings[key];
+  const g=GAMES.find(x=>x.id===gameId);
+  if(g) g.rating=data.count>0?(data.sum/data.count).toFixed(1):'—';
+  saveRatings({...getRatings(),[gameId]:data});
+  saveUserRatings(userRatings);
+  renderStarRating(gameId);
+  renderGrid(GAMES);
+  toast('Calificación removida.','info');
+}
+
+/* ── TOP DESCARGADOS ── */
+function renderTopDownloaded(){
+  const dlCounts=getDownloads();
+  const sorted=[...GAMES]
+    .map(g=>({...g,dlCount:dlCounts[g.id]||0}))
+    .filter(g=>g.dlCount>0)
+    .sort((a,b)=>b.dlCount-a.dlCount)
+    .slice(0,6);
+
+  const sec=document.getElementById('topSection');
+  const list=document.getElementById('topList');
+  if(!list)return;
+
+  if(!sorted.length){sec.style.display='none';return;}
+  sec.style.display='';
+  list.innerHTML='';
+  const rankClass=['gold','silver','bronze'];
+  sorted.forEach((g,i)=>{
+    const item=document.createElement('div');
+    item.className='top-item';
+    item.innerHTML=`
+      <div class="top-rank ${rankClass[i]||''}">${i+1}</div>
+      <div class="top-thumb ${g.cov}">${g.img?`<img src="${g.img}" alt="${g.title}">`:''+g.short}</div>
+      <div class="top-info">
+        <div class="top-name">${g.title}</div>
+        <div class="top-meta">${g.genreLabel} · ${g.year}</div>
+      </div>
+      <div class="top-dl-count">↓ ${g.dlCount}</div>`;
+    item.onclick=()=>showGame(g.id);
+    list.appendChild(item);
+  });
+}
+
+/* ── PERFIL ── */
+function renderPerfil(){
+  if(!currentUser){goPage('home');return;}
+  const prof=getProfile(currentUser.id);
+  const users=getUsers();
+  const userData=users.find(u=>u.id===currentUser.id)||{};
+  const joined=userData.joined?new Date(userData.joined):new Date();
+
+  // avatar
+  const ab=document.getElementById('pfAvatarBig');
+  if(prof.avatar){ab.innerHTML=`<img src="${prof.avatar}" alt="avatar">`;ab.style.background='none';}
+  else{ab.innerHTML=currentUser.username.charAt(0).toUpperCase();ab.style.background='';}
+
+  document.getElementById('pfUsername').textContent=prof.displayName||currentUser.username;
+  document.getElementById('pfSince').textContent='Miembro desde '+joined.toLocaleDateString('es-AR',{year:'numeric',month:'long'});
+  document.getElementById('pfName').value=prof.displayName||currentUser.username;
+  document.getElementById('pfLocation').value=prof.location||'';
+  document.getElementById('pfBio').value=prof.bio||'';
+
+  // stats
+  const hist=getUserDl(currentUser.id);
+  const rated=Object.keys(getUserRatings()).filter(k=>k.startsWith(currentUser.id+'_')).length;
+  document.getElementById('pfStatDl').textContent=hist.length;
+  document.getElementById('pfStatRated').textContent=rated;
+  document.getElementById('pfStatMember').textContent=joined.getFullYear();
+}
+
+function handleAvatarUpload(e){
+  const file=e.target.files[0]; if(!file)return;
+  if(file.size>2*1024*1024){toast('La imagen debe ser menor a 2MB.','error');return;}
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    const prof=getProfile(currentUser.id);
+    prof.avatar=ev.target.result;
+    saveProfile2(currentUser.id,prof);
+    renderPerfil();
+    // actualizar avatar en header
+    const ab=document.getElementById('avatarBtn');
+    ab.innerHTML=`<img src="${ev.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`;
+    toast('Foto actualizada ✅','success');
+  };
+  reader.readAsDataURL(file);
+}
+
+function saveProfile(){
+  if(!currentUser)return;
+  const prof=getProfile(currentUser.id);
+  prof.displayName=document.getElementById('pfName').value.trim()||currentUser.username;
+  prof.location=document.getElementById('pfLocation').value.trim();
+  prof.bio=document.getElementById('pfBio').value.trim();
+  saveProfile2(currentUser.id,prof);
+  document.getElementById('pfUsername').textContent=prof.displayName;
+  document.getElementById('udName').textContent=prof.displayName;
+  toast('Perfil actualizado ✅','success');
+}
+
+/* ── MIS DESCARGAS ── */
+function renderDescargas(){
+  if(!currentUser){goPage('home');return;}
+  const hist=getUserDl(currentUser.id);
+  const cont=document.getElementById('dlHistoryContainer');
+  if(!hist.length){
+    cont.innerHTML=`<div class="descargas-empty"><h3>Todavía no descargaste nada</h3><p>Explorá el catálogo y empezá a descargar tus juegos favoritos.</p></div>`;
+    return;
+  }
+  cont.innerHTML='<div class="dl-history">'+hist.map(h=>{
+    const g=GAMES.find(x=>x.id===h.id);
+    const dateStr=new Date(h.date).toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'});
+    const thumbHtml=h.img
+      ?`<img src="${h.img}" alt="${h.title}">`
+      :`<div style="width:100%;height:100%;background:var(--card);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:.65rem;color:rgba(255,255,255,.2)" class="${h.cov||''}">${h.title.substring(0,3).toUpperCase()}</div>`;
+    return `<div class="dl-hist-item" onclick="showGame('${h.id}')">
+      <div class="dl-hist-thumb">${thumbHtml}</div>
+      <div class="dl-hist-info">
+        <div class="dl-hist-name">${h.title}</div>
+        <div class="dl-hist-date">Descargado el ${dateStr}</div>
+      </div>
+      ${g&&g.link!=='LINK_DEL_JUEGO'?`<a href="${g.link}" target="_blank" onclick="event.stopPropagation()" class="dl-hist-again">↓ Descargar de nuevo</a>`:''}
+    </div>`;
+  }).join('')+'</div>';
+}
+
+/* ── DYNAMIC DATES ── */
+function updateDynamicDates(){
+  const now=new Date();
+  const meses=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const mes=meses[now.getMonth()];
+  const anio=now.getFullYear();
+  const el=document.getElementById('novMes');
+  if(el) el.textContent=`${mes} ${anio}`;
+  // footer copyright
+  document.querySelectorAll('.footer-year').forEach(e=>e.textContent=anio);
+}
+
+/* ── REFRESH HEADER with avatar ── */
+function refreshHeaderAvatar(){
+  if(!currentUser)return;
+  const prof=getProfile(currentUser.id);
+  if(prof.avatar){
+    const ab=document.getElementById('avatarBtn');
+    ab.innerHTML=`<img src="${prof.avatar}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`;
+  }
+  if(prof.displayName) document.getElementById('udName').textContent=prof.displayName;
+}
+
+
+/* ── INIT ── */
+window.addEventListener('DOMContentLoaded',()=>{
+  ensureAdmin(); renderGrid(GAMES); renderNovedades(); updateStats();
+  updateDynamicDates();
+  renderTopDownloaded();
+  const s=getSession(); if(s){currentUser=s;refreshHeader();refreshHeaderAvatar();}
+  document.getElementById('searchInput').addEventListener('input',onSearch);
+  document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Escape')closeSearch();});
+  document.addEventListener('click',e=>{
+    if(!document.getElementById('searchInput').closest('.search-wrap').contains(e.target))closeSearch();
+    if(!document.getElementById('userArea').contains(e.target))closeDD();
+  });
+  document.getElementById('authModal').addEventListener('click',e=>{if(e.target===document.getElementById('authModal'))closeModal();});
+  document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===document.getElementById('lightbox'))closeLightbox();});
+  document.addEventListener('keydown',e=>{
+    if(document.getElementById('lightbox').classList.contains('open')){
+      if(e.key==='ArrowLeft')lbNav(-1);
+      if(e.key==='ArrowRight')lbNav(1);
+      if(e.key==='Escape')closeLightbox();
+    }
+  });
+});
+
+function ensureAdmin(){
+  const u=getUsers();
+  if(!u.find(x=>x.isAdmin)){u.push({id:1,username:'admin',email:'admin@visionz.com',password:btoa('admin123'),isAdmin:true,joined:new Date().toISOString()});saveUsers(u);}
+}
+
+function updateStats(){
+  const u=getUsers();
+  document.getElementById('statUsers').textContent=u.length;
+  document.getElementById('statGames').textContent=GAMES.length+'+';
+  const a=document.getElementById('aStatUsers'),b=document.getElementById('aStatJuegos'),c=document.getElementById('aStatAdmins');
+  if(a)a.textContent=u.length; if(b)b.textContent=GAMES.length; if(c)c.textContent=u.filter(x=>x.isAdmin).length;
+}
+
+/* ── PAGES ── */
+function goPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const t=document.getElementById('page-'+name); if(!t)return;
+  t.classList.add('active');
+  document.documentElement.scrollTop=0; document.body.scrollTop=0;
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  if(name==='home')document.querySelectorAll('nav button')[0].classList.add('active');
+  if(name==='novedades')document.querySelectorAll('nav button')[2].classList.add('active');
+  if(name==='admin'){updateStats();renderAdminUsers();}
+  if(name==='perfil'){renderPerfil();}
+  if(name==='descargas'){renderDescargas();}
+}
+
+/* ── GRID ── */
+function renderGrid(games,containerId='gamesGrid'){
+  const grid=document.getElementById(containerId); if(!grid)return;
+  grid.innerHTML='';
+  if(!games.length){grid.innerHTML=`<div class="no-results"><h3>Sin resultados</h3><p>No encontramos juegos con ese filtro.</p></div>`;return;}
+  games.forEach((g,i)=>{
+    const d=document.createElement('div');
+    d.className='game-card'; d.style.animationDelay=`${i*.06}s`;
+    const badge=g.isNew?`<span class="c-badge new">Nuevo</span>`:g.hot?`<span class="c-badge hot">Popular</span>`:`<span class="c-badge">${g.genreLabel}</span>`;
+    const coverHtml=g.img?`<img src="${g.img}" alt="${g.title}" class="cover-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`:'' ;
+    d.innerHTML=`${coverHtml}<div class="cover-ph ${g.cov}" style="${g.img?'display:none':''}">${g.short}</div>${badge}<span class="c-rating">★ ${g.rating}</span><div class="c-title-bar"><h2>${g.title}</h2><div class="c-yr">${g.year} · ${g.dev}</div></div><div class="c-hover"><h2>${g.title}</h2><p>${g.cardDesc}</p><span class="c-cta">Ver juego →</span></div>`;
+    d.onclick=()=>showGame(g.id);
+    grid.appendChild(d);
+  });
+}
+
+/* ── FILTER ── */
+function setFilter(genre,btn){
+  currentFilter=genre;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  const names={todos:'Todos los juegos',accion:'Acción',sandbox:'Sandbox',fps:'FPS',deportes:'Deportes',terror:'Terror'};
+  document.getElementById('gridLabel').textContent=names[genre]||'Juegos';
+  renderGrid(genre==='todos'?GAMES:GAMES.filter(g=>g.genre===genre));
+  closeSearch();
+}
+
+/* ── NOVEDADES ── */
+function renderNovedades(){
+  const featured=[...GAMES].sort((a,b)=>parseFloat(b.rating)-parseFloat(a.rating)).slice(0,3);
+  const ng=document.getElementById('novGrid'); if(!ng)return;
+  ng.innerHTML='';
+  featured.forEach((g,i)=>{
+    const d=document.createElement('div');
+    d.className='nov-card'+(i===0?' nov-big':'');
+    const imgHtml=g.img?`<img src="${g.img}" alt="${g.title}" onerror="this.remove()">`: '';
+    d.innerHTML=`<div class="nov-cover ${i===0?'':'tall'} ${g.cov}">${imgHtml}<span>${g.short}</span></div><div class="nov-info"><span class="nov-badge ${g.isNew?'':'upd'}">${g.isNew?'Nuevo':'Destacado'}</span><div class="nov-title">${g.title}</div><div class="nov-desc">${g.cardDesc}</div></div>`;
+    d.onclick=()=>showGame(g.id);
+    ng.appendChild(d);
+  });
+  const newer=[...GAMES].filter(g=>g.isNew||g.hot);
+  renderGrid(newer.length?newer:GAMES.slice(0,4),'novAllGrid');
+}
+
+/* ── GAME DETAIL ── */
+function showGame(id){
+  const g=GAMES.find(x=>x.id===id); if(!g)return;
+
+  // Registrar visita
+  trackView(id);
+
+  // Banner
+  document.getElementById('dBg').className=`ghb-bg ${g.cov}`;
+  document.getElementById('dArt').textContent=g.short;
+  const ex=document.getElementById('dBannerImg'); if(ex)ex.remove();
+  if(g.img){
+    const img=document.createElement('img');
+    img.id='dBannerImg'; img.src=g.img; img.className='ghb-bg-img'; img.alt=g.title;
+    document.getElementById('dBg').appendChild(img);
+    document.getElementById('dArt').style.display='none';
+  } else { document.getElementById('dArt').style.display=''; }
+
+  document.getElementById('dBread').textContent=g.title;
+  document.getElementById('dTitle').textContent=g.title;
+  document.getElementById('dDesc').textContent=g.desc;
+  document.getElementById('dMeta').innerHTML=`<span class="m-badge">${g.genreLabel}</span><span class="m-badge b2">${g.dev}</span><span class="m-rat">★ ${g.rating}</span><span class="m-txt">${g.year} · PC</span>`;
+  document.getElementById('dReqs').innerHTML=g.reqs.map(r=>`<div class="req-item"><div class="req-l">${r.l}</div><div class="req-v">${r.v}</div></div>`).join('');
+  document.getElementById('dInfo').innerHTML=[{l:'Versión',v:g.version},{l:'Tamaño',v:g.size},{l:'Idioma',v:g.lang},{l:'Plataforma',v:g.platform}].map(r=>`<div class="dl-line"><span>${r.l}</span><span>${r.v}</span></div>`).join('');
+
+  // Calificación de usuarios
+  renderStarRating(id);
+
+  // Screenshots
+  lbImages=(g.screenshots||[]).filter(s=>s&&s.trim()!=='');
+  const ssBox=document.getElementById('dScreenshots');
+  ssBox.innerHTML='';
+  const ssLabels=['Screenshot 1','Screenshot 2','Screenshot 3'];
+  (g.screenshots||['','','']).forEach((src,idx)=>{
+    const item=document.createElement('div');
+    item.className='ss-item';
+    if(src&&src.trim()!==''){
+      item.classList.add('has-img');
+      item.innerHTML=`<img src="${src}" alt="Screenshot ${idx+1}" onerror="this.parentElement.className='ss-item';this.parentElement.innerHTML='<div class=ss-placeholder><span>🖼️</span>${ssLabels[idx]}</div>'">`;
+      const lbIdx=lbImages.indexOf(src);
+      item.onclick=()=>openLightbox(lbIdx);
+    } else {
+      item.innerHTML=`<div class="ss-placeholder"><span>🖼️</span>${ssLabels[idx]}</div>`;
+    }
+    ssBox.appendChild(item);
+  });
+
+  // Botón de descarga — trackea la descarga al hacer click
+  const btn=document.getElementById('dlBtn'), note=document.getElementById('dlNote');
+  btn.onclick=null; btn.classList.remove('locked');
+  if(g.link!=='LINK_DEL_JUEGO'){
+    btn.href=g.link; btn.target='_blank';
+    btn.textContent='↓ Descargar gratis';
+    btn.onclick=()=>trackDownload(g);
+    note.innerHTML=currentUser
+      ? `Como: <strong style="color:var(--text)">${currentUser.username}</strong>`
+      : `<span style="color:var(--green)">✓ Descarga gratuita · Sin registro</span>`;
+  } else {
+    btn.href='#'; btn.classList.add('locked');
+    btn.textContent='⏳ Próximamente';
+    note.innerHTML=`<span style="color:var(--muted)">Link de descarga en preparación</span>`;
+  }
+  goPage('game');
+}
+
+/* ── LIGHTBOX ── */
+function openLightbox(index){
+  if(!lbImages.length)return;
+  lbIndex=index;
+  document.getElementById('lbImg').src=lbImages[lbIndex];
+  document.getElementById('lbCounter').textContent=`${lbIndex+1} / ${lbImages.length}`;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+function lbNav(dir){
+  lbIndex=(lbIndex+dir+lbImages.length)%lbImages.length;
+  document.getElementById('lbImg').src=lbImages[lbIndex];
+  document.getElementById('lbCounter').textContent=`${lbIndex+1} / ${lbImages.length}`;
+}
+
+/* ── SEARCH ── */
+function onSearch(){
+  const q=document.getElementById('searchInput').value.trim().toLowerCase();
+  const dd=document.getElementById('searchDD');
+  if(!q){dd.classList.remove('open');return;}
+  const res=GAMES.filter(g=>g.title.toLowerCase().includes(q)||g.genreLabel.toLowerCase().includes(q)||g.dev.toLowerCase().includes(q));
+  dd.innerHTML='';
+  if(!res.length){dd.innerHTML=`<div class="search-empty">Sin resultados para "<strong>${q}</strong>"</div>`;}
+  else res.forEach(g=>{
+    const btn=document.createElement('button');
+    btn.className='sri';
+    btn.innerHTML=`<div class="sri-thumb ${g.cov}">${g.short}</div><div><div class="sri-name">${g.title}</div><div class="sri-genre">${g.genreLabel} · ${g.year}</div></div><span style="color:var(--gold);font-size:.78rem;margin-left:auto">★ ${g.rating}</span>`;
+    btn.onclick=()=>{closeSearch();showGame(g.id);};
+    dd.appendChild(btn);
+  });
+  dd.classList.add('open');
+}
+function closeSearch(){document.getElementById('searchDD').classList.remove('open');document.getElementById('searchInput').value='';}
+
+/* ── MODAL ── */
+function openModal(tab='login'){clearErrs();document.getElementById('mSuccess').classList.remove('show');document.getElementById('fLogin').classList.remove('hidden');document.getElementById('fRegister').classList.add('hidden');document.getElementById('authModal').classList.add('open');switchTab(tab);}
+function closeModal(){document.getElementById('authModal').classList.remove('open');clearErrs();['lEmail','lPass','rUser','rEmail','rPass','rPass2'].forEach(id=>{const el=document.getElementById(id);if(el){el.value='';el.classList.remove('err-field');}});document.getElementById('mSuccess').classList.remove('show');}
+function switchTab(tab){clearErrs();const isL=tab==='login';document.getElementById('tabL').classList.toggle('active',isL);document.getElementById('tabR').classList.toggle('active',!isL);document.getElementById('fLogin').classList.toggle('hidden',!isL);document.getElementById('fRegister').classList.toggle('hidden',isL);document.getElementById('mSuccess').classList.remove('show');}
+function clearErrs(){document.querySelectorAll('.fg-err').forEach(e=>e.classList.remove('show'));document.querySelectorAll('.err-field').forEach(e=>e.classList.remove('err-field'));const ge=document.getElementById('gErr');ge.classList.remove('show');ge.textContent='';}
+function showGErr(msg){const ge=document.getElementById('gErr');ge.textContent=msg;ge.classList.add('show');}
+function fErr(inputId,errId,msg){document.getElementById(inputId).classList.add('err-field');const e=document.getElementById(errId);if(msg)e.textContent=msg;e.classList.add('show');return true;}
+function doLogin(){
+  clearErrs();
+  const email=document.getElementById('lEmail').value.trim(),pass=document.getElementById('lPass').value;
+  let err=false;
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))err=fErr('lEmail','lEmailErr','Email inválido.');
+  if(!pass)err=fErr('lPass','lPassErr','Ingresá tu contraseña.')||err;
+  if(err)return;
+  const users=getUsers(),user=users.find(u=>u.email.toLowerCase()===email.toLowerCase());
+  if(!user){showGErr('No existe cuenta con ese email.');return;}
+  if(user.password!==btoa(pass)){showGErr('Contraseña incorrecta.');return;}
+  loginOk(user);
+}
+function doRegister(){
+  clearErrs();
+  const username=document.getElementById('rUser').value.trim(),email=document.getElementById('rEmail').value.trim(),pass=document.getElementById('rPass').value,pass2=document.getElementById('rPass2').value;
+  let err=false;
+  if(username.length<3)err=fErr('rUser','rUserErr','Mínimo 3 caracteres.');
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))err=fErr('rEmail','rEmailErr','Email inválido.')||err;
+  if(pass.length<6)err=fErr('rPass','rPassErr','Mínimo 6 caracteres.')||err;
+  if(pass!==pass2)err=fErr('rPass2','rPass2Err','Las contraseñas no coinciden.')||err;
+  if(err)return;
+  const users=getUsers();
+  if(users.find(u=>u.email.toLowerCase()===email.toLowerCase())){showGErr('Ya existe cuenta con ese email.');return;}
+  if(users.find(u=>u.username.toLowerCase()===username.toLowerCase())){showGErr('Ese usuario ya está en uso.');return;}
+  const nu={id:Date.now(),username,email,password:btoa(pass),isAdmin:false,joined:new Date().toISOString()};
+  users.push(nu);saveUsers(users);updateStats();
+  document.getElementById('fRegister').classList.add('hidden');
+  document.getElementById('mSuccessMsg').textContent='¡Cuenta creada!';
+  document.getElementById('mSuccessSub').textContent=`Bienvenido/a, ${username} 🎮`;
+  document.getElementById('mSuccess').classList.add('show');
+  setTimeout(()=>loginOk(nu),1800);
+}
+function loginOk(user){currentUser={id:user.id,username:user.username,email:user.email,isAdmin:user.isAdmin};saveSession(currentUser);refreshHeader();refreshHeaderAvatar();closeModal();toast(`¡Bienvenido/a, ${user.username}! 🎮`,'success');}
+function refreshHeader(){
+  document.getElementById('authBtns').classList.add('hidden');
+  document.getElementById('userArea').classList.remove('hidden');
+  document.getElementById('avatarBtn').textContent=currentUser.username.charAt(0).toUpperCase();
+  document.getElementById('udName').textContent=currentUser.username;
+  document.getElementById('udEmail').textContent=currentUser.email;
+  const ab=document.getElementById('udAdminBadge'),ai=document.querySelector('.admin-only');
+  if(currentUser.isAdmin){ab.classList.remove('hidden');ai.classList.remove('hidden');}
+  else{ab.classList.add('hidden');ai.classList.add('hidden');}
+}
+function toggleDD(){document.getElementById('userDD').classList.toggle('open');}
+function closeDD(){document.getElementById('userDD').classList.remove('open');}
+function logout(){const name=currentUser?.username||'';currentUser=null;clearSess();document.getElementById('authBtns').classList.remove('hidden');document.getElementById('userArea').classList.add('hidden');closeDD();toast(`Hasta luego, ${name}! 👋`,'info');goPage('home');}
+
+/* ── ADMIN ── */
+function renderAdminUsers(){
+  const users=getUsers(),tbody=document.getElementById('adminUsersTbody');if(!tbody)return;
+  tbody.innerHTML='';
+  users.forEach((u,i)=>{tbody.innerHTML+=`<tr><td style="color:var(--muted)">${i+1}</td><td><strong style="color:var(--white)">${u.username}</strong></td><td>${u.email}</td><td>${new Date(u.joined).toLocaleDateString('es-AR')}</td><td><span class="tbl-badge ${u.isAdmin?'admin':'ok'}">${u.isAdmin?'Admin':'Usuario'}</span></td><td><button class="admin-btn danger" onclick="deleteUser(${u.id})">Eliminar</button></td></tr>`;});
+  if(!users.length)tbody.innerHTML='<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:1.5rem">No hay usuarios.</td></tr>';
+}
+function deleteUser(id){if(!confirm('¿Eliminar este usuario?'))return;saveUsers(getUsers().filter(u=>u.id!==id));renderAdminUsers();updateStats();toast('Usuario eliminado.','info');}
+function adminAddGame(){
+  const title=document.getElementById('af-title').value.trim(),dev=document.getElementById('af-dev').value.trim();
+  const year=parseInt(document.getElementById('af-year').value)||2024,genre=document.getElementById('af-genre').value;
+  const version=document.getElementById('af-version').value.trim()||'1.0',size=document.getElementById('af-size').value.trim()||'N/D';
+  const rating=document.getElementById('af-rating').value.trim()||'8.0',link=document.getElementById('af-link').value.trim()||'LINK_DEL_JUEGO';
+  const cardesc=document.getElementById('af-cardesc').value.trim(),desc=document.getElementById('af-desc').value.trim();
+  if(!title||!dev||!desc){toast('Completá título, desarrolladora y descripción.','error');return;}
+  const gl={accion:'Acción',fps:'FPS',sandbox:'Sandbox',deportes:'Deportes',terror:'Terror',aventura:'Aventura',rpg:'RPG'};
+  const cm={accion:'cov-gta',fps:'cov-cs',sandbox:'cov-mc',deportes:'cov-pes',terror:'cov-re',aventura:'cov-mc',rpg:'cov-cod'};
+  GAMES.push({id:title.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'')+'-'+Date.now(),title,dev,year,genre,genreLabel:gl[genre]||genre,short:title.substring(0,4).toUpperCase(),rating,size,version,lang:'Español',platform:'PC',cov:cm[genre]||'cov-gta',img:'',screenshots:['','',''],desc:desc||'Descripción no disponible.',cardDesc:cardesc||desc.substring(0,60)+'...',link,hot:false,isNew:true,reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'2 GHz'},{l:'GPU',v:'512 MB'},{l:'Disco',v:size},{l:'SO',v:'Windows 7+'},{l:'DirectX',v:'v11'}]});
+  updateStats();renderGrid(GAMES);renderNovedades();
+  document.getElementById('adminSuccess').classList.add('show');
+  setTimeout(()=>document.getElementById('adminSuccess').classList.remove('show'),3000);
+  toast(`"${title}" agregado ✅`,'success');clearAdminForm();
+}
+function clearAdminForm(){['af-title','af-dev','af-year','af-version','af-size','af-rating','af-link','af-cardesc','af-desc'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});}
+
+/* ── TOAST ── */
+function toast(msg,type='info'){
+  const c=document.getElementById('toastCont'),t=document.createElement('div');
+  t.className=`toast ${type}`;
+  t.innerHTML=`<span>${{success:'✅',error:'❌',info:'ℹ️'}[type]||'ℹ️'}</span><span>${msg}</span>`;
+  c.appendChild(t);
+  setTimeout(()=>{t.style.transition='opacity .4s';t.style.opacity='0';setTimeout(()=>t.remove(),400);},3500);
+}
+</script>
+</body>
+</html>
