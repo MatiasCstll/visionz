@@ -59,7 +59,7 @@ let GAMES = [
     ],
     desc:'Counter-Strike 1.6 es el shooter táctico más icónico de todos los tiempos. Terroristas contra contraterroristas en mapas clásicos como de_dust2, cs_assault. Un juego que definió el género FPS competitivo.',
     cardDesc:'El shooter táctico que definió una generación.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://exe.io/Count3Strlk316v', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'512 MB'},{l:'CPU',v:'800 MHz'},{l:'GPU',v:'32 MB'},{l:'Disco',v:'600 MB'},{l:'SO',v:'Windows XP, Vista, 7, 8, 10 o superior'},{l:'Red',v:'Recomendada'}]
   },
   {
