@@ -21,9 +21,9 @@ let GAMES = [
     cov:'cov-gta',
     img:'https://e0.pxfuel.com/wallpapers/903/128/desktop-wallpaper-gta-san-andreas-wp-v9-ryder-cj-smoke.jpg',
     screenshots:[
-      'https://www.gta-growth.com/secciones/gtasa/screenshots/oficiales-android-07.jpg',  // ← reemplazá con tu imagen: 'imagenes/gta_ss1.jpg' o URL
-      'https://www.gta-growth.com/secciones/gtasa/screenshots/oficiales-android-03.jpg',  // ← screenshot 2
-      'https://www.gta-growth.com/secciones/gtasa/screenshots/oficiales-android-08.jpg',  // ← screenshot 3
+      'https://www.gta-growth.com/secciones/gtasa/screenshots/oficiales-android-07.jpg',
+      'https://www.gta-growth.com/secciones/gtasa/screenshots/oficiales-android-03.jpg',
+      'https://www.gta-growth.com/secciones/gtasa/screenshots/oficiales-android-08.jpg',
     ],
     desc:'GTA San Andreas es uno de los juegos de mundo abierto más icónicos. Seguís la historia de Carl "CJ" Johnson que regresa a Los Santos tras la muerte de su madre. El mapa incluye tres ciudades enormes con libertad total para explorar, cientos de misiones y actividades secundarias.',
     cardDesc:'Mundo abierto épico. Libertad total en Los Santos.',
@@ -33,17 +33,17 @@ let GAMES = [
   {
     id:'minecraft', title:'Minecraft', short:'MC',
     genre:'sandbox', genreLabel:'Sandbox', year:2011, dev:'Mojang Studios',
-    rating:'9.8', size:'1.2 GB', version:'Todas las versiones', lang:'Español', platform:'PC',
+    rating:'9.8', size:'1.2 GB', version:'1.12.2', lang:'Español', platform:'PC',
     cov:'cov-mc',
     img:'https://acf.geeknetic.es/imgri/imagenes/noticias/2019/17832-minecraft-playstation-4-muestra.jpg?f=webp',
     screenshots:[
-      'https://i.redd.it/1n8h7b0r4iv41.jpg',  // ← screenshot 1
-      'https://static.wikia.nocookie.net/minecraft_es_gamepedia/images/3/3f/Beta.png/revision/latest?cb=20110711205506',  // ← screenshot 2
-      'https://external-preview.redd.it/minecraft-4k-resolution-keeping-it-cool-v0-HtGMBw9x80toP8MQbAP0LLI2A4aH6s5UYhLfdnwZ-JM.jpg?width=640&crop=smart&auto=webp&s=a3066ded4fe7a958ad7fa583a1a4d34d436bdd75',  // ← screenshot 3
+      'https://i.redd.it/1n8h7b0r4iv41.jpg',
+      'https://static.wikia.nocookie.net/minecraft_es_gamepedia/images/3/3f/Beta.png/revision/latest?cb=20110711205506',
+      'https://external-preview.redd.it/minecraft-4k-resolution-keeping-it-cool-v0-HtGMBw9x80toP8MQbAP0LLI2A4aH6s5UYhLfdnwZ-JM.jpg?width=640&crop=smart&auto=webp&s=a3066ded4fe7a958ad7fa583a1a4d34d436bdd75',
     ],
     desc:'Minecraft es el juego de sandbox más vendido de la historia. Construí estructuras, explorá biomas infinitos, sobreviví a la noche y enfrentá criaturas únicas. Modo creativo sin límites y modo supervivencia desafiante.',
     cardDesc:'Bloques infinitos. Creá, sobreviví, explorá.',
-    link:'https://exe.io/Minecraft-TodaslasVersiones', hot:true, isNew:false,
+    link:'LINK_DEL_JUEGO', hot:true, isNew:false,
     reqs:[{l:'RAM',v:'4 GB'},{l:'CPU',v:'Intel Core i3-3210 / AMD A8-7600 (o equivalente)'},{l:'GPU',v:'HD Graphics 4000 / AMD Radeon R5 (OpenGL 4.4)'},{l:'Disco',v:'1.5 GB'},{l:'SO',v:'Windows 10/11'},{l:'Java',v:'Java 8+'}]
   },
   {
@@ -53,9 +53,9 @@ let GAMES = [
     cov:'cov-cs',
     img:'https://e0.pxfuel.com/wallpapers/843/828/desktop-wallpaper-counter-strike-1-6-pc-game-full-version-from-online-to-here-fantastic-this-shooting-video-game-pla-video-game-posters-game-counter-cs-1-6.jpg',
     screenshots:[
-      'https://i.ytimg.com/vi/oIoueckSEtU/maxresdefault.jpg',  // ← screenshot 1
-      'https://images.steamusercontent.com/ugc/938128623125307932/9E80F16DFF36539DE56DCC4212F66565BBD2C25E/?imw=1024&imh=768&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true',  // ← screenshot 2
-      'https://i.ytimg.com/vi/ipwcpPhc0dk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLChzjIl2EWUnBMC1M4G1mb3N30wyQ',  // ← screenshot 3
+      'https://i.ytimg.com/vi/oIoueckSEtU/maxresdefault.jpg',
+      'https://images.steamusercontent.com/ugc/938128623125307932/9E80F16DFF36539DE56DCC4212F66565BBD2C25E/?imw=1024&imh=768&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true',
+      'https://i.ytimg.com/vi/ipwcpPhc0dk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLChzjIl2EWUnBMC1M4G1mb3N30wyQ',
     ],
     desc:'Counter-Strike 1.6 es el shooter táctico más icónico de todos los tiempos. Terroristas contra contraterroristas en mapas clásicos como de_dust2, cs_assault. Un juego que definió el género FPS competitivo.',
     cardDesc:'El shooter táctico que definió una generación.',
@@ -69,9 +69,9 @@ let GAMES = [
     cov:'cov-pes',
     img:'https://e1.pxfuel.com/desktop-wallpaper/761/74/desktop-wallpaper-watch-ubisoft-s-e3-2017-press-conference-livestream-right-here-dualshockers-pes-21.jpg',
     screenshots:[
-      'https://d2r9epyceweg5n.cloudfront.net/stores/002/714/093/rte/pes21_05.jpg',  // ← screenshot 1
-      'https://playmania438.com.ar/wp-content/uploads/2021/05/maxresdefault.jpg',  // ← screenshot 2
-      'https://images.igdb.com/igdb/image/upload/t_screenshot_huge/sc8fj6.jpg',  // ← screenshot 3
+      'https://d2r9epyceweg5n.cloudfront.net/stores/002/714/093/rte/pes21_05.jpg',
+      'https://playmania438.com.ar/wp-content/uploads/2021/05/maxresdefault.jpg',
+      'https://images.igdb.com/igdb/image/upload/t_screenshot_huge/sc8fj6.jpg',
     ],
     desc:'PES 2021 es la entrega definitiva de fútbol de simulación. Con el mejor control de balón, física realista y modos como Master League y myClub. Incluye las mejores ligas y equipos del mundo.',
     cardDesc:'Fútbol de simulación. El control de balón perfecto.',
@@ -85,9 +85,9 @@ let GAMES = [
     cov:'cov-re',
     img:'https://e0.pxfuel.com/wallpapers/691/697/desktop-wallpaper-resident-evil-iphone-resident-evil-4-iphone.jpg',
     screenshots:[
-      'https://assetsio.gnwcdn.com/-1540566508823.jpg?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp',  // ← screenshot 1
-      'https://cl2.buscafs.com/www.levelup.com/public/uploads/images/160529.jpg',  // ← screenshot 2
-      'https://gaming-cdn.com/images/products/6530/screenshot/resident-evil-4-5-6-pack-pc-steam-wallpaper-3.jpg?v=1751027155',  // ← screenshot 3
+      'https://assetsio.gnwcdn.com/-1540566508823.jpg?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp',
+      'https://cl2.buscafs.com/www.levelup.com/public/uploads/images/160529.jpg',
+      'https://gaming-cdn.com/images/products/6530/screenshot/resident-evil-4-5-6-pack-pc-steam-wallpaper-3.jpg?v=1751027155',
     ],
     desc:'Leon S. Kennedy viaja a un remoto pueblo de España para rescatar a la hija del presidente. Con una cámara sobre el hombro que revolucionó los shooters, combate intenso y atmósfera opresiva. Una obra maestra absoluta.',
     cardDesc:'Tensión pura. Leon S. Kennedy en su peor pesadilla.',
@@ -101,9 +101,9 @@ let GAMES = [
     cov:'cov-cod',
     img:'https://e1.pxfuel.com/desktop-wallpaper/588/161/desktop-wallpaper-call-of-duty-call-of-duty-4-modern-warfare-games-cod-4.jpg',
     screenshots:[
-      'https://wallpapers.com/images/high/callof-duty-modern-warfare-combat-scene-lx5cd57r1pr9k4o1.webp',  // ← screenshot 1
-      'https://wallpapers.com/images/high/modern-warfare-eiffel-tower-defense-tm92kksnvfq69izi.webp',  // ← screenshot 2
-      'https://cdn.mobygames.com/promos/6680579-call-of-duty-4-modern-warfare-screenshot-xbox-360-single-player-.jpg',  // ← screenshot 3
+      'https://wallpapers.com/images/high/callof-duty-modern-warfare-combat-scene-lx5cd57r1pr9k4o1.webp',
+      'https://wallpapers.com/images/high/modern-warfare-eiffel-tower-defense-tm92kksnvfq69izi.webp',
+      'https://cdn.mobygames.com/promos/6680579-call-of-duty-4-modern-warfare-screenshot-xbox-360-single-player-.jpg',
     ],
     desc:'Call of Duty 4: Modern Warfare cambió para siempre los shooters en primera persona. Campaña cinematográfica y multijugador competitivo adictivo que marcó una era y sentó las bases de los CoD modernos.',
     cardDesc:'El FPS que cambió todo. Campaña épica y multi brutal.',
@@ -143,13 +143,10 @@ function trackView(id){
 
 /* ── TRACK DOWNLOAD ── */
 function trackDownload(game){
-  // contador global
   const d=getDownloads(); d[game.id]=(d[game.id]||0)+1; saveDownloads(d);
-  // historial del usuario logueado
   if(currentUser){
     const hist=getUserDl(currentUser.id);
     hist.unshift({id:game.id,title:game.title,img:game.img||'',cov:game.cov,date:new Date().toISOString()});
-    // máximo 50 entradas, sin duplicados consecutivos
     const deduped=hist.filter((x,i)=>i===0||x.id!==hist[i-1].id).slice(0,50);
     saveUserDl(currentUser.id,deduped);
   }
@@ -172,12 +169,10 @@ function renderStarRating(gameId){
   const userKey=currentUser?`${currentUser.id}_${gameId}`:null;
   const myRating=userKey?userRatings[userKey]||0:0;
 
-  // promedio y conteo
   document.getElementById('dStarAvg').textContent=avg||'—';
   document.getElementById('dStarCount').textContent=
     data.count>0?`${data.count} calificaci${data.count===1?'ón':'ones'}`:'Sin calificaciones aún';
 
-  // estrellas de display (promedio)
   const disp=document.getElementById('dStarsDisplay');
   disp.innerHTML='';
   for(let i=1;i<=5;i++){
@@ -187,7 +182,6 @@ function renderStarRating(gameId){
     disp.appendChild(s);
   }
 
-  // tu calificación / prompt
   const yr=document.getElementById('dYourRating');
   const rp=document.getElementById('dRatePrompt');
   if(!currentUser){
@@ -229,18 +223,17 @@ function rateGame(gameId,value){
   const prev=userRatings[key]||0;
   const data=ratings[gameId]||{sum:0,count:0};
 
-  if(prev>0){data.sum-=prev;data.count--;} // quitar voto anterior
+  if(prev>0){data.sum-=prev;data.count--;}
   data.sum+=value; data.count++;
   userRatings[key]=value;
 
-  // actualizar rating del juego en GAMES array
   const g=GAMES.find(x=>x.id===gameId);
   if(g) g.rating=(data.sum/data.count).toFixed(1);
 
   saveRatings({...getRatings(),[gameId]:data});
   saveUserRatings(userRatings);
   renderStarRating(gameId);
-  renderGrid(GAMES); // actualizar cards
+  renderGrid(GAMES);
   toast('¡Gracias por calificar! ⭐','success');
 }
 
@@ -303,7 +296,6 @@ function renderPerfil(){
   const userData=users.find(u=>u.id===currentUser.id)||{};
   const joined=userData.joined?new Date(userData.joined):new Date();
 
-  // avatar
   const ab=document.getElementById('pfAvatarBig');
   if(prof.avatar){ab.innerHTML=`<img src="${prof.avatar}" alt="avatar">`;ab.style.background='none';}
   else{ab.innerHTML=currentUser.username.charAt(0).toUpperCase();ab.style.background='';}
@@ -314,7 +306,6 @@ function renderPerfil(){
   document.getElementById('pfLocation').value=prof.location||'';
   document.getElementById('pfBio').value=prof.bio||'';
 
-  // stats
   const hist=getUserDl(currentUser.id);
   const rated=Object.keys(getUserRatings()).filter(k=>k.startsWith(currentUser.id+'_')).length;
   document.getElementById('pfStatDl').textContent=hist.length;
@@ -331,7 +322,6 @@ function handleAvatarUpload(e){
     prof.avatar=ev.target.result;
     saveProfile2(currentUser.id,prof);
     renderPerfil();
-    // actualizar avatar en header
     const ab=document.getElementById('avatarBtn');
     ab.innerHTML=`<img src="${ev.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`;
     toast('Foto actualizada ✅','success');
@@ -385,7 +375,6 @@ function updateDynamicDates(){
   const anio=now.getFullYear();
   const el=document.getElementById('novMes');
   if(el) el.textContent=`${mes} ${anio}`;
-  // footer copyright
   document.querySelectorAll('.footer-year').forEach(e=>e.textContent=anio);
 }
 
@@ -407,6 +396,20 @@ window.addEventListener('DOMContentLoaded',()=>{
   updateDynamicDates();
   renderTopDownloaded();
   const s=getSession(); if(s){currentUser=s;refreshHeader();refreshHeaderAvatar();}
+
+  // ══════════════════════════════════════════
+  // FIX: Flechita ← → del navegador
+  // Registra el estado inicial (home) para que haya algo adónde volver
+  history.replaceState({page:'home'}, '', location.href);
+  // Escucha cuando el usuario usa la flechita atrás/adelante
+  window.addEventListener('popstate', e=>{
+    const state=e.state;
+    if(!state){ goPageInternal('home'); return; }
+    if(state.page==='game' && state.id) showGameInternal(state.id);
+    else goPageInternal(state.page||'home');
+  });
+  // ══════════════════════════════════════════
+
   document.getElementById('searchInput').addEventListener('input',onSearch);
   document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Escape')closeSearch();});
   document.addEventListener('click',e=>{
@@ -438,7 +441,9 @@ function updateStats(){
 }
 
 /* ── PAGES ── */
-function goPage(name){
+// goPageInternal → solo cambia la vista, SIN tocar el historial
+// Usada internamente por goPage y por el listener popstate
+function goPageInternal(name){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const t=document.getElementById('page-'+name); if(!t)return;
   t.classList.add('active');
@@ -449,6 +454,12 @@ function goPage(name){
   if(name==='admin'){updateStats();renderAdminUsers();}
   if(name==='perfil'){renderPerfil();}
   if(name==='descargas'){renderDescargas();}
+}
+
+// goPage → cambia la vista Y registra en el historial (activa la flechita)
+function goPage(name){
+  history.pushState({page:name}, '', location.pathname+'#'+name);
+  goPageInternal(name);
 }
 
 /* ── GRID ── */
@@ -496,13 +507,13 @@ function renderNovedades(){
 }
 
 /* ── GAME DETAIL ── */
-function showGame(id){
+// showGameInternal → muestra el juego SIN tocar el historial
+// Usada por el listener popstate para no crear entradas duplicadas
+function showGameInternal(id){
   const g=GAMES.find(x=>x.id===id); if(!g)return;
 
-  // Registrar visita
   trackView(id);
 
-  // Banner
   document.getElementById('dBg').className=`ghb-bg ${g.cov}`;
   document.getElementById('dArt').textContent=g.short;
   const ex=document.getElementById('dBannerImg'); if(ex)ex.remove();
@@ -520,10 +531,8 @@ function showGame(id){
   document.getElementById('dReqs').innerHTML=g.reqs.map(r=>`<div class="req-item"><div class="req-l">${r.l}</div><div class="req-v">${r.v}</div></div>`).join('');
   document.getElementById('dInfo').innerHTML=[{l:'Versión',v:g.version},{l:'Tamaño',v:g.size},{l:'Idioma',v:g.lang},{l:'Plataforma',v:g.platform}].map(r=>`<div class="dl-line"><span>${r.l}</span><span>${r.v}</span></div>`).join('');
 
-  // Calificación de usuarios
   renderStarRating(id);
 
-  // Screenshots
   lbImages=(g.screenshots||[]).filter(s=>s&&s.trim()!=='');
   const ssBox=document.getElementById('dScreenshots');
   ssBox.innerHTML='';
@@ -542,7 +551,6 @@ function showGame(id){
     ssBox.appendChild(item);
   });
 
-  // Botón de descarga — trackea la descarga al hacer click
   const btn=document.getElementById('dlBtn'), note=document.getElementById('dlNote');
   btn.onclick=null; btn.classList.remove('locked');
   if(g.link!=='LINK_DEL_JUEGO'){
@@ -557,7 +565,14 @@ function showGame(id){
     btn.textContent='⏳ Próximamente';
     note.innerHTML=`<span style="color:var(--muted)">Link de descarga en preparación</span>`;
   }
-  goPage('game');
+
+  goPageInternal('game');
+}
+
+// showGame → muestra el juego Y registra en el historial (activa la flechita)
+function showGame(id){
+  history.pushState({page:'game', id:id}, '', location.pathname+'#juego-'+id);
+  showGameInternal(id);
 }
 
 /* ── LIGHTBOX ── */
