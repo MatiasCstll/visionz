@@ -33,7 +33,7 @@ let GAMES = [
   {
     id:'minecraft', title:'Minecraft', short:'MC',
     genre:'sandbox', genreLabel:'Sandbox', year:2011, dev:'Mojang Studios',
-    rating:'9.8', size:'1.2 GB', version:'1.12.2', lang:'Español', platform:'PC',
+    rating:'9.8', size:'1.2 GB', version:'Todas las versiones', lang:'Español', platform:'PC',
     cov:'cov-mc',
     img:'https://acf.geeknetic.es/imgri/imagenes/noticias/2019/17832-minecraft-playstation-4-muestra.jpg?f=webp',
     screenshots:[
@@ -43,7 +43,7 @@ let GAMES = [
     ],
     desc:'Minecraft es el juego de sandbox más vendido de la historia. Construí estructuras, explorá biomas infinitos, sobreviví a la noche y enfrentá criaturas únicas. Modo creativo sin límites y modo supervivencia desafiante.',
     cardDesc:'Bloques infinitos. Creá, sobreviví, explorá.',
-    link:'LINK_DEL_JUEGO', hot:true, isNew:false,
+    link:'https://exe.io/Minecraft-TodaslasVersiones', hot:true, isNew:false,
     reqs:[{l:'RAM',v:'4 GB'},{l:'CPU',v:'Intel Core i3-3210 / AMD A8-7600 (o equivalente)'},{l:'GPU',v:'HD Graphics 4000 / AMD Radeon R5 (OpenGL 4.4)'},{l:'Disco',v:'1.5 GB'},{l:'SO',v:'Windows 10/11'},{l:'Java',v:'Java 8+'}]
   },
   {
