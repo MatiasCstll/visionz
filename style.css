@@ -252,6 +252,19 @@ nav button.active { color:var(--accent); }
 .toast.info    { border-left:3px solid var(--blue); }
 @keyframes toastIn { from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)} }
 
+/* PAGINACIÓN */
+#paginacion { padding:0 2.5rem 3rem; }
+.pag-wrap { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; justify-content:center; }
+.pag-btn { background:var(--card2); border:1px solid var(--border); color:var(--text2); font-family:'Barlow Condensed',sans-serif; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; padding:.5rem 1.1rem; cursor:pointer; transition:all .18s; }
+.pag-btn:hover:not([disabled]) { border-color:var(--border2); color:var(--white); }
+.pag-btn[disabled] { opacity:.35; cursor:default; }
+.pag-nums { display:flex; align-items:center; gap:.3rem; }
+.pag-num { background:var(--card2); border:1px solid var(--border); color:var(--text2); font-family:'Barlow Condensed',sans-serif; font-size:.85rem; font-weight:700; letter-spacing:.05em; width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .18s; }
+.pag-num:hover { border-color:var(--border2); color:var(--white); }
+.pag-num.active { background:var(--accent); border-color:var(--accent); color:#fff; pointer-events:none; }
+.pag-dots { color:var(--muted); font-size:.85rem; padding:0 .2rem; }
+.pag-info { width:100%; text-align:center; margin-top:.5rem; font-size:.72rem; letter-spacing:.1em; color:var(--muted); font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; }
+
 /* FOOTER */
 footer { border-top:1px solid var(--border); padding:2rem 2.5rem; display:flex; justify-content:space-between; align-items:center; font-size:.73rem; color:var(--muted); letter-spacing:.06em; flex-wrap:wrap; gap:1rem; }
 .fl { font-family:'Bebas Neue',sans-serif; font-size:1.2rem; color:var(--white); cursor:pointer; }
@@ -353,9 +366,61 @@ footer { border-top:1px solid var(--border); padding:2rem 2.5rem; display:flex; 
 .descargas-empty h3 { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:var(--text2); }
 .descargas-empty p { color:var(--muted); font-size:.85rem; margin-top:.5rem; }
 
+/* ══ PORTADAS NUEVAS (placeholder de color si no hay imagen) ══ */
+.cov-nfsmw       { background:linear-gradient(150deg,#0a0d10 0%,#1e3a4a 50%,#05080a 100%); }
+.cov-fps         { background:linear-gradient(150deg,#0a0c10 0%,#22303a 50%,#06080a 100%); }
+.cov-rpg         { background:linear-gradient(150deg,#100a04 0%,#4a3010 50%,#0a0604 100%); }
+.cov-aventura    { background:linear-gradient(150deg,#06100c 0%,#105040 50%,#040a08 100%); }
+.cov-conduccion  { background:linear-gradient(150deg,#0a0614 0%,#3a1060 50%,#06040c 100%); }
+.cov-estrategia  { background:linear-gradient(150deg,#0c0a04 0%,#4a4010 50%,#080604 100%); }
+.cov-pelea       { background:linear-gradient(150deg,#140404 0%,#5a1a08 50%,#0a0404 100%); }
+/* Apps */
+.cov-nav    { background:linear-gradient(150deg,#06101a 0%,#0f3a6a 50%,#040a12 100%); }
+.cov-util   { background:linear-gradient(150deg,#0a0c10 0%,#2a3448 50%,#06080c 100%); }
+.cov-media  { background:linear-gradient(150deg,#140a04 0%,#5a2a08 50%,#0a0604 100%); }
+.cov-sec    { background:linear-gradient(150deg,#04100a 0%,#0f4a2a 50%,#040a06 100%); }
+.cov-design { background:linear-gradient(150deg,#12061a 0%,#4a1060 50%,#0a040c 100%); }
+.cov-dev    { background:linear-gradient(150deg,#040c14 0%,#0a3a5a 50%,#04080c 100%); }
+.cov-chat   { background:linear-gradient(150deg,#0a0614 0%,#2a2a7a 50%,#06040c 100%); }
+
+/* ══ APLICACIONES (acento azul) ══ */
+#page-apps .filter-btn.active { background:var(--blue); border-color:var(--blue); }
+.hero-apps .hero-glow { background:radial-gradient(circle,rgba(59,130,246,.12) 0%,transparent 65%); }
+.hero-apps h1 .z { color:var(--blue); animation:none; text-shadow:0 0 40px rgba(59,130,246,.35); }
+.hero-apps .hero-eyebrow { color:var(--blue); }
+.c-badge.app, .m-badge.app { background:var(--blue); }
+.c-cta.app { background:var(--blue); }
+.app-card .cover-ph { font-size:3rem; color:rgba(255,255,255,.12); }
+
+/* ══ PAGINACIÓN (todas las secciones) ══ */
+#paginacion-apps, #paginacion-top { padding:0 2.5rem 3rem; }
+#paginacion { margin-top:-3rem; }
+
+/* ══ PÁGINA MÁS DESCARGADOS ══ */
+.top-full-list { display:flex; flex-direction:column; gap:.5rem; padding:0 2.5rem 2rem; max-width:1000px; }
+.top-item-lg { padding:1rem 1.2rem; }
+.top-item-lg .top-rank { font-size:2rem; width:44px; }
+.top-item-lg .top-thumb { width:56px; height:56px; font-size:.85rem; }
+.top-item-lg .top-name { font-size:1rem; }
+.top-side { text-align:right; flex-shrink:0; }
+.top-rat { font-family:'Barlow Condensed',sans-serif; font-size:.85rem; font-weight:700; color:var(--gold); }
+.top-side .top-dl-count { margin-top:.2rem; }
+
+.footer-links { flex-wrap:wrap; }
+
 @media(max-width:768px){
-  header { padding:0 1rem; gap:.8rem; }
-  nav { display:none; }
+  header { padding:.6rem 1rem; gap:.6rem; height:auto; flex-wrap:wrap; }
+  .search-wrap { order:3; flex:1 1 100%; max-width:none; }
+  nav { order:4; flex:1 1 100%; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+  nav::-webkit-scrollbar { display:none; }
+  nav button { white-space:nowrap; padding:.4rem .6rem; }
+  .top-full-list, #paginacion-apps, #paginacion-top, #paginacion { padding-left:1rem; padding-right:1rem; }
+  .hero-stats { flex-wrap:wrap; }
+  .top-item-lg .top-rank { width:28px; font-size:1.5rem; }
+  .top-item-lg .top-thumb { width:44px; height:44px; }
+  .logo { font-size:1.5rem; }
+  .btn-auth { padding:.4rem .6rem; font-size:.66rem; letter-spacing:.08em; }
+  .hero h1 { font-size:clamp(3.2rem,15vw,5rem); }
   .hero { padding:4rem 1.5rem 3rem; }
   .hero-stats { gap:1.5rem; }
   .games-grid { margin:0 1rem 3rem; }
