@@ -140,7 +140,11 @@ let GAMES = [
     rating:'9.8', size:'50 GB', version:'Game of the Year', lang:'Español', platform:'PC',
     cov:'cov-rpg',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/292030/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/ss_5710298af2318afd9aa72449ef29ac4a2ef64d8e.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/ss_0901e64e9d4b8ebaea8348c194e7a3644d2d832d.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/ss_112b1e176c1bd271d8a565eacb6feaf90f240bb2.1920x1080.jpg',
+    ],
     desc:'The Witcher 3: Wild Hunt es considerado uno de los mejores RPG de la historia. Sos Geralt de Rivia, un cazador de monstruos que busca a su hija adoptiva en un mundo abierto enorme, lleno de decisiones morales, contratos de caza y una historia épica. La edición GOTY incluye las expansiones Hearts of Stone y Blood and Wine.',
     cardDesc:'El RPG definitivo. Geralt en un mundo oscuro y enorme.',
     link:'LINK_DEL_JUEGO', hot:true, isNew:true,
@@ -152,7 +156,11 @@ let GAMES = [
     rating:'9.5', size:'12 GB', version:'Special Edition', lang:'Español', platform:'PC',
     cov:'cov-rpg',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/489830/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/ss_73c1a0bb7e1720c8a1847186c3ddd837d3ca7a8d.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/ss_d64b646612ab1402bdda8e400672aa0dbcb352ea.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/ss_b6bb6f79278505b3f48567f08c21f7a0eb171c68.1920x1080.jpg',
+    ],
     desc:'Skyrim es el RPG de mundo abierto por excelencia. Sos el Sangre de Dragón, el único capaz de absorber las almas de los dragones que regresaron a Tamriel. Explorá montañas, mazmorras y ciudades, unite a gremios y armá tu personaje como quieras. Miles de mods disponibles.',
     cardDesc:'Dragones, magia y libertad total en Tamriel.',
     link:'LINK_DEL_JUEGO', hot:true, isNew:false,
@@ -164,7 +172,11 @@ let GAMES = [
     rating:'9.3', size:'10 GB', version:'Ultimate Edition', lang:'Español', platform:'PC',
     cov:'cov-rpg',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/22380/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22380/ss_62f8d0b006935ff6de7fe276f713e7d15e579bc9.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22380/ss_ec8a28942fcb5cb15718f949ab81124932a5084d.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22380/ss_f703adcb9aa1d718a39288adf7d2e1b4dc0e568a.1920x1080.jpg',
+    ],
     desc:'En el desierto de Mojave post-apocalíptico, sos un mensajero al que dieron por muerto. Recorré New Vegas, elegí entre facciones enfrentadas y definí el destino de la región. Una de las mejores historias y sistemas de diálogo de la saga.',
     cardDesc:'Post-apocalipsis en el desierto de Mojave.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -176,7 +188,11 @@ let GAMES = [
     rating:'9.2', size:'8 GB', version:'Remastered', lang:'Español', platform:'PC',
     cov:'cov-rpg',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/570940/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570940/ss_3a71463e4ccaf28c5c27f6cf8d32a3a125f45404.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570940/ss_92b2ba470cbfdb8839b649b3f478e5531dd81a17.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570940/ss_626cc310dc9ac7fb146011582c864a35e5f3e381.1920x1080.jpg',
+    ],
     desc:'El clásico que creó un género. Dark Souls te lleva a Lordran, un reino en ruinas lleno de enemigos implacables y jefes memorables. Combate exigente, mundo interconectado y una sensación de logro como ningún otro juego. Versión remasterizada a 60 FPS.',
     cardDesc:'Morí, aprendé, volvé a intentarlo. El RPG más desafiante.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -190,7 +206,11 @@ let GAMES = [
     rating:'9.6', size:'6.5 GB', version:'Completo + Episodios', lang:'Español', platform:'PC',
     cov:'cov-fps',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/220/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_47b4105b396de408cb8b6b4f358c69e5e2a62dae.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_0e499071a60a20b24149ad65a8edb769250f2921.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_ffb00abd45012680e4f209355ec81f961b6dd1fb.1920x1080.jpg',
+    ],
     desc:'Gordon Freeman vuelve en City 17, una ciudad bajo el control de la Alianza. Half-Life 2 revolucionó los FPS con su motor de física, la Gravity Gun y una narrativa sin cortes. Un clásico obligatorio que sigue vigente.',
     cardDesc:'Gordon Freeman y la Gravity Gun. Un clásico eterno.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -202,7 +222,11 @@ let GAMES = [
     rating:'9.0', size:'15 GB', version:'Standard', lang:'Español', platform:'PC',
     cov:'cov-fps',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/220240/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220240/91ca9b48ef5a3095281cd7eceb40d2daeffb0454/ss_91ca9b48ef5a3095281cd7eceb40d2daeffb0454.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220240/d2cc64ad335dd754966a8a41e755be44ecf9d5df/ss_d2cc64ad335dd754966a8a41e755be44ecf9d5df.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220240/1c4a54582fefd79dbc5fa0bd81d20a5ab66ad4e3/ss_1c4a54582fefd79dbc5fa0bd81d20a5ab66ad4e3.1920x1080.jpg',
+    ],
     desc:'Jason Brody queda atrapado en una isla tropical controlada por piratas y el inolvidable Vaas. Mundo abierto, caza, sigilo y acción explosiva en uno de los shooters más queridos de la década.',
     cardDesc:'¿Te dije alguna vez la definición de locura?',
     link:'LINK_DEL_JUEGO', hot:true, isNew:false,
@@ -214,7 +238,11 @@ let GAMES = [
     rating:'9.4', size:'25 GB', version:'Remastered', lang:'Español', platform:'PC',
     cov:'cov-fps',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/409710/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/409710/ss_bb9c564381c11357a51f1579c6337fba90ead10f.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/409710/ss_fefcc94c6f10da7009cf07cf877e5d5937ebfb45.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/409710/ss_04e04ae694f8b077e7f03906f7fa813823b5fd4e.1920x1080.jpg',
+    ],
     desc:'Bajo el océano se esconde Rapture, una utopía que se convirtió en pesadilla. Combiná armas y plásmidos para sobrevivir a los Splicers y los Big Daddies en un FPS con una de las mejores historias jamás contadas.',
     cardDesc:'Rapture te espera bajo el mar. ¿Quisieras...?',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -228,7 +256,11 @@ let GAMES = [
     rating:'9.1', size:'800 MB', version:'Completo', lang:'Español', platform:'PC',
     cov:'cov-gta',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/12140/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/12140/0000003256.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/12140/0000003257.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/12140/0000003258.1920x1080.jpg',
+    ],
     desc:'Max Payne es un policía de Nueva York que perdió todo. En una noche de tormenta de nieve se lanza a una venganza contra la mafia y una droga misteriosa. El juego que popularizó el bullet time y la narrativa estilo novela negra.',
     cardDesc:'Bullet time y venganza en Nueva York.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -240,7 +272,11 @@ let GAMES = [
     rating:'9.4', size:'18 GB', version:'Game of the Year', lang:'Español', platform:'PC',
     cov:'cov-gta',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/200260/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/200260/ss_31e817088eb23c1373410e3ea70a933ffbb8dbab.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/200260/ss_52f74c49e620871e78d09185d22f89a98438cfe4.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/200260/ss_8ff38eebd84802a8f9baf8a6be73bb7803f47ee2.1920x1080.jpg',
+    ],
     desc:'Arkham City es una prisión gigante en el corazón de Gotham. Batman enfrenta al Joker, Two-Face, el Pingüino y muchos más en un mundo abierto con el sistema de combate freeflow que marcó una época.',
     cardDesc:'Sé Batman. Gotham entera es tu campo de batalla.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -252,7 +288,11 @@ let GAMES = [
     rating:'9.7', size:'70 GB', version:'PC Edition', lang:'Español', platform:'PC',
     cov:'cov-gta',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/ss_6eccc970b5de2943546d93d319be1b5c0618f21b.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/ss_f1bff24d3967a21d303d95e11ed892e3d9113057.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/ss_3670ba72c7e3e9c3c3225547ef2c1053504e62b8.1920x1080.jpg',
+    ],
     desc:'Kratos deja atrás su pasado griego y vive en las tierras nórdicas junto a su hijo Atreus. Juntos emprenden un viaje para cumplir la última voluntad de su esposa. Combate brutal con el Hacha Leviatán y una historia emotiva.',
     cardDesc:'Kratos y Atreus en la mitología nórdica.',
     link:'LINK_DEL_JUEGO', hot:true, isNew:true,
@@ -266,7 +306,11 @@ let GAMES = [
     rating:'9.0', size:'12 GB', version:'GOTY Edition', lang:'Español', platform:'PC',
     cov:'cov-aventura',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/203160/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/203160/ss_65861a8ea2efcb01fca8aa4b1233663bb053ab54.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/203160/ss_cd920308517efb19c11b44e251af89e40fb412d5.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/203160/ss_8f34a87469f3a0c73049cbd0469bdff6e3d22713.1920x1080.jpg',
+    ],
     desc:'El origen de Lara Croft. Tras un naufragio, una joven Lara queda varada en una isla misteriosa y debe convertirse en una sobreviviente. Exploración, tumbas, escalada y combate en un reinicio espectacular de la saga.',
     cardDesc:'El nacimiento de una sobreviviente: Lara Croft.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -278,7 +322,11 @@ let GAMES = [
     rating:'9.3', size:'8 GB', version:'Deluxe', lang:'Español', platform:'PC',
     cov:'cov-aventura',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/33230/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/33230/ss_dd6a4d319cda32c24a4e16a0a62908e82673f458.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/33230/ss_ef44b9f703f71acfdeb728a497390d397084ee35.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/33230/ss_d3967a58038cc5e59332bb0043ab1ca343112bc6.1920x1080.jpg',
+    ],
     desc:'Ezio Auditore da Firenze busca venganza en la Italia del Renacimiento. Recorré Florencia y Venecia, conocé a Leonardo da Vinci y convertite en un maestro asesino. Para muchos, el mejor de toda la saga.',
     cardDesc:'Ezio Auditore y la Italia del Renacimiento.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -290,7 +338,11 @@ let GAMES = [
     rating:'9.7', size:'8 GB', version:'Completo', lang:'Español', platform:'PC',
     cov:'cov-aventura',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/620/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/ss_f3f6787d74739d3b2ec8a484b5c994b3d31ef325.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/ss_6a4f5afdaa98402de9cf0b59fed27bab3256a6f4.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/ss_0cdd90fafc160b52d08b303d205f9fd4e83cf164.1920x1080.jpg',
+    ],
     desc:'Chell despierta en los laboratorios de Aperture Science y GLaDOS sigue ahí. Resolvé puzzles con la pistola de portales en una campaña llena de humor y un cooperativo para dos jugadores brillante.',
     cardDesc:'Puzzles con portales y el humor de GLaDOS.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -303,8 +355,12 @@ let GAMES = [
     genre:'conducción', genreLabel:'Conducción', year:2004, dev:'Electronic Arts',
     rating:'9.2', size:'2.5 GB', version:'Completo', lang:'Español', platform:'PC',
     cov:'cov-conduccion',
-    img:'',
-    screenshots:['','',''],
+    img:'https://www.giantbomb.com/a/uploads/original/0/5872/191788-nfsug2box.jpg',
+    screenshots:[
+      'https://www.giantbomb.com/a/uploads/original/0/8737/234763-nfsu2_03.jpg',
+      'https://www.giantbomb.com/a/uploads/original/0/4745/323327-s23919_ps2_1.jpg',
+      'https://www.giantbomb.com/a/uploads/original/0/4745/323328-s23919_ps2_2.jpg',
+    ],
     desc:'Need for Speed Underground 2 lleva el tuning y las carreras callejeras a Bayview, una ciudad abierta para recorrer de noche. Personalizá tu auto al máximo con neones, kits de carrocería y vinilos. Un clásico que marcó a toda una generación.',
     cardDesc:'Tuning, neones y carreras nocturnas en Bayview.',
     link:'LINK_DEL_JUEGO', hot:true, isNew:false,
@@ -316,7 +372,11 @@ let GAMES = [
     rating:'8.6', size:'30 GB', version:'Remastered', lang:'Español', platform:'PC',
     cov:'cov-conduccion',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1328660/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1328660/ss_d4bf9f107a31fd5088f2cfa811381bd00b64310c.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1328660/ss_849818f935c563a87dcb8e1468774c9719f8137c.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1328660/ss_ac6b43bb488664c12101dd0b7bf3b544b508abc1.1920x1080.jpg',
+    ],
     desc:'Persecuciones a toda velocidad en Seacrest County. Jugá como corredor o como policía, con autos exóticos, armas de persecución y gráficos remasterizados. Incluye todo el contenido descargable original.',
     cardDesc:'Corredor o policía. Persecuciones a fondo.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:true,
@@ -330,7 +390,11 @@ let GAMES = [
     rating:'9.5', size:'30 GB', version:'Definitive Edition', lang:'Español', platform:'PC',
     cov:'cov-estrategia',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/813780/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/813780/ss_ab2692aa33171bc61378dd59efa89e2ff86e02a6.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/813780/ss_1033024a26f0a7ed277865201aed9bb471b54320.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/813780/ss_83253675c7af3ad5f3f2c1dc2c43c667000e0c4a.1920x1080.jpg',
+    ],
     desc:'El rey de la estrategia en tiempo real. Construí tu civilización, recolectá recursos, armá ejércitos y conquistá a tus rivales a lo largo de mil años de historia. La Definitive Edition trae gráficos 4K, nuevas civilizaciones y campañas.',
     cardDesc:'Mil años de historia. Construí, conquistá, dominá.',
     link:'LINK_DEL_JUEGO', hot:true, isNew:false,
@@ -342,7 +406,11 @@ let GAMES = [
     rating:'9.1', size:'3 GB', version:'Extended Edition', lang:'Español', platform:'PC',
     cov:'cov-estrategia',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/266840/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/266840/ss_cdd67c84e356692c6304f479a28a111ac207f12d.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/266840/ss_8cd2910cdd8001dd5de2c884a85eb27529a6329d.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/266840/ss_c4a186273ae304a51f22c6fc4a480a717799f833.1920x1080.jpg',
+    ],
     desc:'Estrategia en tiempo real con dioses y criaturas mitológicas. Elegí entre griegos, egipcios, nórdicos y atlantes, invocá poderes divinos y mandá minotauros, cíclopes y titanes a la batalla.',
     cardDesc:'Dioses, titanes y mitología en guerra.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -356,7 +424,11 @@ let GAMES = [
     rating:'9.0', size:'60 GB', version:'Ultimate Edition', lang:'Español', platform:'PC',
     cov:'cov-pelea',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/389730/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/389730/ss_d92a558644ad60ae5814fc4d2bbaebc5abf62fa3.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/389730/ss_40faa5ba39563cb899f1ab2ddd2afbf8b451d52f.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/389730/ss_ed3246605518907954918eb06e90705249be77d6.1920x1080.jpg',
+    ],
     desc:'El final de la saga Mishima. Tekken 7 combina el combate 3D clásico con nuevas mecánicas como Rage Arts y Power Crush. Más de 30 personajes, modo historia cinemático y online competitivo.',
     cardDesc:'La guerra de los Mishima llega a su fin.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -368,7 +440,11 @@ let GAMES = [
     rating:'8.8', size:'40 GB', version:'XL Edition', lang:'Español', platform:'PC',
     cov:'cov-pelea',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/307780/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/307780/ss_b2030dd6da12f3d366fa076dddf899d2190ea33e.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/307780/ss_03f7f4582a1036cbcbca1a4c87e14c7831b5f424.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/307780/ss_1f002ef5eb037c81e92bcbc29306fc91d4b6d26f.1920x1080.jpg',
+    ],
     desc:'Peleas brutales, Fatalities y Brutalities. Mortal Kombat X trae tres variantes de combate por personaje, un modo historia con nuevos guerreros y la edición XL con todos los personajes extra como Predator, Alien y Jason.',
     cardDesc:'¡Finish him! Fatalities y combate brutal.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -380,7 +456,11 @@ let GAMES = [
     rating:'8.9', size:'8 GB', version:'Ultra', lang:'Español', platform:'PC',
     cov:'cov-pelea',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/45760/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/45760/ss_28d926b012977ea4aed7bef9455409b6817b4314.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/45760/ss_97b7bc50b6b29616b7eb5be03ae8b83eebfd83c5.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/45760/ss_387c57ccb3d4b2203df6595f751390b9d95596ee.1920x1080.jpg',
+    ],
     desc:'La versión definitiva de Street Fighter IV con 44 luchadores, todos los escenarios y modos. Ryu, Ken, Chun-Li y compañía en el juego de pelea 2D que revivió el género.',
     cardDesc:'Hadouken! 44 luchadores clásicos.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:false,
@@ -394,7 +474,11 @@ let GAMES = [
     rating:'9.3', size:'13 GB', version:'Completo', lang:'Español', platform:'PC',
     cov:'cov-re',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/550/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_2eae29fbdfe8e5e8999b96d8bb28c5db70507968.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_29b3b4f2a3994c889f6fc12e0781d9d4726ef33f.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_9488e329bb42d792a059fb44cb7135d25b6262f5.1920x1080.jpg',
+    ],
     desc:'Cuatro sobrevivientes contra hordas de infectados en el sur de Estados Unidos. Cooperativo para 4 jugadores, infectados especiales, armas cuerpo a cuerpo y el Director IA que hace cada partida distinta.',
     cardDesc:'Cooperativo zombie para 4. Nunca dos partidas iguales.',
     link:'LINK_DEL_JUEGO', hot:true, isNew:false,
@@ -406,7 +490,11 @@ let GAMES = [
     rating:'8.7', size:'5 GB', version:'+ Whistleblower', lang:'Español', platform:'PC',
     cov:'cov-re',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/238320/library_600x900.jpg',
-    screenshots:['','',''],
+    screenshots:[
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238320/ss_de19e8b1f41d9594bf64d02424a0ec5046c733f5.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238320/ss_1b4cc24b78f404c69fa18d42e5d5b00873c8852f.1920x1080.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238320/ss_c629aed2b6d7751222acb9bef1022338f9bc6b03.1920x1080.jpg',
+    ],
     desc:'Un periodista entra al Mount Massive Asylum para investigar a una corporación. Sin armas, solo con una cámara de visión nocturna, tenés que correr y esconderte. Uno de los juegos de terror más intensos que existen.',
     cardDesc:'Sin armas. Solo una cámara y el miedo.',
     link:'LINK_DEL_JUEGO', hot:false, isNew:true,
@@ -472,7 +560,65 @@ let APPS = [
 /* Para ponerle imagen o link a una app, agregalo acá abajo así:
    setApp('chrome',{img:'https://...', link:'https://exe.io/...'});  */
 function setApp(id,data){const a=APPS.find(x=>x.id===id);if(a)Object.assign(a,data);}
+
+/* ── LOGOS DE LAS APPS (automáticos) ──
+   [logo de Simple Icons (o '' si no hay), color de la marca, sitio web oficial]
+   Si una app no tiene logo en Simple Icons, se usa el ícono de su sitio web. */
+const SI='https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/';
+const APP_ICONS={
+  chrome:['googlechrome','4285F4','google.com/chrome'], firefox:['firefoxbrowser','FF7139','mozilla.org'],
+  brave:['brave','FB542B','brave.com'], operagx:['operagx','EE2950','opera.com'],
+  winrar:['','6A2C91','win-rar.com'], '7zip':['7zip','3A3A3A','7-zip.org'], ccleaner:['ccleaner','CB2D29','ccleaner.com'],
+  cpuz:['','4A6FA5','cpuid.com'], hwmonitor:['','4A6FA5','cpuid.com'], afterburner:['msi','D41E1E','msi.com'],
+  vlc:['vlcmediaplayer','FF8800','videolan.org'], audacity:['audacity','2A4BD7','audacityteam.org'],
+  obs:['obsstudio','5A5A6A','obsproject.com'], handbrake:['','C0392B','handbrake.fr'],
+  malwarebytes:['malwarebytes','0D3ECC','malwarebytes.com'], avast:['avast','FF7800','avast.com'], bitwarden:['bitwarden','175DDC','bitwarden.com'],
+  gimp:['gimp','7A6F55','gimp.org'], inkscape:['inkscape','3A3A3A','inkscape.org'], canva:['canva','00C4CC','canva.com'],
+  vscode:['','007ACC','code.visualstudio.com'], git:['git','F05032','git-scm.com'], postman:['postman','FF6C37','postman.com'], nodejs:['nodedotjs','5FA04E','nodejs.org'],
+  discord:['discord','5865F2','discord.com'], telegram:['telegram','26A5E4','telegram.org'], zoom:['zoom','0B5CFF','zoom.us'], whatsapp:['whatsapp','25D366','whatsapp.com'],
+};
+APPS.forEach(a=>{
+  const ic=APP_ICONS[a.id]; if(!ic)return;
+  a.icon=ic[0]?SI+ic[0]+'.svg':'https://www.google.com/s2/favicons?domain='+ic[2]+'&sz=128';
+  a.iconMono=!!ic[0];          // los de Simple Icons son negros → se pintan de blanco
+  a.color='#'+ic[1];
+});
+// HTML del logo de una app (para tarjetas, detalle y ranking)
+function appIconHtml(a,cls='app-icon'){
+  return a.icon?`<img src="${a.icon}" alt="${a.title}" class="${cls}${a.iconMono?' mono':''}" onerror="this.remove()">`:'';
+}
+function appBg(a){return a.color?`background:radial-gradient(circle at 50% 42%,${a.color}55 0%,${a.color}18 45%,#07090e 100%)`:'';}
 // setApp('chrome',{img:'', link:''});
+/* Links oficiales de descarga de cada app (página del fabricante).
+   Si querés ganar con el acortador, reemplazá el link por el tuyo de exe.io. */
+setApp('chrome',      {link:'https://www.google.com/chrome/'});
+setApp('firefox',     {link:'https://www.mozilla.org/es-AR/firefox/new/'});
+setApp('brave',       {link:'https://brave.com/download/'});
+setApp('operagx',     {link:'https://www.opera.com/gx'});
+setApp('winrar',      {link:'https://www.win-rar.com/download.html'});
+setApp('7zip',        {link:'https://www.7-zip.org/download.html'});
+setApp('ccleaner',    {link:'https://www.ccleaner.com/ccleaner/download'});
+setApp('cpuz',        {link:'https://www.cpuid.com/softwares/cpu-z.html'});
+setApp('hwmonitor',   {link:'https://www.cpuid.com/softwares/hwmonitor.html'});
+setApp('afterburner', {link:'https://www.msi.com/Landing/afterburner/graphics-cards'});
+setApp('vlc',         {link:'https://www.videolan.org/vlc/'});
+setApp('audacity',    {link:'https://www.audacityteam.org/download/'});
+setApp('obs',         {link:'https://obsproject.com/download'});
+setApp('handbrake',   {link:'https://handbrake.fr/downloads.php'});
+setApp('malwarebytes',{link:'https://www.malwarebytes.com/mwb-download'});
+setApp('avast',       {link:'https://www.avast.com/free-antivirus-download'});
+setApp('bitwarden',   {link:'https://bitwarden.com/download/'});
+setApp('gimp',        {link:'https://www.gimp.org/downloads/'});
+setApp('inkscape',    {link:'https://inkscape.org/release/'});
+setApp('canva',       {link:'https://www.canva.com/download/windows/'});
+setApp('vscode',      {link:'https://code.visualstudio.com/download'});
+setApp('git',         {link:'https://git-scm.com/download/win'});
+setApp('postman',     {link:'https://www.postman.com/downloads/'});
+setApp('nodejs',      {link:'https://nodejs.org/en/download'});
+setApp('discord',     {link:'https://discord.com/download'});
+setApp('telegram',    {link:'https://desktop.telegram.org/'});
+setApp('zoom',        {link:'https://zoom.us/download'});
+setApp('whatsapp',    {link:'https://www.whatsapp.com/download'});
 
 /* ── STATE ── */
 let currentUser=null, currentFilter='todos', lbImages=[], lbIndex=0;
@@ -1069,7 +1215,7 @@ function renderTopDescargasPage(){
     const meta=isApps?`${x.catLabel} · ${x.dev}`:`${x.genreLabel} · ${x.year}`;
     return `<div class="top-item top-item-lg" onclick="${isApps?'showApp':'showGame'}('${x.id}')">
       <div class="top-rank ${rankClass[rank-1]||''}">${rank}</div>
-      <div class="top-thumb ${x.cov}">${x.img?`<img src="${x.img}" alt="${x.title}" onerror="this.remove()">`:''}${x.img?'':x.short}</div>
+      <div class="top-thumb ${x.cov}" style="${isApps&&!x.img?appBg(x):''}">${x.img?`<img src="${x.img}" alt="${x.title}" onerror="this.remove()">`:(isApps&&x.icon?appIconHtml(x,'top-app-icon'):x.short)}</div>
       <div class="top-info"><div class="top-name">${x.title}</div><div class="top-meta">${meta}</div></div>
       <div class="top-side"><div class="top-rat">★ ${x.rating}</div><div class="top-dl-count">↓ ${x.dlCount} descarga${x.dlCount===1?'':'s'}</div></div>
     </div>`;
@@ -1098,7 +1244,8 @@ function renderAppsGrid(){
     d.className='game-card app-card'; d.style.animationDelay=`${i*.05}s`;
     const badge=a.isNew?`<span class="c-badge new">Nuevo</span>`:a.hot?`<span class="c-badge hot">Popular</span>`:`<span class="c-badge app">${a.catLabel}</span>`;
     const coverHtml=a.img?`<img src="${a.img}" alt="${a.title}" class="cover-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`:'';
-    d.innerHTML=`${coverHtml}<div class="cover-ph ${a.cov}" style="${a.img?'display:none':''}">${a.short}</div>${badge}<span class="c-rating">★ ${a.rating}</span><div class="c-title-bar"><h2>${a.title}</h2><div class="c-yr">${a.catLabel} · ${a.dev}</div></div><div class="c-hover"><h2>${a.title}</h2><p>${a.cardDesc}</p><span class="c-cta app">Ver app →</span></div>`;
+    const phInner=a.icon?`${appIconHtml(a)}<span class="app-ph-short">${a.short}</span>`:a.short;
+    d.innerHTML=`${coverHtml}<div class="cover-ph ${a.cov}" style="${a.img?'display:none;':''}${appBg(a)}">${phInner}</div>${badge}<span class="c-rating">★ ${a.rating}</span><div class="c-title-bar"><h2>${a.title}</h2><div class="c-yr">${a.catLabel} · ${a.dev}</div></div><div class="c-hover"><h2>${a.title}</h2><p>${a.cardDesc}</p><span class="c-cta app">Ver app →</span></div>`;
     d.onclick=()=>showApp(a.id);
     grid.appendChild(d);
   });
@@ -1122,6 +1269,12 @@ function showAppInternal(id){
     back:{label:'← Aplicaciones',page:'apps'},
     onDownload:()=>trackDownload(a,'app'),
   });
+  // Banner del detalle: logo grande sobre el color de la marca
+  if(!a.img&&a.icon){
+    const art=document.getElementById('dArt');
+    art.innerHTML=appIconHtml(a,'app-icon-big'); art.style.display='';
+    document.getElementById('dBg').setAttribute('style',appBg(a));
+  }
 }
 function showApp(id){
   history.pushState({page:'app',id:id},'',location.pathname+'#app-'+id);
@@ -1172,6 +1325,7 @@ function fillDetail(g,o){
   document.title=`${g.title} — Descargar gratis | Visión Z`;
 
   document.getElementById('dBg').className=`ghb-bg ${g.cov}`;
+  document.getElementById('dBg').removeAttribute('style');
   document.getElementById('dArt').textContent=g.short;
   const ex=document.getElementById('dBannerImg'); if(ex)ex.remove();
   if(g.img){
@@ -1193,6 +1347,10 @@ function fillDetail(g,o){
   lbImages=(g.screenshots||[]).filter(s=>s&&s.trim()!=='');
   const ssBox=document.getElementById('dScreenshots');
   ssBox.innerHTML='';
+  // Si no hay ninguna captura (ej: apps), se oculta la sección entera
+  const hasSS=lbImages.length>0;
+  ssBox.style.display=hasSS?'':'none';
+  const ssT=document.getElementById('dSsTitle'); if(ssT)ssT.style.display=hasSS?'':'none';
   const ssLabels=['Screenshot 1','Screenshot 2','Screenshot 3'];
   (g.screenshots||['','','']).forEach((src,idx)=>{
     const item=document.createElement('div');
