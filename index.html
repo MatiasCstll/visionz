@@ -19,20 +19,25 @@
   <div class="logo" onclick="goPage('home')">Visión <span>Z</span></div>
   <div class="search-wrap">
     <span class="search-icon">⌕</span>
-    <input type="text" id="searchInput" placeholder="Buscar juegos y apps..." autocomplete="off">
+    <input type="text" id="searchInput" placeholder="Buscar juegos y apps..." data-i18n-ph="search.ph" autocomplete="off">
     <div class="search-results" id="searchDD"></div>
   </div>
   <nav>
-    <button class="active" onclick="goPage('home')">Inicio</button>
-    <button onclick="goJuegos()">Juegos</button>
-    <button onclick="goPage('apps')">Aplicaciones</button>
-    <button onclick="goPage('topdescargas')">Más Descargados</button>
-    <button onclick="goPage('novedades')">Novedades</button>
+    <button class="active" onclick="goPage('home')" data-i18n="nav.home">Inicio</button>
+    <button onclick="goJuegos()" data-i18n="nav.games">Juegos</button>
+    <button onclick="goPage('apps')" data-i18n="nav.apps">Aplicaciones</button>
+    <button onclick="goPage('topdescargas')" data-i18n="nav.top">Más Descargados</button>
+    <button onclick="goPage('novedades')" data-i18n="nav.new">Novedades</button>
   </nav>
   <div class="user-area">
+    <!-- Selector de idioma -->
+    <div class="lang-sw" title="Idioma / Language">
+      <button data-lang="es" onclick="setLang('es')">ES</button>
+      <button data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
     <div id="authBtns">
-      <button class="btn-auth btn-login"    onclick="openModal('login')">Ingresar</button>
-      <button class="btn-auth btn-register" onclick="openModal('register')">Registrarse</button>
+      <button class="btn-auth btn-login"    onclick="openModal('login')" data-i18n="auth.login">Ingresar</button>
+      <button class="btn-auth btn-register" onclick="openModal('register')" data-i18n="auth.register">Registrarse</button>
     </div>
     <div class="user-dd-wrap hidden" id="userArea">
       <button class="avatar-btn" id="avatarBtn" onclick="toggleDD()">?</button>
@@ -42,11 +47,11 @@
           <div class="ud-email" id="udEmail"></div>
           <span class="ud-badge hidden" id="udAdminBadge">Admin</span>
         </div>
-        <button class="ud-item" onclick="goPage('perfil');closeDD()">👤 Mi perfil</button>
-        <button class="ud-item" onclick="goPage('descargas');closeDD()">📥 Mis descargas</button>
-        <button class="ud-item admin-only hidden" onclick="goPage('admin'); closeDD()">⚙️ Panel Admin</button>
+        <button class="ud-item" onclick="goPage('perfil');closeDD()" data-i18n="ud.profile">👤 Mi perfil</button>
+        <button class="ud-item" onclick="goPage('descargas');closeDD()" data-i18n="ud.downloads">📥 Mis descargas</button>
+        <button class="ud-item admin-only hidden" onclick="goPage('admin'); closeDD()" data-i18n="ud.admin">⚙️ Panel Admin</button>
         <div class="ud-divider"></div>
-        <button class="ud-item danger" onclick="logout()">🚪 Cerrar sesión</button>
+        <button class="ud-item danger" onclick="logout()" data-i18n="ud.logout">🚪 Cerrar sesión</button>
       </div>
     </div>
   </div>
@@ -56,35 +61,35 @@
 <div id="page-home" class="page active">
   <section class="hero">
     <div class="hero-glow"></div><div class="hero-lines"></div>
-    <p class="hero-eyebrow">Tu sitio de descargas gratuitas</p>
+    <p class="hero-eyebrow" data-i18n="home.eyebrow">Tu sitio de descargas gratuitas</p>
     <h1>VISION <span class="z">Z</span></h1>
-    <p class="hero-tagline">Los mejores juegos clásicos, listos para descargar.</p>
+    <p class="hero-tagline" data-i18n="home.tagline">Los mejores juegos clásicos, listos para descargar.</p>
     <div class="hero-stats">
-      <div class="stat-item"><div class="stat-num" id="statGames">6<span>+</span></div><div class="stat-label">Juegos</div></div>
-      <div class="stat-item"><div class="stat-num" id="statApps">0</div><div class="stat-label">Apps</div></div>
-      <div class="stat-item"><div class="stat-num" id="statUsers">0</div><div class="stat-label">Usuarios</div></div>
-      <div class="stat-item"><div class="stat-num">100<span>%</span></div><div class="stat-label">Gratis</div></div>
+      <div class="stat-item"><div class="stat-num" id="statGames">6<span>+</span></div><div class="stat-label" data-i18n="stat.games">Juegos</div></div>
+      <div class="stat-item"><div class="stat-num" id="statApps">0</div><div class="stat-label" data-i18n="stat.apps">Apps</div></div>
+      <div class="stat-item"><div class="stat-num" id="statUsers">0</div><div class="stat-label" data-i18n="stat.users">Usuarios</div></div>
+      <div class="stat-item"><div class="stat-num">100<span>%</span></div><div class="stat-label" data-i18n="stat.free">Gratis</div></div>
     </div>
   </section>
   <div class="filter-bar" id="filterBar">
-    <span class="filter-label">Género:</span>
-    <button class="filter-btn active" data-genre="todos" onclick="setFilter('todos',this)">Todos</button>
-    <button class="filter-btn" data-genre="accion" onclick="setFilter('accion',this)">Acción</button>
-    <button class="filter-btn" data-genre="fps" onclick="setFilter('fps',this)">FPS</button>
-    <button class="filter-btn" data-genre="rpg" onclick="setFilter('rpg',this)">RPG</button>
-    <button class="filter-btn" data-genre="aventura" onclick="setFilter('aventura',this)">Aventura</button>
-    <button class="filter-btn" data-genre="conducción" onclick="setFilter('conducción',this)">Conducción</button>
-    <button class="filter-btn" data-genre="estrategia" onclick="setFilter('estrategia',this)">Estrategia</button>
-    <button class="filter-btn" data-genre="pelea" onclick="setFilter('pelea',this)">Pelea</button>
-    <button class="filter-btn" data-genre="terror" onclick="setFilter('terror',this)">Terror</button>
-    <button class="filter-btn" data-genre="deportes" onclick="setFilter('deportes',this)">Deportes</button>
-    <button class="filter-btn" data-genre="sandbox" onclick="setFilter('sandbox',this)">Sandbox</button>
+    <span class="filter-label" data-i18n="filter.genre">Género:</span>
+    <button class="filter-btn active" data-genre="todos" onclick="setFilter('todos',this)" data-i18n="g.all">Todos</button>
+    <button class="filter-btn" data-genre="accion" onclick="setFilter('accion',this)" data-i18n="g.accion">Acción</button>
+    <button class="filter-btn" data-genre="fps" onclick="setFilter('fps',this)" data-i18n="g.fps">FPS</button>
+    <button class="filter-btn" data-genre="rpg" onclick="setFilter('rpg',this)" data-i18n="g.rpg">RPG</button>
+    <button class="filter-btn" data-genre="aventura" onclick="setFilter('aventura',this)" data-i18n="g.aventura">Aventura</button>
+    <button class="filter-btn" data-genre="conducción" onclick="setFilter('conducción',this)" data-i18n="g.conducción">Conducción</button>
+    <button class="filter-btn" data-genre="estrategia" onclick="setFilter('estrategia',this)" data-i18n="g.estrategia">Estrategia</button>
+    <button class="filter-btn" data-genre="pelea" onclick="setFilter('pelea',this)" data-i18n="g.pelea">Pelea</button>
+    <button class="filter-btn" data-genre="terror" onclick="setFilter('terror',this)" data-i18n="g.terror">Terror</button>
+    <button class="filter-btn" data-genre="deportes" onclick="setFilter('deportes',this)" data-i18n="g.deportes">Deportes</button>
+    <button class="filter-btn" data-genre="sandbox" onclick="setFilter('sandbox',this)" data-i18n="g.sandbox">Sandbox</button>
   </div>
   <div class="section-label" id="gridLabel">Todos los juegos</div>
   <div class="games-grid" id="gamesGrid"></div>
   <div id="paginacion"></div>
   <div class="top-section" id="topSection">
-    <div class="section-label" style="padding:0 0 1.5rem">Lo más descargado</div>
+    <div class="section-label" style="padding:0 0 1.5rem" data-i18n="home.top">Lo más descargado</div>
     <div class="top-list" id="topList"></div>
   </div>
 </div>
@@ -93,15 +98,15 @@
 <div id="page-novedades" class="page">
   <section class="hero" style="padding:4rem 2.5rem 3rem">
     <div class="hero-glow"></div>
-    <p class="hero-eyebrow">Lo más reciente</p>
-    <h1 style="font-size:clamp(3rem,8vw,7rem)">NOVEDA<span class="z">DES</span></h1>
-    <p class="hero-tagline">Últimas incorporaciones y actualizaciones del catálogo.</p>
+    <p class="hero-eyebrow" data-i18n="nov.eyebrow">Lo más reciente</p>
+    <h1 style="font-size:clamp(3rem,8vw,7rem)" data-i18n="nov.h1">NOVEDA<span class="z">DES</span></h1>
+    <p class="hero-tagline" data-i18n="nov.tagline">Últimas incorporaciones y actualizaciones del catálogo.</p>
   </section>
   <div class="novedades-section">
-    <h2 id="novTitle">🔥 Destacados de <span id="novMes">este mes</span></h2>
+    <h2 id="novTitle" data-i18n="nov.title">🔥 Destacados de <span id="novMes">este mes</span></h2>
     <div class="novedades-grid" id="novGrid"></div>
   </div>
-  <div class="section-label" style="padding:1rem 2.5rem 1.5rem">Todos los juegos nuevos</div>
+  <div class="section-label" style="padding:1rem 2.5rem 1.5rem" data-i18n="nov.all">Todos los juegos nuevos</div>
   <div class="games-grid" id="novAllGrid"></div>
 </div>
 
@@ -109,14 +114,14 @@
 <div id="page-topdescargas" class="page">
   <section class="hero" style="padding:4rem 2.5rem 3rem">
     <div class="hero-glow"></div>
-    <p class="hero-eyebrow">Ranking</p>
-    <h1 style="font-size:clamp(3rem,8vw,7rem)">MÁS <span class="z">DESCARGADOS</span></h1>
-    <p class="hero-tagline">Del más descargado al menos descargado.</p>
+    <p class="hero-eyebrow" data-i18n="top.eyebrow">Ranking</p>
+    <h1 style="font-size:clamp(3rem,8vw,7rem)" data-i18n="top.h1">MÁS <span class="z">DESCARGADOS</span></h1>
+    <p class="hero-tagline" data-i18n="top.tagline">Del más descargado al menos descargado.</p>
   </section>
   <div class="filter-bar">
-    <span class="filter-label">Ver:</span>
-    <button class="filter-btn active" onclick="setTopMode('juegos',this)">Juegos</button>
-    <button class="filter-btn" onclick="setTopMode('apps',this)">Aplicaciones</button>
+    <span class="filter-label" data-i18n="top.show">Ver:</span>
+    <button class="filter-btn active" onclick="setTopMode('juegos',this)" data-i18n="top.games">Juegos</button>
+    <button class="filter-btn" onclick="setTopMode('apps',this)" data-i18n="top.apps">Aplicaciones</button>
   </div>
   <div class="top-full-list" id="topFullList"></div>
   <div id="paginacion-top"></div>
@@ -126,20 +131,22 @@
 <div id="page-apps" class="page">
   <section class="hero hero-apps" style="padding:4rem 2.5rem 3rem">
     <div class="hero-glow"></div>
-    <p class="hero-eyebrow">Software para tu PC</p>
-    <h1 style="font-size:clamp(3rem,8vw,7rem)">APLICA<span class="z">CIONES</span></h1>
-    <p class="hero-tagline">Programas esenciales, gratis y listos para instalar.</p>
+    <p class="hero-eyebrow" data-i18n="apps.eyebrow">Software para tu PC</p>
+    <h1 style="font-size:clamp(3rem,8vw,7rem)" data-i18n="apps.h1">APLICA<span class="z">CIONES</span></h1>
+    <p class="hero-tagline" data-i18n="apps.tagline">Programas esenciales, gratis y listos para instalar.</p>
   </section>
   <div class="filter-bar">
-    <span class="filter-label">Categoría:</span>
-    <button class="filter-btn active" onclick="setAppsFilter('todos',this)">Todas</button>
-    <button class="filter-btn" onclick="setAppsFilter('navegadores',this)">Navegadores</button>
-    <button class="filter-btn" onclick="setAppsFilter('utilidades',this)">Utilidades</button>
-    <button class="filter-btn" onclick="setAppsFilter('multimedia',this)">Multimedia</button>
-    <button class="filter-btn" onclick="setAppsFilter('seguridad',this)">Seguridad</button>
-    <button class="filter-btn" onclick="setAppsFilter('diseno',this)">Diseño</button>
-    <button class="filter-btn" onclick="setAppsFilter('desarrollo',this)">Desarrollo</button>
-    <button class="filter-btn" onclick="setAppsFilter('comunicacion',this)">Comunicación</button>
+    <span class="filter-label" data-i18n="apps.cat">Categoría:</span>
+    <button class="filter-btn active" onclick="setAppsFilter('todos',this)" data-i18n="c.todos">Todas</button>
+    <button class="filter-btn" onclick="setAppsFilter('navegadores',this)" data-i18n="c.navegadores">Navegadores</button>
+    <button class="filter-btn" onclick="setAppsFilter('utilidades',this)" data-i18n="c.utilidades">Utilidades</button>
+    <button class="filter-btn" onclick="setAppsFilter('multimedia',this)" data-i18n="c.multimedia">Multimedia</button>
+    <button class="filter-btn" onclick="setAppsFilter('seguridad',this)" data-i18n="c.seguridad">Seguridad</button>
+    <button class="filter-btn" onclick="setAppsFilter('diseno',this)" data-i18n="c.diseno">Diseño</button>
+    <button class="filter-btn" onclick="setAppsFilter('desarrollo',this)" data-i18n="c.desarrollo">Desarrollo</button>
+    <button class="filter-btn" onclick="setAppsFilter('comunicacion',this)" data-i18n="c.comunicacion">Comunicación</button>
+    <button class="filter-btn" onclick="setAppsFilter('gaming',this)" data-i18n="c.gaming">Gaming</button>
+    <button class="filter-btn" onclick="setAppsFilter('oficina',this)" data-i18n="c.oficina">Oficina</button>
   </div>
   <div class="section-label" id="appsGridLabel">Todas las aplicaciones</div>
   <div class="games-grid" id="appsGrid"></div>
@@ -161,9 +168,9 @@
   </div>
   <div class="gd-body">
     <main>
-      <p class="gd-stitle">Descripción</p>
+      <p class="gd-stitle" data-i18n="d.desc">Descripción</p>
       <p class="gd-desc" id="dDesc"></p>
-      <p class="gd-stitle">Calificación de usuarios</p>
+      <p class="gd-stitle" data-i18n="d.rating">Calificación de usuarios</p>
       <div class="star-section">
         <div class="star-row">
           <div class="star-avg" id="dStarAvg">—</div>
@@ -175,7 +182,7 @@
         <div class="star-your" id="dYourRating" style="margin-top:.8rem"></div>
         <div style="margin-top:.7rem;font-size:.75rem;color:var(--muted)" id="dRatePrompt"></div>
       </div>
-      <p class="gd-stitle" id="dSsTitle">Capturas de pantalla</p>
+      <p class="gd-stitle" id="dSsTitle" data-i18n="d.ss">Capturas de pantalla</p>
       <div class="screenshots" id="dScreenshots"></div>
       <p class="gd-stitle" id="dReqsTitle">Requisitos mínimos</p>
       <div class="req-grid" id="dReqs"></div>
@@ -186,39 +193,61 @@
         <div id="dInfo"></div>
         <a id="dlBtn" class="dl-btn" href="#">↓ Descargar ahora</a>
         <p class="dl-note" id="dlNote"></p>
+        <button class="dl-report" id="dlReport" onclick="reportLink()" data-i18n="d.reportLink">⚠ ¿Link caído? Reportalo</button>
       </div>
     </aside>
+    <!-- Comentarios de los usuarios logueados + reportes de link caído
+         (va después del cuadro de descarga para que en celular el botón quede arriba) -->
+    <section class="gd-com">
+      <p class="gd-stitle" id="dComTitle"><span data-i18n="d.comments">Comentarios</span> <span class="com-count" id="dComCount"></span></p>
+      <div id="dComForm"></div>
+      <div class="com-list" id="dComList"></div>
+    </section>
+  </div>
+  <!-- Juegos relacionados (mismo género / desarrolladora) -->
+  <div class="related-wrap" id="dRelatedWrap">
+    <div class="section-label" id="dRelatedTitle">Juegos relacionados</div>
+    <div class="games-grid related" id="dRelated"></div>
   </div>
 </div>
 
 <!-- ═══════ PAGE: ADMIN ═══════ -->
 <div id="page-admin" class="page">
   <div class="admin-wrap">
-    <div class="admin-title">Panel <span>Admin</span></div>
-    <p class="admin-sub">Gestión de usuarios, juegos y contenido de Visión Z</p>
+    <div class="admin-title" data-i18n="admin.title">Panel <span>Admin</span></div>
+    <p class="admin-sub" data-i18n="admin.sub">Gestión de usuarios, juegos y contenido de Visión Z</p>
     <div class="admin-grid">
-      <div class="admin-stat"><div class="as-num" id="aStatJuegos">6</div><div class="as-label">Juegos publicados</div></div>
-      <div class="admin-stat" style="border-left-color:var(--blue)"><div class="as-num" id="aStatUsers">0</div><div class="as-label">Usuarios registrados</div></div>
-      <div class="admin-stat" style="border-left-color:var(--green)"><div class="as-num" id="aStatAdmins">1</div><div class="as-label">Administradores</div></div>
+      <div class="admin-stat"><div class="as-num" id="aStatJuegos">6</div><div class="as-label" data-i18n="admin.statGames">Juegos publicados</div></div>
+      <div class="admin-stat" style="border-left-color:var(--blue)"><div class="as-num" id="aStatUsers">0</div><div class="as-label" data-i18n="admin.statUsers">Usuarios registrados</div></div>
+      <div class="admin-stat" style="border-left-color:var(--green)"><div class="as-num" id="aStatAdmins">1</div><div class="as-label" data-i18n="admin.statAdmins">Administradores</div></div>
+      <div class="admin-stat" style="border-left-color:var(--gold)"><div class="as-num" id="aStatReports">0</div><div class="as-label" data-i18n="admin.statReports">Links caídos reportados</div></div>
     </div>
-    <p class="admin-section-title">Usuarios registrados</p>
-    <table class="admin-table"><thead><tr><th>#</th><th>Usuario</th><th>Email</th><th>Registrado</th><th>Rol</th><th>Acciones</th></tr></thead><tbody id="adminUsersTbody"></tbody></table>
-    <p class="admin-section-title">Agregar nuevo juego</p>
-    <div class="admin-success" id="adminSuccess">✅ Juego agregado exitosamente al catálogo.</div>
+    <p class="admin-section-title" data-i18n="admin.reports">Links caídos reportados</p>
+    <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th data-i18n="th.item">Juego / App</th><th data-i18n="th.reports">Reportes</th><th data-i18n="th.detail">Reportado por</th><th data-i18n="th.last">Último reporte</th><th data-i18n="th.actions">Acciones</th></tr></thead><tbody id="adminReportsTbody"></tbody></table></div>
+    <p class="admin-section-title" data-i18n="admin.users">Usuarios registrados</p>
+    <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>#</th><th data-i18n="th.user">Usuario</th><th data-i18n="th.email">Email</th><th data-i18n="th.joined">Registrado</th><th data-i18n="th.role">Rol</th><th data-i18n="th.actions">Acciones</th></tr></thead><tbody id="adminUsersTbody"></tbody></table></div>
+    <p class="admin-section-title" data-i18n="admin.custom">Juegos agregados desde el panel</p>
+    <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th data-i18n="th.game">Juego</th><th data-i18n="th.genre">Género</th><th data-i18n="th.link">Link</th><th data-i18n="th.actions">Acciones</th></tr></thead><tbody id="adminCustomTbody"></tbody></table></div>
+    <p class="admin-section-title" data-i18n="admin.add">Agregar nuevo juego</p>
+    <div class="admin-success" id="adminSuccess" data-i18n="admin.success">✅ Juego agregado exitosamente al catálogo.</div>
     <div class="admin-form-grid">
-      <div class="af-group"><label>Título del juego</label><input type="text" id="af-title" placeholder="Ej: Half-Life 2"></div>
-      <div class="af-group"><label>Desarrolladora</label><input type="text" id="af-dev" placeholder="Ej: Valve"></div>
-      <div class="af-group"><label>Año</label><input type="number" id="af-year" placeholder="2004" min="1990" max="2030"></div>
-      <div class="af-group"><label>Género</label><select id="af-genre"><option value="accion">Acción</option><option value="fps">FPS</option><option value="sandbox">Sandbox</option><option value="deportes">Deportes</option><option value="terror">Terror</option><option value="aventura">Aventura</option><option value="rpg">RPG</option><option value="conducción">Conducción</option><option value="estrategia">Estrategia</option><option value="pelea">Pelea</option></select></div>
-      <div class="af-group"><label>Versión</label><input type="text" id="af-version" placeholder="Ej: 1.0 Original"></div>
-      <div class="af-group"><label>Tamaño</label><input type="text" id="af-size" placeholder="Ej: 4.7 GB"></div>
-      <div class="af-group"><label>Calificación (0-10)</label><input type="text" id="af-rating" placeholder="9.5"></div>
-      <div class="af-group"><label>Link de descarga</label><input type="text" id="af-link" placeholder="https://..."></div>
-      <div class="af-group af-full"><label>Descripción corta (card)</label><input type="text" id="af-cardesc" placeholder="Ej: Mundo abierto épico..."></div>
-      <div class="af-group af-full"><label>Descripción completa</label><textarea id="af-desc" placeholder="Descripción detallada..."></textarea></div>
+      <div class="af-group"><label data-i18n="af.title">Título del juego</label><input type="text" id="af-title" placeholder="Ej: Half-Life 2" data-i18n-ph="af.ph.title"></div>
+      <div class="af-group"><label data-i18n="af.dev">Desarrolladora</label><input type="text" id="af-dev" placeholder="Ej: Valve" data-i18n-ph="af.ph.dev"></div>
+      <div class="af-group"><label data-i18n="af.year">Año</label><input type="number" id="af-year" placeholder="2004" min="1990" max="2030"></div>
+      <div class="af-group"><label data-i18n="af.genre">Género</label><select id="af-genre"><option value="accion" data-i18n="g.accion">Acción</option><option value="fps" data-i18n="g.fps">FPS</option><option value="sandbox" data-i18n="g.sandbox">Sandbox</option><option value="deportes" data-i18n="g.deportes">Deportes</option><option value="terror" data-i18n="g.terror">Terror</option><option value="aventura" data-i18n="g.aventura">Aventura</option><option value="rpg" data-i18n="g.rpg">RPG</option><option value="conducción" data-i18n="g.conducción">Conducción</option><option value="estrategia" data-i18n="g.estrategia">Estrategia</option><option value="pelea" data-i18n="g.pelea">Pelea</option></select></div>
+      <div class="af-group"><label data-i18n="af.version">Versión</label><input type="text" id="af-version" placeholder="Ej: 1.0 Original" data-i18n-ph="af.ph.version"></div>
+      <div class="af-group"><label data-i18n="af.size">Tamaño</label><input type="text" id="af-size" placeholder="Ej: 4.7 GB" data-i18n-ph="af.ph.size"></div>
+      <div class="af-group"><label data-i18n="af.rating">Calificación (0-10)</label><input type="text" id="af-rating" placeholder="9.5"></div>
+      <div class="af-group"><label data-i18n="af.link">Link de descarga</label><input type="text" id="af-link" placeholder="https://..."></div>
+      <div class="af-group af-full"><label data-i18n="af.img">Portada (URL de la imagen)</label><input type="text" id="af-img" placeholder="https://..."></div>
+      <div class="af-group af-full"><label data-i18n="af.ss">Capturas (una URL por línea, hasta 3)</label><textarea id="af-ss" placeholder="https://...&#10;https://...&#10;https://..."></textarea></div>
+      <div class="af-group af-full"><label data-i18n="af.cardesc">Descripción corta (card)</label><input type="text" id="af-cardesc" placeholder="Ej: Mundo abierto épico..." data-i18n-ph="af.ph.cardesc"></div>
+      <div class="af-group af-full"><label data-i18n="af.desc">Descripción completa</label><textarea id="af-desc" placeholder="Descripción detallada..." data-i18n-ph="af.ph.desc"></textarea></div>
+      <div class="af-group af-full"><label data-i18n="af.cardescEn">Descripción corta en inglés (opcional)</label><input type="text" id="af-cardescEn" placeholder="E.g.: Epic open world..."></div>
+      <div class="af-group af-full"><label data-i18n="af.descEn">Descripción completa en inglés (opcional)</label><textarea id="af-descEn" placeholder="Detailed description..."></textarea></div>
     </div>
-    <button class="admin-btn primary" onclick="adminAddGame()">+ Agregar juego al catálogo</button>&nbsp;
-    <button class="admin-btn secondary" onclick="clearAdminForm()">Limpiar</button>
+    <button class="admin-btn primary" onclick="adminAddGame()" data-i18n="af.addBtn">+ Agregar juego al catálogo</button>&nbsp;
+    <button class="admin-btn secondary" onclick="clearAdminForm()" data-i18n="af.clear">Limpiar</button>
   </div>
 </div>
 
@@ -237,26 +266,62 @@
       </div>
     </div>
     <div class="perfil-stats-row">
-      <div class="pf-stat"><div class="pf-stat-num" id="pfStatDl">0</div><div class="pf-stat-label">Descargas</div></div>
-      <div class="pf-stat"><div class="pf-stat-num" id="pfStatRated">0</div><div class="pf-stat-label">Juegos calificados</div></div>
-      <div class="pf-stat"><div class="pf-stat-num" id="pfStatMember"></div><div class="pf-stat-label">Miembro desde</div></div>
+      <div class="pf-stat"><div class="pf-stat-num" id="pfStatDl">0</div><div class="pf-stat-label" data-i18n="pf.dl">Descargas</div></div>
+      <div class="pf-stat"><div class="pf-stat-num" id="pfStatRated">0</div><div class="pf-stat-label" data-i18n="pf.rated">Juegos calificados</div></div>
+      <div class="pf-stat"><div class="pf-stat-num" id="pfStatMember"></div><div class="pf-stat-label" data-i18n="pf.member">Miembro desde</div></div>
     </div>
-    <div class="gd-stitle">Editar perfil</div>
+    <div class="gd-stitle" data-i18n="pf.edit">Editar perfil</div>
     <div class="perfil-form">
-      <div class="pf-group"><label>Nombre de usuario</label><input type="text" id="pfName" placeholder="Tu nombre de usuario"></div>
-      <div class="pf-group"><label>País / Ciudad</label><input type="text" id="pfLocation" placeholder="Ej: Buenos Aires, AR"></div>
-      <div class="pf-group pf-full"><label>Bio</label><textarea id="pfBio" placeholder="Contá algo sobre vos..."></textarea></div>
+      <div class="pf-group"><label data-i18n="pf.name">Nombre de usuario</label><input type="text" id="pfName" placeholder="Tu nombre de usuario" data-i18n-ph="pf.ph.name"></div>
+      <div class="pf-group"><label data-i18n="pf.loc">País / Ciudad</label><input type="text" id="pfLocation" placeholder="Ej: Buenos Aires, AR" data-i18n-ph="pf.ph.loc"></div>
+      <div class="pf-group pf-full"><label data-i18n="pf.bio">Bio</label><textarea id="pfBio" placeholder="Contá algo sobre vos..." data-i18n-ph="pf.ph.bio"></textarea></div>
     </div>
-    <button class="pf-save" onclick="saveProfile()">Guardar cambios</button>
+    <button class="pf-save" onclick="saveProfile()" data-i18n="pf.save">Guardar cambios</button>
   </div>
 </div>
 
 <!-- ═══════ PAGE: MIS DESCARGAS ═══════ -->
 <div id="page-descargas" class="page">
   <div class="descargas-wrap">
-    <div class="descargas-title">Mis <span>Descargas</span></div>
-    <p class="descargas-sub">Historial de todos los juegos que descargaste.</p>
+    <div class="descargas-title" data-i18n="dl.title">Mis <span>Descargas</span></div>
+    <p class="descargas-sub" data-i18n="dl.sub">Historial de todos los juegos que descargaste.</p>
     <div id="dlHistoryContainer"></div>
+  </div>
+</div>
+
+<!-- ═══════ PAGE: CONTACTO ═══════ -->
+<div id="page-contacto" class="page">
+  <div class="info-wrap">
+    <div class="info-title" data-i18n="ct.title">Con<span>tacto</span></div>
+    <p class="info-sub" data-i18n="ct.sub">¿Tenés una consulta, una sugerencia o querés pedir un juego? Escribinos y te respondemos.</p>
+    <a class="dl-btn info-mail" id="contactMail" href="#">✉ Escribinos</a>
+    <div class="info-box" data-i18n="ct.links"><h3>¿Un link no funciona?</h3><p>Usá el botón <strong>“⚠ Reportar link caído”</strong> en la página del juego o app: es la forma más rápida de que lo arreglemos.</p></div>
+    <div class="info-box" data-i18n="ct.owner"><h3>¿Sos dueño de algún contenido?</h3><p>Si publicamos algo tuyo y querés que lo quitemos, escribinos al mismo correo con el link y lo revisamos.</p></div>
+  </div>
+</div>
+
+<!-- ═══════ PAGE: PRIVACIDAD ═══════ -->
+<div id="page-privacidad" class="page">
+  <div class="info-wrap">
+    <div class="info-title" data-i18n="pv.title">Privaci<span>dad</span></div>
+    <p class="info-sub" data-i18n="pv.updated">Última actualización: octubre de 2026</p>
+    <div class="info-text" data-i18n="pv.body">
+      <h3>Qué datos guardamos</h3>
+      <ul>
+        <li><strong>Si te registrás:</strong> tu email, nombre de usuario y contraseña. La contraseña la maneja Firebase (Google) y nosotros nunca la vemos.</li>
+        <li><strong>Tu perfil:</strong> el nombre, país/ciudad, bio y foto que elijas cargar.</li>
+        <li><strong>Tu actividad:</strong> historial de descargas, calificaciones con estrellas, comentarios y reportes de links caídos.</li>
+        <li><strong>En tu navegador:</strong> el idioma elegido y un contador de visitas a cada juego. Esto queda solo en tu dispositivo.</li>
+      </ul>
+      <h3>Qué es público</h3>
+      <p>Tus comentarios (con tu nombre de usuario, foto chica y fecha) los puede ver cualquier visitante. El resto de tu perfil, tu email y tu historial solo los ves vos y los administradores del sitio.</p>
+      <h3>Servicios de terceros</h3>
+      <p>Usamos Firebase (Google) para las cuentas y la base de datos, y Google Fonts para las tipografías. Las imágenes se cargan desde Steam, jsDelivr y Google, por lo que esos servicios reciben datos técnicos como tu dirección IP. Los links de descarga llevan a sitios externos (acortadores y servidores de archivos) que tienen sus propias políticas y pueden mostrar publicidad o usar cookies.</p>
+      <h3>Cookies</h3>
+      <p>Visión Z no usa cookies de publicidad propias. Para mantener tu sesión iniciada, Firebase guarda datos en el almacenamiento de tu navegador.</p>
+      <h3>Tus derechos</h3>
+      <p>Podés editar tu perfil cuando quieras y borrar tus comentarios. Si querés que eliminemos tu cuenta y todos tus datos, escribinos a <a class="contact-mail-txt" href="#"></a>.</p>
+    </div>
   </div>
 </div>
 
@@ -264,14 +329,14 @@
 <footer>
   <div class="fl" onclick="goPage('home')">Visión <span>Z</span></div>
   <div class="footer-links">
-    <button onclick="goPage('home')">Inicio</button>
-    <button onclick="goJuegos()">Juegos</button>
-    <button onclick="goPage('apps')">Aplicaciones</button>
-    <button onclick="goPage('topdescargas')">Más Descargados</button>
-    <button onclick="goPage('novedades')">Novedades</button>
-    <button>Contacto</button><button>Privacidad</button>
+    <button onclick="goPage('home')" data-i18n="nav.home">Inicio</button>
+    <button onclick="goJuegos()" data-i18n="nav.games">Juegos</button>
+    <button onclick="goPage('apps')" data-i18n="nav.apps">Aplicaciones</button>
+    <button onclick="goPage('topdescargas')" data-i18n="nav.top">Más Descargados</button>
+    <button onclick="goPage('novedades')" data-i18n="nav.new">Novedades</button>
+    <button onclick="goPage('contacto')" data-i18n="ft.contact">Contacto</button><button onclick="goPage('privacidad')" data-i18n="ft.privacy">Privacidad</button>
   </div>
-  <span>© <span class="footer-year">2025</span> Visión Z · Todos los derechos reservados</span>
+  <span data-i18n="ft.rights">© <span class="footer-year">2025</span> Visión Z · Todos los derechos reservados</span>
 </footer>
 
 <!-- ═══════ MODAL AUTH ═══════ -->
@@ -280,24 +345,24 @@
     <button class="modal-close" onclick="closeModal()">✕</button>
     <div class="modal-logo">Visión <span>Z</span></div>
     <div class="modal-tabs">
-      <button class="modal-tab active" id="tabL" onclick="switchTab('login')">Ingresar</button>
-      <button class="modal-tab" id="tabR" onclick="switchTab('register')">Registrarse</button>
+      <button class="modal-tab active" id="tabL" onclick="switchTab('login')" data-i18n="m.tabLogin">Ingresar</button>
+      <button class="modal-tab" id="tabR" onclick="switchTab('register')" data-i18n="m.tabRegister">Registrarse</button>
     </div>
     <div class="global-err" id="gErr"></div>
     <div id="fLogin">
-      <div class="fg"><label>Email</label><input type="email" id="lEmail" placeholder="tu@email.com"><div class="fg-err" id="lEmailErr">Email inválido.</div></div>
-      <div class="fg"><label>Contraseña</label><div class="pass-wrap"><input type="password" id="lPass" placeholder="••••••••"><button type="button" class="eye-btn" onclick="togglePass('lPass',this)">👁</button></div><div class="fg-err" id="lPassErr">Ingresá tu contraseña.</div></div>
-      <div class="modal-fn" style="margin:-.4rem 0 .6rem;text-align:right"><button type="button" onclick="resetPassword()">¿Olvidaste tu contraseña?</button></div>
-      <button class="form-submit" onclick="doLogin()">Ingresar</button>
-      <div class="modal-fn">¿No tenés cuenta? <button onclick="switchTab('register')">Registrate gratis</button></div>
+      <div class="fg"><label data-i18n="m.email">Email</label><input type="email" id="lEmail" placeholder="tu@email.com" data-i18n-ph="m.ph.email"><div class="fg-err" id="lEmailErr">Email inválido.</div></div>
+      <div class="fg"><label data-i18n="m.pass">Contraseña</label><div class="pass-wrap"><input type="password" id="lPass" placeholder="••••••••"><button type="button" class="eye-btn" onclick="togglePass('lPass',this)">👁</button></div><div class="fg-err" id="lPassErr">Ingresá tu contraseña.</div></div>
+      <div class="modal-fn" style="margin:-.4rem 0 .6rem;text-align:right"><button type="button" onclick="resetPassword()" data-i18n="m.forgot">¿Olvidaste tu contraseña?</button></div>
+      <button class="form-submit" onclick="doLogin()" data-i18n="m.loginBtn">Ingresar</button>
+      <div class="modal-fn"><span data-i18n="m.noAccount">¿No tenés cuenta?</span> <button onclick="switchTab('register')" data-i18n="m.registerFree">Registrate gratis</button></div>
     </div>
     <div id="fRegister" class="hidden">
-      <div class="fg"><label>Nombre de usuario</label><input type="text" id="rUser" placeholder="gamer123"><div class="fg-err" id="rUserErr">Mínimo 3 caracteres.</div></div>
-      <div class="fg"><label>Email</label><input type="email" id="rEmail" placeholder="tu@email.com"><div class="fg-err" id="rEmailErr">Email inválido.</div></div>
-      <div class="fg"><label>Contraseña</label><div class="pass-wrap"><input type="password" id="rPass" placeholder="Mínimo 6 caracteres"><button type="button" class="eye-btn" onclick="togglePass('rPass',this)">👁</button></div><div class="fg-err" id="rPassErr">Mínimo 6 caracteres.</div></div>
-      <div class="fg"><label>Confirmar contraseña</label><div class="pass-wrap"><input type="password" id="rPass2" placeholder="Repetí la contraseña"><button type="button" class="eye-btn" onclick="togglePass('rPass2',this)">👁</button></div><div class="fg-err" id="rPass2Err">Las contraseñas no coinciden.</div></div>
-      <button class="form-submit" onclick="doRegister()">Crear cuenta</button>
-      <div class="modal-fn">¿Ya tenés cuenta? <button onclick="switchTab('login')">Iniciá sesión</button></div>
+      <div class="fg"><label data-i18n="m.user">Nombre de usuario</label><input type="text" id="rUser" placeholder="gamer123"><div class="fg-err" id="rUserErr">Mínimo 3 caracteres.</div></div>
+      <div class="fg"><label data-i18n="m.email">Email</label><input type="email" id="rEmail" placeholder="tu@email.com" data-i18n-ph="m.ph.email"><div class="fg-err" id="rEmailErr">Email inválido.</div></div>
+      <div class="fg"><label data-i18n="m.pass">Contraseña</label><div class="pass-wrap"><input type="password" id="rPass" placeholder="Mínimo 6 caracteres" data-i18n-ph="m.ph.pass6"><button type="button" class="eye-btn" onclick="togglePass('rPass',this)">👁</button></div><div class="fg-err" id="rPassErr">Mínimo 6 caracteres.</div></div>
+      <div class="fg"><label data-i18n="m.confirm">Confirmar contraseña</label><div class="pass-wrap"><input type="password" id="rPass2" placeholder="Repetí la contraseña" data-i18n-ph="m.ph.pass2"><button type="button" class="eye-btn" onclick="togglePass('rPass2',this)">👁</button></div><div class="fg-err" id="rPass2Err">Las contraseñas no coinciden.</div></div>
+      <button class="form-submit" onclick="doRegister()" data-i18n="m.createBtn">Crear cuenta</button>
+      <div class="modal-fn"><span data-i18n="m.haveAccount">¿Ya tenés cuenta?</span> <button onclick="switchTab('login')" data-i18n="m.signIn">Iniciá sesión</button></div>
     </div>
     <div class="modal-success" id="mSuccess">
       <div class="ms-icon">✅</div>
@@ -323,6 +388,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-check-compat.js"></script>
 <script src="app.js"></script>
 
 </body>
