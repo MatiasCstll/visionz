@@ -12,15 +12,6 @@
                  Si ponés una URL/ruta → muestra la imagen
                  Al hacer click en una imagen se abre un
                  lightbox con navegación (← →)
-
-   Opcionales:
-   banner      → imagen horizontal para el detalle y el carrusel
-   descEn / cardDescEn → descripciones en inglés
-   trailer     → tráiler del detalle: número de video de Steam
-                 ('256768283'), un link a un .mp4, o 'yt:ID' de YouTube
-   nivel       → requisitos 'bajo', 'medio' o 'alto'. Si no lo ponés
-                 se calcula solo por la RAM (≤2 GB bajo, ≤6 GB medio,
-                 más de 6 GB alto)
 ════════════════════════════════════════════════════ */
 let GAMES = [
   {
@@ -91,7 +82,6 @@ let GAMES = [
       'https://playmania438.com.ar/wp-content/uploads/2021/05/maxresdefault.jpg',
       'https://images.igdb.com/igdb/image/upload/t_screenshot_huge/sc8fj6.jpg',
     ],
-    trailer:'256803629',
     desc:'PES 2021 es la entrega definitiva de fútbol de simulación. Con el mejor control de balón, física realista y modos como Master League y myClub. Incluye las mejores ligas y equipos del mundo.',
     descEn:'PES 2021 is the definitive football simulation entry. The best ball control, realistic physics and modes like Master League and myClub. Features the best leagues and teams in the world.',
     cardDesc:'Fútbol de simulación. El control de balón perfecto.',
@@ -111,7 +101,6 @@ let GAMES = [
       'https://cl2.buscafs.com/www.levelup.com/public/uploads/images/160529.jpg',
       'https://gaming-cdn.com/images/products/6530/screenshot/resident-evil-4-5-6-pack-pc-steam-wallpaper-3.jpg?v=1751027155',
     ],
-    trailer:'2030736',
     desc:'Leon S. Kennedy viaja a un remoto pueblo de España para rescatar a la hija del presidente. Con una cámara sobre el hombro que revolucionó los shooters, combate intenso y atmósfera opresiva. Una obra maestra absoluta.',
     descEn:"Leon S. Kennedy travels to a remote village in Spain to rescue the president's daughter. With an over-the-shoulder camera that revolutionized shooters, intense combat and an oppressive atmosphere. An absolute masterpiece.",
     cardDesc:'Tensión pura. Leon S. Kennedy en su peor pesadilla.',
@@ -131,7 +120,6 @@ let GAMES = [
       'https://wallpapers.com/images/high/modern-warfare-eiffel-tower-defense-tm92kksnvfq69izi.webp',
       'https://cdn.mobygames.com/promos/6680579-call-of-duty-4-modern-warfare-screenshot-xbox-360-single-player-.jpg',
     ],
-    trailer:'998',
     desc:'Call of Duty 4: Modern Warfare cambió para siempre los shooters en primera persona. Campaña cinematográfica y multijugador competitivo adictivo que marcó una era y sentó las bases de los CoD modernos.',
     descEn:'Call of Duty 4: Modern Warfare changed first-person shooters forever. A cinematic campaign and addictive competitive multiplayer that defined an era and laid the foundation for modern CoD.',
     cardDesc:'El FPS que cambió todo. Campaña épica y multi brutal.',
@@ -181,7 +169,7 @@ let GAMES = [
     descEn:'The Witcher 3: Wild Hunt is considered one of the best RPGs ever made. You are Geralt of Rivia, a monster hunter searching for his adopted daughter in a huge open world full of moral choices, hunting contracts and an epic story. The GOTY edition includes the Hearts of Stone and Blood and Wine expansions.',
     cardDesc:'El RPG definitivo. Geralt en un mundo oscuro y enorme.',
     cardDescEn:'The definitive RPG. Geralt in a dark, massive world.',
-    link:'LINK_DEL_JUEGO', hot:true, isNew:true,
+    link:'https://linksterr.com/r/egcdrw/', hot:true, isNew:true,
     reqs:[{l:'RAM',v:'6 GB'},{l:'CPU',v:'Intel Core i5-2500K / AMD Phenom II X4 940'},{l:'GPU',v:'NVIDIA GTX 660 / AMD Radeon HD 7870'},{l:'Disco',v:'50 GB'},{l:'SO',v:'Windows 7/8/10 (64-bit)'},{l:'DirectX',v:'v11'}]
   },
   {
@@ -196,12 +184,11 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/ss_d64b646612ab1402bdda8e400672aa0dbcb352ea.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/ss_b6bb6f79278505b3f48567f08c21f7a0eb171c68.1920x1080.jpg',
     ],
-    trailer:'256672927',
     desc:'Skyrim es el RPG de mundo abierto por excelencia. Sos el Sangre de Dragón, el único capaz de absorber las almas de los dragones que regresaron a Tamriel. Explorá montañas, mazmorras y ciudades, unite a gremios y armá tu personaje como quieras. Miles de mods disponibles.',
     descEn:'Skyrim is the ultimate open-world RPG. You are the Dragonborn, the only one able to absorb the souls of the dragons that have returned to Tamriel. Explore mountains, dungeons and cities, join guilds and build your character however you like. Thousands of mods available.',
     cardDesc:'Dragones, magia y libertad total en Tamriel.',
     cardDescEn:'Dragons, magic and total freedom in Tamriel.',
-    link:'LINK_DEL_JUEGO', hot:true, isNew:false,
+    link:'https://linksterr.com/r/syyzmh/', hot:true, isNew:false,
     reqs:[{l:'RAM',v:'8 GB'},{l:'CPU',v:'Intel i5-750 / AMD Phenom II X4-945'},{l:'GPU',v:'NVIDIA GTX 470 1GB / AMD HD 7870 2GB'},{l:'Disco',v:'12 GB'},{l:'SO',v:'Windows 7/8.1/10 (64-bit)'},{l:'DirectX',v:'v11'}]
   },
   {
@@ -220,7 +207,7 @@ let GAMES = [
     descEn:'In the post-apocalyptic Mojave Desert, you are a courier left for dead. Travel through New Vegas, choose between warring factions and decide the fate of the region. One of the best stories and dialogue systems in the series.',
     cardDesc:'Post-apocalipsis en el desierto de Mojave.',
     cardDescEn:'Post-apocalypse in the Mojave Desert.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://linksterr.com/r/vsktn0/', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'Dual Core 2.0 GHz'},{l:'GPU',v:'NVIDIA GeForce 6 / ATI X1300 (256 MB)'},{l:'Disco',v:'10 GB'},{l:'SO',v:'Windows XP/Vista/7/10'},{l:'DirectX',v:'v9.0c'}]
   },
   {
@@ -235,12 +222,11 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570940/ss_92b2ba470cbfdb8839b649b3f478e5531dd81a17.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570940/ss_626cc310dc9ac7fb146011582c864a35e5f3e381.1920x1080.jpg',
     ],
-    trailer:'256717685',
     desc:'El clásico que creó un género. Dark Souls te lleva a Lordran, un reino en ruinas lleno de enemigos implacables y jefes memorables. Combate exigente, mundo interconectado y una sensación de logro como ningún otro juego. Versión remasterizada a 60 FPS.',
     descEn:'The classic that created a genre. Dark Souls takes you to Lordran, a ruined kingdom full of relentless enemies and memorable bosses. Demanding combat, an interconnected world and a sense of achievement like no other game. Remastered version at 60 FPS.',
     cardDesc:'Morí, aprendé, volvé a intentarlo. El RPG más desafiante.',
     cardDescEn:'Die, learn, try again. The most challenging RPG.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://linksterr.com/r/zlp972/', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'6 GB'},{l:'CPU',v:'Intel Core i5-2300 / AMD FX-6300'},{l:'GPU',v:'NVIDIA GTX 460 / AMD Radeon HD 6870'},{l:'Disco',v:'8 GB'},{l:'SO',v:'Windows 7/8.1/10 (64-bit)'},{l:'DirectX',v:'v11'}]
   },
 
@@ -257,7 +243,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_0e499071a60a20b24149ad65a8edb769250f2921.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_ffb00abd45012680e4f209355ec81f961b6dd1fb.1920x1080.jpg',
     ],
-    trailer:'257074217',
     desc:'Gordon Freeman vuelve en City 17, una ciudad bajo el control de la Alianza. Half-Life 2 revolucionó los FPS con su motor de física, la Gravity Gun y una narrativa sin cortes. Un clásico obligatorio que sigue vigente.',
     descEn:'Gordon Freeman returns in City 17, a city under the control of the Combine. Half-Life 2 revolutionized FPS games with its physics engine, the Gravity Gun and seamless storytelling. A must-play classic that still holds up.',
     cardDesc:'Gordon Freeman y la Gravity Gun. Un clásico eterno.',
@@ -277,12 +262,11 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220240/d2cc64ad335dd754966a8a41e755be44ecf9d5df/ss_d2cc64ad335dd754966a8a41e755be44ecf9d5df.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220240/1c4a54582fefd79dbc5fa0bd81d20a5ab66ad4e3/ss_1c4a54582fefd79dbc5fa0bd81d20a5ab66ad4e3.1920x1080.jpg',
     ],
-    trailer:'2028177',
     desc:'Jason Brody queda atrapado en una isla tropical controlada por piratas y el inolvidable Vaas. Mundo abierto, caza, sigilo y acción explosiva en uno de los shooters más queridos de la década.',
     descEn:'Jason Brody is stranded on a tropical island controlled by pirates and the unforgettable Vaas. Open world, hunting, stealth and explosive action in one of the most beloved shooters of the decade.',
     cardDesc:'¿Te dije alguna vez la definición de locura?',
     cardDescEn:'Did I ever tell you the definition of insanity?',
-    link:'LINK_DEL_JUEGO', hot:true, isNew:false,
+    link:'https://linksterr.com/r/86wbsz/', hot:true, isNew:false,
     reqs:[{l:'RAM',v:'4 GB'},{l:'CPU',v:'Intel Core 2 Duo E6700 / AMD Athlon64 X2 6000+'},{l:'GPU',v:'512 MB DirectX 9.0c'},{l:'Disco',v:'15 GB'},{l:'SO',v:'Windows 7/8/10'},{l:'DirectX',v:'v9.0c'}]
   },
   {
@@ -301,7 +285,7 @@ let GAMES = [
     descEn:'Beneath the ocean lies Rapture, a utopia turned nightmare. Combine weapons and plasmids to survive the Splicers and Big Daddies in an FPS with one of the greatest stories ever told.',
     cardDesc:'Rapture te espera bajo el mar. ¿Quisieras...?',
     cardDescEn:'Rapture awaits beneath the sea. Would you kindly...?',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://linksterr.com/r/6skjpm/', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'4 GB'},{l:'CPU',v:'Intel Core 2 Duo E4600'},{l:'GPU',v:'NVIDIA GT 240 / AMD HD 4670 (512 MB)'},{l:'Disco',v:'25 GB'},{l:'SO',v:'Windows 7/10 (64-bit)'},{l:'DirectX',v:'v11'}]
   },
 
@@ -337,12 +321,11 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/200260/ss_52f74c49e620871e78d09185d22f89a98438cfe4.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/200260/ss_8ff38eebd84802a8f9baf8a6be73bb7803f47ee2.1920x1080.jpg',
     ],
-    trailer:'81216',
     desc:'Arkham City es una prisión gigante en el corazón de Gotham. Batman enfrenta al Joker, Two-Face, el Pingüino y muchos más en un mundo abierto con el sistema de combate freeflow que marcó una época.',
     descEn:'Arkham City is a giant prison in the heart of Gotham. Batman faces the Joker, Two-Face, the Penguin and many more in an open world with the freeflow combat system that defined an era.',
     cardDesc:'Sé Batman. Gotham entera es tu campo de batalla.',
     cardDescEn:'Be the Batman. All of Gotham is your battlefield.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://linksterr.com/r/top0xc/', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'Intel Core 2 Duo 2.4 GHz / AMD Athlon X2 4800+'},{l:'GPU',v:'NVIDIA 8800 / ATI 3850 (512 MB)'},{l:'Disco',v:'18 GB'},{l:'SO',v:'Windows XP/Vista/7/10'},{l:'DirectX',v:'v9.0c'}]
   },
   {
@@ -357,12 +340,11 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/ss_f1bff24d3967a21d303d95e11ed892e3d9113057.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/ss_3670ba72c7e3e9c3c3225547ef2c1053504e62b8.1920x1080.jpg',
     ],
-    trailer:'256864004',
     desc:'Kratos deja atrás su pasado griego y vive en las tierras nórdicas junto a su hijo Atreus. Juntos emprenden un viaje para cumplir la última voluntad de su esposa. Combate brutal con el Hacha Leviatán y una historia emotiva.',
     descEn:"Kratos leaves his Greek past behind and lives in the Norse lands with his son Atreus. Together they set out on a journey to fulfill his wife's last wish. Brutal combat with the Leviathan Axe and an emotional story.",
     cardDesc:'Kratos y Atreus en la mitología nórdica.',
     cardDescEn:'Kratos and Atreus in Norse mythology.',
-    link:'LINK_DEL_JUEGO', hot:true, isNew:true,
+    link:'https://linksterr.com/r/oeo7ke/', hot:true, isNew:true,
     reqs:[{l:'RAM',v:'8 GB'},{l:'CPU',v:'Intel i5-2500K / AMD Ryzen 3 1200'},{l:'GPU',v:'NVIDIA GTX 960 4GB / AMD R9 290X 4GB'},{l:'Disco',v:'70 GB'},{l:'SO',v:'Windows 10 (64-bit)'},{l:'DirectX',v:'v11'}]
   },
 
@@ -379,7 +361,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/203160/ss_cd920308517efb19c11b44e251af89e40fb412d5.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/203160/ss_8f34a87469f3a0c73049cbd0469bdff6e3d22713.1920x1080.jpg',
     ],
-    trailer:'256663323',
     desc:'El origen de Lara Croft. Tras un naufragio, una joven Lara queda varada en una isla misteriosa y debe convertirse en una sobreviviente. Exploración, tumbas, escalada y combate en un reinicio espectacular de la saga.',
     descEn:'The origin of Lara Croft. After a shipwreck, a young Lara is stranded on a mysterious island and must become a survivor. Exploration, tombs, climbing and combat in a spectacular reboot of the series.',
     cardDesc:'El nacimiento de una sobreviviente: Lara Croft.',
@@ -399,7 +380,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/33230/ss_ef44b9f703f71acfdeb728a497390d397084ee35.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/33230/ss_d3967a58038cc5e59332bb0043ab1ca343112bc6.1920x1080.jpg',
     ],
-    trailer:'5365',
     desc:'Ezio Auditore da Firenze busca venganza en la Italia del Renacimiento. Recorré Florencia y Venecia, conocé a Leonardo da Vinci y convertite en un maestro asesino. Para muchos, el mejor de toda la saga.',
     descEn:'Ezio Auditore da Firenze seeks revenge in Renaissance Italy. Roam Florence and Venice, meet Leonardo da Vinci and become a master assassin. For many, the best in the entire series.',
     cardDesc:'Ezio Auditore y la Italia del Renacimiento.',
@@ -419,7 +399,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/ss_6a4f5afdaa98402de9cf0b59fed27bab3256a6f4.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/ss_0cdd90fafc160b52d08b303d205f9fd4e83cf164.1920x1080.jpg',
     ],
-    trailer:'5787',
     desc:'Chell despierta en los laboratorios de Aperture Science y GLaDOS sigue ahí. Resolvé puzzles con la pistola de portales en una campaña llena de humor y un cooperativo para dos jugadores brillante.',
     descEn:'Chell wakes up in the Aperture Science labs and GLaDOS is still there. Solve puzzles with the portal gun in a campaign full of humor and a brilliant two-player co-op.',
     cardDesc:'Puzzles con portales y el humor de GLaDOS.',
@@ -459,7 +438,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1328660/ss_849818f935c563a87dcb8e1468774c9719f8137c.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1328660/ss_ac6b43bb488664c12101dd0b7bf3b544b508abc1.1920x1080.jpg',
     ],
-    trailer:'256808880',
     desc:'Persecuciones a toda velocidad en Seacrest County. Jugá como corredor o como policía, con autos exóticos, armas de persecución y gráficos remasterizados. Incluye todo el contenido descargable original.',
     descEn:'High-speed pursuits in Seacrest County. Play as a racer or a cop, with exotic cars, pursuit tech and remastered graphics. Includes all the original downloadable content.',
     cardDesc:'Corredor o policía. Persecuciones a fondo.',
@@ -481,7 +459,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/813780/ss_1033024a26f0a7ed277865201aed9bb471b54320.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/813780/ss_83253675c7af3ad5f3f2c1dc2c43c667000e0c4a.1920x1080.jpg',
     ],
-    trailer:'256753456',
     desc:'El rey de la estrategia en tiempo real. Construí tu civilización, recolectá recursos, armá ejércitos y conquistá a tus rivales a lo largo de mil años de historia. La Definitive Edition trae gráficos 4K, nuevas civilizaciones y campañas.',
     descEn:'The king of real-time strategy. Build your civilization, gather resources, raise armies and conquer your rivals across a thousand years of history. The Definitive Edition brings 4K graphics, new civilizations and campaigns.',
     cardDesc:'Mil años de historia. Construí, conquistá, dominá.',
@@ -501,7 +478,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/266840/ss_8cd2910cdd8001dd5de2c884a85eb27529a6329d.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/266840/ss_c4a186273ae304a51f22c6fc4a480a717799f833.1920x1080.jpg',
     ],
-    trailer:'2031737',
     desc:'Estrategia en tiempo real con dioses y criaturas mitológicas. Elegí entre griegos, egipcios, nórdicos y atlantes, invocá poderes divinos y mandá minotauros, cíclopes y titanes a la batalla.',
     descEn:'Real-time strategy with gods and mythological creatures. Choose between Greeks, Egyptians, Norse and Atlanteans, call down divine powers and send minotaurs, cyclopes and titans into battle.',
     cardDesc:'Dioses, titanes y mitología en guerra.',
@@ -523,7 +499,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/389730/ss_40faa5ba39563cb899f1ab2ddd2afbf8b451d52f.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/389730/ss_ed3246605518907954918eb06e90705249be77d6.1920x1080.jpg',
     ],
-    trailer:'256807403',
     desc:'El final de la saga Mishima. Tekken 7 combina el combate 3D clásico con nuevas mecánicas como Rage Arts y Power Crush. Más de 30 personajes, modo historia cinemático y online competitivo.',
     descEn:'The end of the Mishima saga. Tekken 7 combines classic 3D fighting with new mechanics like Rage Arts and Power Crush. Over 30 characters, a cinematic story mode and competitive online play.',
     cardDesc:'La guerra de los Mishima llega a su fin.',
@@ -543,7 +518,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/307780/ss_03f7f4582a1036cbcbca1a4c87e14c7831b5f424.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/307780/ss_1f002ef5eb037c81e92bcbc29306fc91d4b6d26f.1920x1080.jpg',
     ],
-    trailer:'2037015',
     desc:'Peleas brutales, Fatalities y Brutalities. Mortal Kombat X trae tres variantes de combate por personaje, un modo historia con nuevos guerreros y la edición XL con todos los personajes extra como Predator, Alien y Jason.',
     descEn:'Brutal fights, Fatalities and Brutalities. Mortal Kombat X brings three combat variations per character, a story mode with new warriors and the XL edition with every bonus character like Predator, Alien and Jason.',
     cardDesc:'¡Finish him! Fatalities y combate brutal.',
@@ -563,7 +537,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/45760/ss_97b7bc50b6b29616b7eb5be03ae8b83eebfd83c5.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/45760/ss_387c57ccb3d4b2203df6595f751390b9d95596ee.1920x1080.jpg',
     ],
-    trailer:'2033898',
     desc:'La versión definitiva de Street Fighter IV con 44 luchadores, todos los escenarios y modos. Ryu, Ken, Chun-Li y compañía en el juego de pelea 2D que revivió el género.',
     descEn:'The definitive version of Street Fighter IV with 44 fighters and every stage and mode. Ryu, Ken, Chun-Li and company in the 2D fighting game that revived the genre.',
     cardDesc:'Hadouken! 44 luchadores clásicos.',
@@ -585,7 +558,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_29b3b4f2a3994c889f6fc12e0781d9d4726ef33f.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_9488e329bb42d792a059fb44cb7135d25b6262f5.1920x1080.jpg',
     ],
-    trailer:'5952',
     desc:'Cuatro sobrevivientes contra hordas de infectados en el sur de Estados Unidos. Cooperativo para 4 jugadores, infectados especiales, armas cuerpo a cuerpo y el Director IA que hace cada partida distinta.',
     descEn:'Four survivors against hordes of infected in the American South. 4-player co-op, special infected, melee weapons and the AI Director that makes every run different.',
     cardDesc:'Cooperativo zombie para 4. Nunca dos partidas iguales.',
@@ -605,7 +577,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238320/ss_1b4cc24b78f404c69fa18d42e5d5b00873c8852f.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238320/ss_c629aed2b6d7751222acb9bef1022338f9bc6b03.1920x1080.jpg',
     ],
-    trailer:'2029178',
     desc:'Un periodista entra al Mount Massive Asylum para investigar a una corporación. Sin armas, solo con una cámara de visión nocturna, tenés que correr y esconderte. Uno de los juegos de terror más intensos que existen.',
     descEn:'A journalist enters Mount Massive Asylum to investigate a corporation. With no weapons, only a night-vision camera, you have to run and hide. One of the most intense horror games out there.',
     cardDesc:'Sin armas. Solo una cámara y el miedo.',
@@ -630,7 +601,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/ss_2744f112fa060320d191a50e8b3a92441a648a56.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/ss_da39c16db175f6973770bae6b91d411251763152.1920x1080.jpg',
     ],
-    trailer:'257109786',
     desc:'Michael, Franklin y Trevor son tres criminales muy distintos que terminan unidos por una serie de golpes cada vez más arriesgados. Los Santos y el condado de Blaine forman uno de los mundos abiertos más grandes y detallados jamás creados, con autos, aviones, misiones secundarias y el modo GTA Online.',
     descEn:'Michael, Franklin and Trevor are three very different criminals pulled together by a series of increasingly risky heists. Los Santos and Blaine County make up one of the largest and most detailed open worlds ever made, packed with cars, planes, side missions and GTA Online.',
     cardDesc:'Tres criminales, un golpe perfecto y Los Santos.',
@@ -688,7 +658,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/ss_bac60bacbf5da8945103648c08d27d5e202444ca.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/ss_668dafe477743f8b50b818d5bbfcec669e9ba93e.1920x1080.jpg',
     ],
-    trailer:'256768248',
     desc:'Estados Unidos, 1899. Arthur Morgan y la banda de Van der Linde huyen de la ley tras un golpe que salió mal. Un mundo abierto gigantesco y lleno de detalles, con caza, pesca, duelos, robos y una de las historias más emotivas de los videojuegos. Incluye Red Dead Online.',
     descEn:'America, 1899. Arthur Morgan and the Van der Linde gang are on the run after a robbery gone wrong. A massive, incredibly detailed open world with hunting, fishing, duels, heists and one of the most moving stories in gaming. Red Dead Online included.',
     cardDesc:'Arthur Morgan y el fin del Lejano Oeste.',
@@ -708,7 +677,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1030830/ss_f6d60fcb54fce33e1365861d472508a7f6350d2a.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1030830/ss_dc2a279273bd3f92401bda589e3220f119c40dcb.1920x1080.jpg',
     ],
-    trailer:'256785635',
     desc:'Vito Scaletta vuelve de la Segunda Guerra Mundial y se mete en la mafia de Empire Bay para pagar las deudas de su familia. Una historia de gánsteres al estilo de las películas clásicas, ahora remasterizada en 4K con todos los DLC incluidos.',
     descEn:"Vito Scaletta returns from World War II and joins the Empire Bay mob to pay off his family's debts. A gangster story straight out of classic movies, now remastered in 4K with every DLC included.",
     cardDesc:'Vito Scaletta y la mafia de los años 40 y 50.',
@@ -728,12 +696,11 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/204100/ss_b442d79fbc45be2cb773d3de6f7b40fa5f126588.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/204100/ss_4ae054ce0dd3563aea20d8f76630ea4caff878d2.1920x1080.jpg',
     ],
-    trailer:'81721',
     desc:'Años después de Nueva York, Max Payne trabaja como guardaespaldas de una familia millonaria en São Paulo. Cuando secuestran a la esposa de su jefe, todo se desmorona. Tiroteos cinematográficos, bullet time mejorado y una narrativa oscura con el sello de Rockstar.',
     descEn:"Years after New York, Max Payne works as a bodyguard for a wealthy family in São Paulo. When his boss's wife is kidnapped, everything falls apart. Cinematic gunfights, improved bullet time and a dark story with Rockstar's signature style.",
     cardDesc:'Max vuelve, más roto que nunca, en São Paulo.',
     cardDescEn:'Max is back and more broken than ever, in São Paulo.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://linksterr.com/r/c1ey6r/', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'Intel Dual Core 2.4 GHz / AMD Dual Core 2.6 GHz'},{l:'GPU',v:'NVIDIA 8600 GT 512MB / Radeon HD 3400'},{l:'Disco',v:'35 GB'},{l:'SO',v:'Windows 7/10 (64-bit)'},{l:'DirectX',v:'v9.0c'}]
   },
   {
@@ -748,7 +715,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/601150/ss_4ce180ed8979a51c72de51f985e9e9ba13500508.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/601150/ss_e2be70565f94a7f6c392cccddce08c67f2f87612.1920x1080.jpg',
     ],
-    trailer:'256814529',
     desc:'Un árbol demoníaco gigante aparece en Red Grave City y Nero, Dante y el misterioso V tienen que detener la invasión. Combate frenético y estiloso, combos infinitos y un rango de estilo que premia cada movimiento. La acción hack and slash en su máxima expresión.',
     descEn:'A giant demonic tree sprouts in Red Grave City and Nero, Dante and the mysterious V must stop the invasion. Frantic, stylish combat, endless combos and a style meter that rewards every move. Hack and slash action at its finest.',
     cardDesc:'Dante, Nero y V contra un ejército demoníaco.',
@@ -768,7 +734,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1817070/ss_427677cf78195df94702f0a963cd9eaeb9d8935a.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1817070/ss_dfba6f2477bfa42be69ddfdffbd421d3943d20bf.1920x1080.jpg',
     ],
-    trailer:'256900369',
     desc:'Peter Parker lleva ocho años como Spider-Man y tiene que enfrentar a Mister Negativo, Kingpin y una lista de villanos clásicos. Recorré Manhattan colgándote de las telarañas con un sistema de movimiento increíble y un combate ágil. Incluye la expansión La ciudad que nunca duerme.',
     descEn:'Peter Parker has been Spider-Man for eight years and must face Mister Negative, Kingpin and a roster of classic villains. Swing across Manhattan with an amazing traversal system and fluid combat. Includes The City That Never Sleeps expansion.',
     cardDesc:'Columpiate por Nueva York como Peter Parker.',
@@ -788,7 +753,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/ss_2685dd844a2a523b6c7ec207d46a538db6a908cd.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/ss_15f0e9982621aed44900215ad283811af0779b1d.1920x1080.jpg',
     ],
-    trailer:'256806899',
     desc:'En el Japón feudal de la era Sengoku, un shinobi conocido como Lobo busca venganza y rescatar a su joven señor. Combate de espadas basado en desviar golpes, un brazo prostético con herramientas y la posibilidad de resucitar. Ganador del premio a Juego del Año 2019.',
     descEn:'In the Sengoku era of feudal Japan, a shinobi known as Wolf seeks revenge and to rescue his young lord. Sword combat built around deflecting attacks, a prosthetic arm full of tools and the ability to resurrect. Winner of Game of the Year 2019.',
     cardDesc:'Un shinobi, una katana y duelos a muerte.',
@@ -808,7 +772,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268910/ss_615455299355eaf552c638c7ea5b24a8b46e02dd.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268910/ss_483fb089be0093beeef03525276803a9ca4f66a1.1920x1080.jpg',
     ],
-    trailer:'256894191',
     desc:'Cuphead y Mugman perdieron una apuesta con el Diablo y ahora tienen que cobrar las deudas de sus almas. Un run and gun centrado en jefes, dibujado a mano al estilo de los dibujos animados de los años 30, con jazz en vivo. Difícil, hermoso y se puede jugar de a dos.',
     descEn:'Cuphead and Mugman lost a bet with the Devil and now must collect soul debts to pay him back. A boss-focused run and gun hand-drawn in the style of 1930s cartoons, with live jazz. Tough, gorgeous and playable in local co-op.',
     cardDesc:'Jefes imposibles con estilo de dibujo animado de los 30.',
@@ -887,7 +850,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10180/ss_9a8893322d2e4718bb3ad762fa2d9deb07a012a6.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10180/ss_5e5937d034aeec6baad838229c2466165e4e0950.1920x1080.jpg',
     ],
-    trailer:'5470',
     desc:'La secuela de Modern Warfare lleva la guerra de Makarov a todo el mundo, desde las montañas de Afganistán hasta las calles de Washington. Una campaña explosiva, el modo cooperativo Spec Ops y uno de los multijugadores más recordados de la saga.',
     descEn:'The sequel to Modern Warfare takes the war against Makarov around the globe, from the mountains of Afghanistan to the streets of Washington. An explosive campaign, the Spec Ops co-op mode and one of the most iconic multiplayers in the series.',
     cardDesc:'La Task Force 141 y el capitán Price están de vuelta.',
@@ -907,7 +869,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/42700/ss_8cc1d7d93af1bf0e87ff3d04bddc59b359471235.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/42700/ss_e3ad24dd02143ffbbbf17467fde104b462c9120e.1920x1080.jpg',
     ],
-    trailer:'5908',
     desc:'Alex Mason es un agente de operaciones encubiertas durante la Guerra Fría, y sus recuerdos esconden un secreto que puede cambiar la historia. Campaña llena de giros, multijugador con mejoras de armas y el famoso modo Zombies con el mapa Kino der Toten.',
     descEn:'Alex Mason is a black ops agent during the Cold War, and his memories hide a secret that could change history. A twist-filled campaign, multiplayer with weapon upgrades and the famous Zombies mode featuring Kino der Toten.',
     cardDesc:'Guerra Fría, operaciones secretas y Zombies.',
@@ -927,7 +888,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1238860/ss_03f32767fd67f15723ffcd68c92e425265a0ca3d.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1238860/ss_006c4f68fb8389d8753bb87ba6a37903591d1ec1.1920x1080.jpg',
     ],
-    trailer:'256787502',
     desc:'Batallas masivas de hasta 64 jugadores con tanques, aviones, helicópteros y barcos. El sistema Levolution permite derrumbar edificios enteros y cambiar el mapa en plena partida. La Premium Edition incluye todas las expansiones con mapas y armas extra.',
     descEn:'Massive battles for up to 64 players with tanks, jets, helicopters and boats. The Levolution system lets you bring down entire buildings and reshape the map mid-match. The Premium Edition includes every expansion with extra maps and weapons.',
     cardDesc:'Guerra total para 64 jugadores con mapas destructibles.',
@@ -947,7 +907,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/298110/80837f83feb636e6747a9ddc24bee20003c714d0/ss_80837f83feb636e6747a9ddc24bee20003c714d0.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/298110/994c96b823374e576cb5d6513f8a976c1a41efc8/ss_994c96b823374e576cb5d6513f8a976c1a41efc8.1920x1080.jpg',
     ],
-    trailer:'2035525',
     desc:'Ajay Ghale viaja a Kyrat, una región del Himalaya gobernada por el carismático y despiadado Pagan Min. Mundo abierto con montañas, templos, girocópteros, elefantes de guerra y un cooperativo para dos jugadores. Más grande y más loco que Far Cry 3.',
     descEn:'Ajay Ghale travels to Kyrat, a Himalayan region ruled by the charismatic and ruthless Pagan Min. An open world of mountains, temples, gyrocopters, war elephants and two-player co-op. Bigger and crazier than Far Cry 3.',
     cardDesc:'Kyrat, elefantes y el excéntrico Pagan Min.',
@@ -967,7 +926,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/782330/ss_7e6a2148321c8024285e3924903d8897cac95358.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/782330/ss_af3b43c4be0029b52ceefaf55ebe1918e2cb3471.1920x1080.jpg',
     ],
-    trailer:'257182101',
     desc:'Las legiones del infierno invadieron la Tierra y solo el Doom Slayer puede detenerlas. Combate brutal y velocísimo, con motosierra, lanzallamas y la Crucible Blade, y una banda sonora metalera que te pone a mil. El FPS de acción más intenso de los últimos años.',
     descEn:"Hell's armies have invaded Earth and only the Doom Slayer can stop them. Brutal, lightning-fast combat with chainsaw, flame belch and the Crucible Blade, backed by a metal soundtrack that never lets up. The most intense action FPS in years.",
     cardDesc:'Rip and tear: el Doom Slayer contra el infierno.',
@@ -987,7 +945,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/49520/ss_2f27a18562fbf4a91943c3968b35db5ac1caf5ad.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/49520/ss_c20610ab476bfe99172df77fe84f579d91e45a2b.1920x1080.jpg',
     ],
-    trailer:'2029699',
     desc:'Un shooter con elementos de rol donde cazás botín en el planeta Pandora para derrotar al Handsome Jack. Elegí entre varias clases, juntá millones de armas generadas al azar y jugá en cooperativo hasta con cuatro amigos. La GOTY incluye todas las campañas extra.',
     descEn:'A role-playing shooter where you hunt for loot across the planet Pandora to take down Handsome Jack. Pick a class, collect millions of randomly generated guns and play co-op with up to four friends. The GOTY edition includes every extra campaign.',
     cardDesc:'Millones de armas, humor y cooperativo en Pandora.',
@@ -1007,7 +964,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/412020/ss_bd875dbf865e70cda73a7cd6b132cadacfdb768b.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/412020/ss_7ef17676a804b0d646c38583ba0f68f33b3f3d9e.1920x1080.jpg',
     ],
-    trailer:'256833673',
     desc:'Artyom deja los túneles del metro de Moscú y emprende un viaje en el tren Aurora por una Rusia devastada por la guerra nuclear. Mezcla de shooter y supervivencia con zonas abiertas, mutantes, crafteo y un ciclo de día y noche. Un viaje atmosférico de un año entero.',
     descEn:'Artyom leaves the Moscow metro tunnels and sets off on the Aurora train across a Russia devastated by nuclear war. A blend of shooter and survival with open areas, mutants, crafting and a day-night cycle. An atmospheric journey spanning a whole year.',
     cardDesc:'Escapá de Moscú en tren por la Rusia post-nuclear.',
@@ -1029,7 +985,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/377160/ss_910437ac708aed7c028f6e43a6224c633d086b0a.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/377160/ss_f649b8e57749f380cca225db5074edbb1e06d7f5.1920x1080.jpg',
     ],
-    trailer:'256658080',
     desc:'Sos el único sobreviviente del Refugio 111 y salís a un Boston devastado por la guerra nuclear buscando a tu hijo. Explorá la Commonwealth, armá asentamientos, modificá armas y servoarmaduras y elegí entre facciones. La GOTY incluye los seis DLC como Far Harbor.',
     descEn:'You are the sole survivor of Vault 111, stepping out into a nuclear-ravaged Boston to find your son. Explore the Commonwealth, build settlements, mod weapons and power armor and choose between factions. The GOTY edition includes all six DLCs like Far Harbor.',
     cardDesc:'Salí del Refugio 111 y reconstruí Boston.',
@@ -1049,7 +1004,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22370/ss_d770133d0a0c1b9b73fa31f20f29fe6617b73cfb.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22370/ss_2405f21839a5cec01918a5f6fe7cae0b80422107.1920x1080.jpg',
     ],
-    trailer:'5523',
     desc:'Naciste en el Refugio 101, pero un día tu padre se escapa y salís a buscarlo al Yermo Capital, lo que queda de Washington tras la guerra nuclear. Sistema V.A.T.S., decisiones morales con consecuencias y cinco expansiones incluidas en la edición GOTY.',
     descEn:'You were born in Vault 101, but one day your father escapes and you head out to find him in the Capital Wasteland, what is left of Washington after nuclear war. V.A.T.S. combat, moral choices with real consequences and five expansions in the GOTY edition.',
     cardDesc:'El Yermo Capital te espera fuera del Refugio 101.',
@@ -1069,7 +1023,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_dcdac9e4b26ac0ee5248bfd2967d764fd00cdb42.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_3c41384a24d86dddd58a8f61db77f9dc0bfda8b5.1920x1080.jpg',
     ],
-    trailer:'256860537',
     desc:'Creado por FromSoftware junto a George R. R. Martin, Elden Ring te lleva a las Tierras Intermedias para convertirte en el Señor del Círculo. Un mundo abierto enorme lleno de secretos, jefes legendarios, magia e invocaciones, con montura y total libertad para explorar.',
     descEn:'Created by FromSoftware with George R. R. Martin, Elden Ring takes you to the Lands Between to become the Elden Lord. A vast open world full of secrets, legendary bosses, sorcery and summons, with a mount and total freedom to explore.',
     cardDesc:'Las Tierras Intermedias y el mejor souls en mundo abierto.',
@@ -1089,7 +1042,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/374320/ss_1c0fa39091901496d77cf4cecfea4ffb056d6452.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/374320/ss_1318a04ef11d87f38aebe6d47a96124f8f888ca8.1920x1080.jpg',
     ],
-    trailer:'256663134',
     desc:'Las llamas se apagan y el mundo cae en ruinas. Como Latente, tenés que devolver a los Señores de la Ceniza a sus tronos en el reino de Lothric. Combate más rápido, jefes increíbles y un diseño de niveles brillante. Incluye las expansiones Ashes of Ariandel y The Ringed City.',
     descEn:'The flames are fading and the world is falling into ruin. As the Unkindled, you must return the Lords of Cinder to their thrones in the kingdom of Lothric. Faster combat, incredible bosses and brilliant level design. Includes Ashes of Ariandel and The Ringed City.',
     cardDesc:'El cierre épico de la trilogía Souls.',
@@ -1109,7 +1061,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1328670/ss_4e226eb092381ba6c4ea9c164a1d18574c993a8a.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1328670/ss_8994024759b1e6afb09a99381637c8b6fb4e4075.1920x1080.jpg',
     ],
-    trailer:'256836016',
     desc:'La trilogía Mass Effect remasterizada en 4K con más de 40 DLC. Sos el comandante Shepard y tenés que reunir una tripulación para salvar la galaxia de los Segadores. Tus decisiones se arrastran de un juego al otro y definen el destino de tus compañeros.',
     descEn:'The Mass Effect trilogy remastered in 4K with over 40 DLCs. You are Commander Shepard, assembling a crew to save the galaxy from the Reapers. Your choices carry over from game to game and decide the fate of your squad.',
     cardDesc:'La trilogía completa del comandante Shepard.',
@@ -1129,7 +1080,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/ss_0e64170751e1ae20ff8fdb7001a8892fd48260e7.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/ss_af2804aa4bf35d4251043744412ce3b359a125ef.1920x1080.jpg',
     ],
-    trailer:'257081132',
     desc:'Sos V, un mercenario que busca un implante único que guarda la clave de la inmortalidad, y con él la conciencia de Johnny Silverhand. Explorá Night City, una megalópolis futurista llena de bandas, corporaciones y misiones. La Ultimate Edition incluye la expansión Phantom Liberty.',
     descEn:'You are V, a mercenary chasing a one-of-a-kind implant that holds the key to immortality, along with the mind of Johnny Silverhand. Explore Night City, a futuristic megalopolis of gangs, corporations and gigs. The Ultimate Edition includes the Phantom Liberty expansion.',
     cardDesc:'Night City, implantes y Keanu Reeves.',
@@ -1149,7 +1099,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/ss_73d93bea842b93914d966622104dcb8c0f42972b.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/ss_cf936d31061b58e98e0c646aee00e6030c410cda.1920x1080.jpg',
     ],
-    trailer:'256987424',
     desc:"Basado en Dungeons & Dragons, Baldur's Gate 3 te pone a juntar un grupo de aventureros mientras un parásito te consume desde adentro. Combate por turnos, decisiones que cambian todo y cooperativo online. Ganador del premio a Juego del Año 2023.",
     descEn:"Based on Dungeons & Dragons, Baldur's Gate 3 has you gather a party of adventurers while a parasite consumes you from within. Turn-based combat, choices that change everything and online co-op. Winner of Game of the Year 2023.",
     cardDesc:'El RPG del año: D&D con libertad absoluta.',
@@ -1169,7 +1118,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22330/0000009038.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22330/0000009039.1920x1080.jpg',
     ],
-    trailer:'5286',
     desc:'El emperador fue asesinado y las puertas de Oblivion se abren por toda la provincia de Cyrodiil. Libertad total para unirte a gremios, explorar mazmorras y forjar tu propio camino. La GOTY incluye las expansiones Knights of the Nine y Shivering Isles.',
     descEn:'The Emperor has been assassinated and the gates of Oblivion open across the province of Cyrodiil. Total freedom to join guilds, explore dungeons and forge your own path. The GOTY edition includes Knights of the Nine and Shivering Isles.',
     cardDesc:'Cerrá las puertas de Oblivion y salvá Cyrodiil.',
@@ -1189,7 +1137,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/ss_6b4986a37c7b5c185a796085c002febcdd5357b5.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/ss_0dfb20f6f09c196bfc317bd517dc430ed6e6a2a4.1920x1080.jpg',
     ],
-    trailer:'256769022',
     desc:'Viajá al Nuevo Mundo como cazador y enfrentate a criaturas enormes en ecosistemas vivos. Rastreá, cazá, conseguí materiales y fabricá armas y armaduras cada vez más poderosas. Catorce tipos de armas y cooperativo para cuatro jugadores. Incluye la expansión Iceborne.',
     descEn:'Travel to the New World as a hunter and take on huge creatures in living ecosystems. Track, hunt, gather materials and craft ever more powerful weapons and armor. Fourteen weapon types and four-player co-op. Includes the Iceborne expansion.',
     cardDesc:'Cazá monstruos gigantes en el Nuevo Mundo.',
@@ -1211,7 +1158,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/48190/ss_b5fd8f198c7fdaa80e064039abc5b38238a5cef0.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/48190/ss_69a80289cc74d51d1edd016c1fbf9766ea63126b.1920x1080.jpg',
     ],
-    trailer:'80643',
     desc:'La historia de Ezio Auditore continúa en Roma, el corazón del poder de los Borgia. Reclutá y entrená tu propia hermandad de asesinos, recuperá la ciudad barrio por barrio y descubrí los secretos de la Manzana del Edén. Incluye un multijugador original.',
     descEn:"Ezio Auditore's story continues in Rome, the heart of Borgia power. Recruit and train your own brotherhood of assassins, reclaim the city district by district and uncover the secrets of the Apple of Eden. Includes a unique multiplayer mode.",
     cardDesc:'Ezio y su hermandad contra los Borgia en Roma.',
@@ -1231,7 +1177,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242050/ss_afb6f91bc96b51d0684bb4cbec4389b49dcb96db.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242050/ss_c2ad7f22e27b8ffab2a896e543a82fc8f6e9a1a7.1920x1080.jpg',
     ],
-    trailer:'2030349',
     desc:"Edward Kenway es un pirata en la época dorada de la piratería en el Caribe. Navegá con tu barco, el Jackdaw, abordá galeones, buscá tesoros y explorá islas paradisíacas. Para muchos, el mejor Assassin's Creed gracias a su espectacular combate naval.",
     descEn:"Edward Kenway is a pirate in the golden age of Caribbean piracy. Sail your ship, the Jackdaw, board galleons, hunt for treasure and explore paradise islands. For many fans the best Assassin's Creed, thanks to its spectacular naval combat.",
     cardDesc:'Piratas, abordajes y el Caribe a toda vela.',
@@ -1251,7 +1196,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582160/ss_c4a4545f51c6836ac11c31427944fc7df813edfb.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582160/ss_7edc3de6db0e6391158863f766c334c6eab1dbaa.1920x1080.jpg',
     ],
-    trailer:'256686955',
     desc:'Viajá al Antiguo Egipto como Bayek, un medjay que busca venganza y termina fundando la Hermandad de los Asesinos. Un mundo abierto gigante con pirámides, desiertos y el delta del Nilo, nuevo combate estilo RPG y misiones con faraones y dioses.',
     descEn:'Travel to Ancient Egypt as Bayek, a Medjay seeking revenge who ends up founding the Brotherhood of Assassins. A huge open world of pyramids, deserts and the Nile delta, new RPG-style combat and quests with pharaohs and gods.',
     cardDesc:'El origen de la Hermandad en el Antiguo Egipto.',
@@ -1271,7 +1215,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391220/ss_be8bcd75e7dbf8cf7d8c861e15c12211b39f160d.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391220/ss_3b46aa127290e6ad2f62c125096bf5e901458ad6.1920x1080.jpg',
     ],
-    trailer:'256659136',
     desc:'Lara Croft sigue los pasos de su padre hasta Siberia en busca de la ciudad perdida de Kitezh y el secreto de la inmortalidad. Tumbas desafiantes, sigilo, caza y crafteo en paisajes nevados espectaculares. La edición 20 aniversario incluye todos los DLC.',
     descEn:"Lara Croft follows in her father's footsteps to Siberia, searching for the lost city of Kitezh and the secret of immortality. Challenging tombs, stealth, hunting and crafting across spectacular snowy landscapes. The 20 Year Celebration includes every DLC.",
     cardDesc:'Lara busca la fuente de la inmortalidad en Siberia.',
@@ -1291,7 +1234,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1659420/1bb804eb1e1ac1b23840c977586c8f9c2c0393a8/ss_1bb804eb1e1ac1b23840c977586c8f9c2c0393a8.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1659420/074469c3a7070c2a821ae984705276028ebf34c2/ss_074469c3a7070c2a821ae984705276028ebf34c2.1920x1080.jpg',
     ],
-    trailer:'256910607',
     desc:'Incluye Uncharted 4: El desenlace del ladrón y Uncharted: El legado perdido. Nathan Drake vuelve al mundo de los cazadores de tesoros para buscar el botín del pirata Henry Avery, con persecuciones, tiroteos y escaladas dignas de una película de acción.',
     descEn:"Includes Uncharted 4: A Thief's End and Uncharted: The Lost Legacy. Nathan Drake returns to treasure hunting in search of pirate Henry Avery's fortune, with chases, gunfights and climbing worthy of a blockbuster movie.",
     cardDesc:'Nathan Drake en su última gran aventura.',
@@ -1311,7 +1253,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1888930/ss_89fffc2857dcae29dee2a09f1be33d745610e19d.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1888930/ss_8cd55ab975b2e47f4d4d9a0da4ae6948040ef807.1920x1080.jpg',
     ],
-    trailer:'256936971',
     desc:'Veinte años después de una pandemia que convirtió a la gente en infectados, Joel tiene que escoltar a Ellie, una chica de 14 años, a través de unos Estados Unidos en ruinas. Remake completo de la obra maestra de Naughty Dog. Incluye la precuela Left Behind.',
     descEn:"Twenty years after a pandemic turned people into the Infected, Joel must escort Ellie, a 14-year-old girl, across a ruined United States. A full remake of Naughty Dog's masterpiece. Includes the Left Behind prequel.",
     cardDesc:'Joel y Ellie cruzan unos Estados Unidos devastados.',
@@ -1331,7 +1272,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/ss_d5b6edd94e77ba6db31c44d8a3c09d807ab27751.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/ss_a81e4231cc8d55f58b51a4a938898af46503cae5.1920x1080.jpg',
     ],
-    trailer:'256679401',
     desc:'Explorá Hallownest, un reino subterráneo de insectos en ruinas, en este metroidvania dibujado a mano. Más de 130 enemigos, 30 jefes desafiantes, habilidades nuevas para desbloquear caminos y una banda sonora preciosa. Incluye todas las expansiones gratuitas.',
     descEn:'Explore Hallownest, a ruined underground kingdom of insects, in this hand-drawn metroidvania. Over 130 enemies, 30 challenging bosses, new abilities that open new paths and a beautiful soundtrack. Includes every free expansion.',
     cardDesc:'Un reino de insectos en ruinas lleno de secretos.',
@@ -1351,7 +1291,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1151640/ss_271f850eec3f96b22aa17be35b948268e0771c7f.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1151640/ss_15f5759c441e4e5f51e1a8ee333e4ab9df9aa783.1920x1080.jpg',
     ],
-    trailer:'256899640',
     desc:'En un futuro lejano, la humanidad volvió a vivir en tribus y las máquinas con forma de animales dominan la Tierra. Sos Aloy, una cazadora experta que busca descubrir su pasado. Arco, trampas y estrategia para derribar máquinas gigantes. Incluye The Frozen Wilds.',
     descEn:'In the distant future, humanity lives in tribes again and animal-like machines rule the Earth. You are Aloy, a skilled hunter searching for her past. Use bows, traps and strategy to take down giant machines. Includes The Frozen Wilds.',
     cardDesc:'Aloy contra dinosaurios robot en un mundo salvaje.',
@@ -1371,7 +1310,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/990080/ss_df93b5e8a183f7232d68be94ae78920a90de1443.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/990080/ss_94058497bf0f8fabdde17ee8d59bece609a60663.1920x1080.jpg',
     ],
-    trailer:'256930504',
     desc:'Sos un estudiante de quinto año en Hogwarts a fines del siglo XIX, con la capacidad de dominar una magia antigua. Aprendé hechizos, prepará pociones, volá en escoba y explorá el castillo, Hogsmeade y las Tierras Altas. Un mundo abierto para fans de Harry Potter.',
     descEn:'You are a fifth-year student at Hogwarts in the late 1800s with the ability to wield an ancient magic. Learn spells, brew potions, fly on a broom and explore the castle, Hogsmeade and the Highlands. An open world for every Harry Potter fan.',
     cardDesc:'Viví tu propia historia en Hogwarts en el siglo XIX.',
@@ -1391,7 +1329,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/731490/ss_931f13ad19753ac5d491bc55e31ec9e2181ca637.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/731490/ss_312f4dbd137af1b36c3572aaa79349db6dd841a2.1920x1080.jpg',
     ],
-    trailer:'256720063',
     desc:'Crash Bandicoot vuelve con sus tres primeras aventuras totalmente remasterizadas: Crash Bandicoot, Cortex Strikes Back y Warped. Saltá, girá y rompé cajas para frenar los planes del Dr. Neo Cortex. La nostalgia de PlayStation con gráficos modernos.',
     descEn:'Crash Bandicoot returns with his first three adventures fully remastered: Crash Bandicoot, Cortex Strikes Back and Warped. Jump, spin and smash crates to stop Dr. Neo Cortex. PlayStation nostalgia with modern graphics.',
     cardDesc:'Los tres Crash clásicos de PlayStation, remasterizados.',
@@ -1413,7 +1350,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1262560/ss_4292ba4d468883bb13c619330229047f9ab197f7.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1262560/ss_6b9c3c8cdf2a6a1c03a9525e3e09b1db23643cac.1920x1080.jpg',
     ],
-    trailer:'256789460',
     desc:'Criterion reinventa Most Wanted en Fairhaven, una ciudad abierta donde todos los autos están para que los encuentres y los manejes. Persecuciones policiales, saltos, choques espectaculares y la lista de los 10 corredores más buscados que tenés que derrotar.',
     descEn:'Criterion reimagines Most Wanted in Fairhaven, an open city where every car is out there to find and drive. Police chases, jumps, spectacular crashes and a list of the 10 most wanted racers to take down.',
     cardDesc:'Convertite en el más buscado de Fairhaven.',
@@ -1433,7 +1369,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222680/ss_6994870577a41882c458cd00d852d8092116c81c.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222680/ss_1f752c037d7cbab2e1658f36d5c76d11e91e4fec.1920x1080.jpg',
     ],
-    trailer:'256823664',
     desc:'En Palm City corrés de día en eventos oficiales para ganar plata, y de noche en carreras callejeras para ganar reputación mientras escapás de una policía corrupta. Tuning profundo, personalización visual al máximo y una ciudad inspirada en Miami.',
     descEn:'In Palm City you race official events by day to earn cash, and hit the streets at night to build rep while escaping a corrupt police force. Deep tuning, extensive visual customization and a Miami-inspired city.',
     cardDesc:'De día carreras legales, de noche ilegales.',
@@ -1453,7 +1388,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1262600/ss_25ed9eea91e7d3d582eebc4d3df2a03cbc4ac295.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1262600/ss_e8801aa10a3a3089d34672a7e28bcb9d711c8d46.1920x1080.jpg',
     ],
-    trailer:'256787680',
     desc:'Elegí ser corredor o policía en Redview County, un mundo abierto donde las persecuciones pueden empezar en cualquier momento. Gadgets como pulsos electromagnéticos y bloqueos, autos exóticos y un modo en línea que mezcla a todos los jugadores en el mismo mapa.',
     descEn:'Choose to be a racer or a cop in Redview County, an open world where pursuits can break out at any moment. Gadgets like EMPs and roadblocks, exotic cars and an online mode that drops every player into the same map.',
     cardDesc:'Corredor o policía en Redview County.',
@@ -1473,7 +1407,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551360/ss_00f0090174380eeaf8753bd3d1028b6772c3aebf.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551360/ss_b65236b365315ebb6da6114ce42cd74b59cab3c8.1920x1080.jpg',
     ],
-    trailer:'256875134',
     desc:'Forza Horizon 5 te lleva a un México enorme y vibrante, con desiertos, selvas, ciudades coloniales y un volcán activo. Cientos de autos reales, estaciones que cambian el mapa, eventos espectaculares y juego en línea con amigos. El mejor juego de carreras arcade de la actualidad.',
     descEn:'Forza Horizon 5 takes you to a huge, vibrant Mexico with deserts, jungles, colonial towns and an active volcano. Hundreds of real cars, seasons that change the map, spectacular events and online play with friends. The best arcade racing game around.',
     cardDesc:'El festival Horizon llega a México.',
@@ -1493,7 +1426,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1238080/ss_0ede399d2c0a7ad1bd4416bef9a4da22f840df75.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1238080/ss_c584613cd8b78f2395783b911631898ec44a6eda.1920x1080.jpg',
     ],
-    trailer:'256786307',
     desc:'Paradise City es tu patio de juegos: carreras, choques espectaculares, saltos imposibles y takedowns contra rivales en un mundo abierto sin tiempos de carga. La versión remasterizada incluye todos los DLC, como la isla Big Surf y las motos.',
     descEn:'Paradise City is your playground: races, spectacular crashes, impossible jumps and takedowns against rivals in a seamless open world. The remastered version includes every DLC, including Big Surf Island and bikes.',
     cardDesc:'Choques, saltos y destrucción en Paradise City.',
@@ -1513,7 +1445,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/227300/edbff61a062a49d1d97269e53b8afbffde05bb24/ss_edbff61a062a49d1d97269e53b8afbffde05bb24.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/227300/c610d985eb21cc22c26507b53cd843cfa0b3a00d/ss_c610d985eb21cc22c26507b53cd843cfa0b3a00d.1920x1080.jpg',
     ],
-    trailer:'256882174',
     desc:'Recorré Europa al volante de camiones reales llevando cargas entre decenas de ciudades. Empezá como chofer, comprá tus propios camiones, contratá conductores y armá una empresa de transporte. Relajante, adictivo y con miles de mods de la comunidad.',
     descEn:'Travel across Europe behind the wheel of real trucks, hauling cargo between dozens of cities. Start as a driver, buy your own trucks, hire drivers and build a transport company. Relaxing, addictive and backed by thousands of community mods.',
     cardDesc:'Manejá camiones por toda Europa y armá tu empresa.',
@@ -1533,7 +1464,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/244210/ss_b97afb7a10ad6455c01d0e2a191e105007cf7504.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/244210/ss_131963607a54afaf64688397d9742af37149148d.1920x1080.jpg',
     ],
-    trailer:'256704206',
     desc:'Uno de los simuladores de manejo más realistas, con física avanzada, autos con licencia oficial y circuitos escaneados con láser como Monza, Spa y Nürburgring. Ideal para jugar con volante y con una comunidad de mods enorme que agrega cientos de autos y pistas.',
     descEn:'One of the most realistic driving simulators, with advanced physics, officially licensed cars and laser-scanned circuits like Monza, Spa and the Nürburgring. Ideal with a wheel, backed by a huge modding community that adds hundreds of cars and tracks.',
     cardDesc:'Simulación de manejo pura con autos y pistas reales.',
@@ -1572,7 +1502,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/284160/ss_50b8ba7ff80d50af3bd6b1b4e326849555a952a2.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/284160/ss_e55bbb37fa7208d720d15e69c23c8d932283b4fe.1920x1080.jpg',
     ],
-    trailer:'257056227',
     desc:'BeamNG.drive simula cada parte de los vehículos en tiempo real, así que cada choque, salto o vuelco se ve y se siente real. Mapas abiertos, cientos de vehículos, escenarios y un editor para crear lo que quieras. Ideal para experimentar y para los fans de los mods.',
     descEn:'BeamNG.drive simulates every part of each vehicle in real time, so every crash, jump or rollover looks and feels real. Open maps, hundreds of vehicles, scenarios and an editor to build anything. Perfect for experimenting and for modding fans.',
     cardDesc:'La física de choques más realista que existe.',
@@ -1594,7 +1523,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/933110/0ce49006f59004b0afd9488471a20b15b7543f49/ss_0ce49006f59004b0afd9488471a20b15b7543f49.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/933110/136a60d55135896794d172808c57f7d689bd73a7/ss_136a60d55135896794d172808c57f7d689bd73a7.1920x1080.jpg',
     ],
-    trailer:'256798809',
     desc:'Liderá una potencia europea o una nación nativa durante la colonización de América. Armá tu ciudad, enviá cartas desde tu metrópolis y conquistá el Nuevo Mundo. La Definitive Edition trae gráficos 4K, nuevas civilizaciones como incas y suecos y todas las expansiones.',
     descEn:'Lead a European power or a native nation through the colonization of the Americas. Build your town, ship cards from your home city and conquer the New World. The Definitive Edition adds 4K graphics, new civilizations like the Inca and Swedes, and every expansion.',
     cardDesc:'La colonización de América en tiempo real.',
@@ -1614,7 +1542,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1466860/ss_5384805fa5d365b069f197498269fabd7143cb4c.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1466860/ss_4da9632574ab355b1a581190c262d21a1d3248ba.1920x1080.jpg',
     ],
-    trailer:'256913281',
     desc:'La saga de estrategia más famosa regresa con civilizaciones únicas como los mongoles, los ingleses y los chinos, cada una con su propio estilo de juego. Campañas históricas con documentales, asedios con armas de pólvora y un multijugador competitivo muy activo.',
     descEn:'The most famous strategy series returns with unique civilizations like the Mongols, English and Chinese, each with its own playstyle. Historical campaigns with documentaries, gunpowder sieges and a very active competitive multiplayer.',
     cardDesc:'La saga vuelve con batallas medievales épicas.',
@@ -1634,7 +1561,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1017900/ss_934c6edd764cb8d3cbf91c636d472ff60e244ec3.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1017900/ss_bfd3d1e91f386b53f92aba8340faa31260d43e1b.1920x1080.jpg',
     ],
-    trailer:'256759482',
     desc:'El primer Age of Empires totalmente remasterizado: llevá a tu civilización desde la Edad de Piedra hasta la Edad de Hierro. Egipcios, griegos, babilonios y más, con gráficos 4K, música renovada, nuevas mejoras de interfaz y multijugador en línea.',
     descEn:'The original Age of Empires fully remastered: guide your civilization from the Stone Age to the Iron Age. Egyptians, Greeks, Babylonians and more, with 4K graphics, a re-recorded soundtrack, interface upgrades and online multiplayer.',
     cardDesc:'El clásico que empezó todo, remasterizado en 4K.',
@@ -1654,7 +1580,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8930/ss_e6f9ef54f06ffebc9445d8b29d8d2054fa3185d4.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8930/ss_aa383406a5f2979598b543d8f272d3ac145e357a.1920x1080.jpg',
     ],
-    trailer:'5690',
     desc:'Guiá a tu civilización desde la prehistoria hasta la era espacial. Fundá ciudades, investigá tecnologías, negociá con otros líderes y ganá por conquista, ciencia, cultura o diplomacia. La Complete Edition incluye Gods & Kings y Brave New World.',
     descEn:'Guide your civilization from prehistory to the space age. Found cities, research technologies, negotiate with other leaders and win through conquest, science, culture or diplomacy. The Complete Edition includes Gods & Kings and Brave New World.',
     cardDesc:'Un turno más... y construí un imperio eterno.',
@@ -1674,7 +1599,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/289070/ss_6c4a3cfb61f1a9677cf2ac549c2816a4e651f741.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/289070/ss_b2bf12299c38214fe520af0f724a6349d17ed330.1920x1080.jpg',
     ],
-    trailer:'256672694',
     desc:'La entrega más completa de Civilization: las ciudades ahora se expanden por el mapa con distritos especializados. Investigá, comerciá, hacé guerra o ganá por religión. La Gold Edition incluye la expansión Rise and Fall y varios paquetes de civilizaciones.',
     descEn:'The most complete Civilization yet: cities now sprawl across the map with specialized districts. Research, trade, wage war or win through religion. The Gold Edition includes the Rise and Fall expansion and several civilization packs.',
     cardDesc:'Ciudades que se expanden por el mapa y líderes icónicos.',
@@ -1694,7 +1618,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1213210/ss_77f4464527f8c4e01bccb9e94c2af485e3dd0e08.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1213210/ss_75277c48e5a23a9aca86789a364b4d3a5394e5fa.1920x1080.jpg',
     ],
-    trailer:'256787918',
     desc:'Los dos clásicos de la estrategia en tiempo real, Tiberian Dawn y Red Alert, remasterizados en 4K con todas sus expansiones. Más de 7 horas de música remasterizada por Frank Klepacki, videos restaurados y multijugador en línea renovado.',
     descEn:'Two real-time strategy classics, Tiberian Dawn and Red Alert, remastered in 4K with every expansion. Over 7 hours of music remastered by Frank Klepacki, restored cutscenes and revamped online multiplayer.',
     cardDesc:'C&C y Red Alert remasterizados en 4K.',
@@ -1714,7 +1637,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/885970/ss_b6eb84ba1301caa65a5ffccc568c0cd0c5fe80f0.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/885970/ss_6db1660ca0f4429fd8027669136a01949171063d.1920x1080.jpg',
     ],
-    trailer:'256832225',
     desc:'El legendario Rome: Total War remasterizado en 4K. Manejá tu imperio en un mapa por turnos y dirigí batallas en tiempo real con miles de soldados. Incluye las expansiones Barbarian Invasion y Alexander, y 16 facciones nuevas para jugar.',
     descEn:'The legendary Rome: Total War remastered in 4K. Run your empire on a turn-based map and command real-time battles with thousands of soldiers. Includes the Barbarian Invasion and Alexander expansions, plus 16 newly playable factions.',
     cardDesc:'Conquistá el mundo antiguo con legiones romanas.',
@@ -1734,7 +1656,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40970/ss_9b06199ee9165fff5cb5fe682c2cbb41016afaaf.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40970/ss_85a9e4eea5b61ffa0adbfcb434c98aa7fc9361ce.1920x1080.jpg',
     ],
-    trailer:'2029619',
     desc:'El clásico de los cibers: construí castillos, administrá la economía y defendete de los asedios en las Cruzadas. Enfrentate a señores como el Lobo, el Sultán y Ricardo Corazón de León en el modo escaramuza. La versión HD soporta resoluciones modernas.',
     descEn:'An internet café classic: build castles, manage your economy and hold off sieges during the Crusades. Face lords like the Wolf, the Sultan and Richard the Lionheart in skirmish mode. The HD version supports modern resolutions.',
     cardDesc:'Construí tu castillo y resistí asedios en las Cruzadas.',
@@ -1754,7 +1675,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3590/0000008151.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3590/0000008152.1920x1080.jpg',
     ],
-    trailer:'900829',
     desc:'Una horda de zombies quiere entrar a tu casa y tu única defensa son las plantas de tu jardín. Lanzaguisantes, girasoles, nueces y cerezas explosivas en un tower defense adictivo, con modo aventura, minijuegos, puzzles y modo supervivencia. Para todas las edades.',
     descEn:'A horde of zombies wants into your house and your only defense is your garden. Peashooters, sunflowers, wall-nuts and cherry bombs in an addictive tower defense with adventure mode, mini-games, puzzles and survival. Fun for all ages.',
     cardDesc:'Defendé tu casa de los zombies con plantas.',
@@ -1776,7 +1696,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/976310/ss_4fa4fd2ea1b7ff6c6b699dc9eb717986f80845a4.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/976310/ss_aa70f659fe14e3c07033474249096b60c17021b3.1920x1080.jpg',
     ],
-    trailer:'256813084',
     desc:'Kronika, la guardiana del tiempo, quiere reescribir la historia y junta a los luchadores del pasado y del presente. Combate brutal con Fatal Blows, Fatalities y personalización de equipamiento. La Ultimate Edition incluye Aftermath y todos los personajes extra.',
     descEn:'Kronika, keeper of time, wants to rewrite history and brings together fighters from past and present. Brutal combat with Fatal Blows, Fatalities and gear customization. The Ultimate Edition includes Aftermath and every bonus fighter.',
     cardDesc:'Fatalities, viajes en el tiempo y Kronika.',
@@ -1815,7 +1734,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/678950/ss_1702e9bc7ba4ce2dce2555c8d63612aafb5c757a.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/678950/ss_3f18dbe6561ea68c5acb055e3eaa97f480022c24.1920x1080.jpg',
     ],
-    trailer:'256827868',
     desc:'El juego de pelea de Dragon Ball que parece el anime de verdad. Armá equipos de tres luchadores como Goku, Vegeta, Cell y Broly, con combos aéreos, ataques especiales y escenas dramáticas. Creado por Arc System Works, los genios de Guilty Gear.',
     descEn:'The Dragon Ball fighter that truly looks like the anime. Build teams of three fighters like Goku, Vegeta, Cell and Broly, with air combos, super attacks and dramatic finishes. Made by Arc System Works, the masters behind Guilty Gear.',
     cardDesc:'Peleas 3 contra 3 que parecen el anime.',
@@ -1835,7 +1753,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/349040/ss_053f86d775e5b4ebfc0eb1d8ae42754c66d25130.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/349040/ss_4f91876c2dbcc95cd32fdf3d9cf68895737b33ef.1920x1080.jpg',
     ],
-    trailer:'256660477',
     desc:'Reviví la Cuarta Gran Guerra Ninja y el desenlace de la historia de Naruto y Sasuke con batallas espectaculares y escenas fieles al anime. Más de 100 personajes jugables. La edición Road to Boruto agrega la historia de Boruto y nuevos luchadores.',
     descEn:"Relive the Fourth Great Ninja War and the finale of Naruto and Sasuke's story through spectacular battles and anime-faithful scenes. Over 100 playable characters. The Road to Boruto edition adds Boruto's story and new fighters.",
     cardDesc:'La Cuarta Gran Guerra Ninja y el final de Naruto.',
@@ -1855,7 +1772,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/627270/ss_6c134ed979e8abf86364bf4a3d32e35dde16b696.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/627270/ss_297cb766d40b263bd630ac48abb3fafc6a221987.1920x1080.jpg',
     ],
-    trailer:'256711523',
     desc:'Batman, Superman, la Mujer Maravilla y los villanos de DC se enfrentan en peleas brutales de los creadores de Mortal Kombat. Sistema de equipamiento que cambia la apariencia y habilidades de cada personaje y un modo historia cinematográfico. Incluye todos los DLC.',
     descEn:"Batman, Superman, Wonder Woman and DC's villains clash in brutal fights from the makers of Mortal Kombat. A gear system that changes each character's look and abilities, plus a cinematic story mode. Includes every DLC.",
     cardDesc:'Los héroes de DC se enfrentan entre sí.',
@@ -1875,7 +1791,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1778820/ss_99dabe34abc0f92adc39d7099908c9540be7eb3f.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1778820/ss_bbd38a5fe748ec966cbc85ffcd4931f0f2da8ffd.1920x1080.jpg',
     ],
-    trailer:'256961348',
     desc:'La saga Mishima continúa con Jin Kazama enfrentando a su padre, Kazuya. Tekken 8 apuesta por la agresividad con el nuevo sistema Heat, gráficos en Unreal Engine 5, 32 personajes y el modo Arcade Quest para aprender a jugar desde cero.',
     descEn:'The Mishima saga continues as Jin Kazama faces his father, Kazuya. Tekken 8 rewards aggression with the new Heat system, Unreal Engine 5 graphics, 32 characters and an Arcade Quest mode to learn from scratch.',
     cardDesc:'Jin contra Kazuya: la pelea más agresiva de la saga.',
@@ -1895,7 +1810,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/454650/ss_412fe476f8d59c6d6c6b2b8da97f2ea4fd4b5356.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/454650/ss_1bc6848427f580686e56fc659c937ea108beef51.1920x1080.jpg',
     ],
-    trailer:'256673245',
     desc:'Creá tu propio guerrero eligiendo entre saiyajin, terrícola, namekiano, majin o la raza de Freezer, y unite a la Patrulla del Tiempo para corregir la historia de Dragon Ball. Ciudad central con otros jugadores, misiones paralelas y un montón de personajes.',
     descEn:"Create your own warrior from Saiyan, Earthling, Namekian, Majin or Frieza's race and join the Time Patrol to fix Dragon Ball history. A hub city full of other players, parallel quests and a huge roster.",
     cardDesc:'Creá tu guerrero y protegé la historia de Dragon Ball.',
@@ -1915,7 +1829,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/222440/ss_74018f6e5cfcd52b5c7c1443f49e5be25bb819ad.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/222440/ss_3270c6c0cdb13cefc586955264b83111615bb431.1920x1080.jpg',
     ],
-    trailer:'256817399',
     desc:'La versión definitiva del clásico de los fichines, con más de 60 luchadores como Kyo, Iori, Terry y Mai. Peleas 3 contra 3, sistema MAX2 y modo desafío. Incluye juego en línea con rollback para enfrentarte a jugadores de todo el mundo.',
     descEn:'The definitive version of the arcade classic, with over 60 fighters like Kyo, Iori, Terry and Mai. Three-on-three battles, the MAX2 system and challenge mode. Includes rollback online play to face players worldwide.',
     cardDesc:'El KOF de los fichines, con más de 60 luchadores.',
@@ -1956,7 +1869,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/952060/ss_ef618256720e6e665f4b8b5dd11726a561e0b16e.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/952060/ss_34f01910d65fb171a27e058cb74623c0eb53ba69.1920x1080.jpg',
     ],
-    trailer:'256770136',
     desc:'Jill Valentine intenta escapar de Raccoon City mientras el Nemesis, un arma biológica imparable, la persigue sin descanso. Remake del clásico de PlayStation con acción intensa, esquives perfectos y gráficos de última generación. Incluye el multijugador Resistance.',
     descEn:'Jill Valentine tries to escape Raccoon City while Nemesis, an unstoppable bioweapon, hunts her down. A remake of the PlayStation classic with intense action, perfect dodges and cutting-edge graphics. Includes the Resistance multiplayer.',
     cardDesc:'Jill Valentine escapa del Nemesis.',
@@ -1976,7 +1888,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/418370/ss_93663d90ead22ac9481b7c75eaea57509cdf41cb.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/418370/ss_4ba2efde83e86ad41dd962b6802c45029efbe75d.1920x1080.jpg',
     ],
-    trailer:'256665613',
     desc:'Ethan Winters llega a una granja abandonada de Luisiana buscando a su esposa desaparecida y se encuentra con la perturbadora familia Baker. La saga vuelve al terror puro en primera persona, con recursos escasos y mucha tensión. La Gold Edition incluye todos los DLC.',
     descEn:'Ethan Winters arrives at an abandoned Louisiana plantation looking for his missing wife and meets the disturbing Baker family. The series returns to pure first-person horror with scarce resources and nonstop tension. The Gold Edition includes every DLC.',
     cardDesc:'La familia Baker te espera en Luisiana.',
@@ -1996,7 +1907,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1196590/ss_8113ec993ec474055c4cdce5ee86f91f7cf6663f.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1196590/ss_50283e6df9d2f3f24ff4a1a36a94ae307e21cee8.1920x1080.jpg',
     ],
-    trailer:'256825272',
     desc:'Ethan Winters busca a su hija secuestrada en un misterioso pueblo de Europa del Este dominado por criaturas y por la imponente Lady Dimitrescu. Terror y acción en primera persona con castillos, lobos y mucho misterio. La Gold Edition incluye Shadows of Rose.',
     descEn:'Ethan Winters searches for his kidnapped daughter in a mysterious Eastern European village ruled by creatures and the towering Lady Dimitrescu. First-person horror and action with castles, lycans and plenty of mystery. The Gold Edition includes Shadows of Rose.',
     cardDesc:'Lady Dimitrescu y un pueblo maldito.',
@@ -2016,7 +1926,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2050650/ss_ab807f8ad9e968a620777caf483cb6020367b9ee.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2050650/ss_0442f7fb4327d79802c2db8ea8d23d228a28d896.1920x1080.jpg',
     ],
-    trailer:'256998126',
     desc:'El remake de una de las mejores aventuras de la historia. Leon S. Kennedy viaja a un pueblo de España para rescatar a Ashley, la hija del presidente, y se enfrenta a los Ganados. Gráficos modernos, parry con cuchillo, sigilo y una historia ampliada.',
     descEn:"The remake of one of the greatest adventures ever made. Leon S. Kennedy travels to a village in Spain to rescue Ashley, the president's daughter, and faces the Ganados. Modern graphics, knife parries, stealth and an expanded story.",
     cardDesc:'Leon vuelve al pueblo, más aterrador que nunca.',
@@ -2036,7 +1945,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17470/0000006482.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17470/0000006483.1920x1080.jpg',
     ],
-    trailer:'5163',
     desc:'Isaac Clarke, un ingeniero, llega a la nave minera USG Ishimura y la encuentra infestada de necromorfos, cadáveres convertidos en monstruos. Para sobrevivir tenés que desmembrarlos con herramientas de trabajo. Sin interfaz en pantalla y con una atmósfera aterradora.',
     descEn:'Engineer Isaac Clarke reaches the mining ship USG Ishimura and finds it overrun by necromorphs, corpses turned into monsters. To survive you must dismember them with mining tools. No on-screen HUD and a terrifying atmosphere.',
     cardDesc:'Terror en el espacio: cortá los miembros de los necromorfos.',
@@ -2056,7 +1964,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/57300/ss_db5cf1ca6aa0198d45b9ea892c202bd2bb451e74.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/57300/ss_b27b47bb43ebd1ab3b26e3d74cf2db088e928a6d.1920x1080.jpg',
     ],
-    trailer:'901419',
     desc:'Daniel despierta en un castillo prusiano sin recordar nada y con una sola certeza: algo lo está cazando. Sin armas para defenderte, solo podés esconderte, huir y resolver puzzles mientras la oscuridad te hace perder la cordura. Un clásico del terror indie.',
     descEn:'Daniel wakes up in a Prussian castle with no memory and one certainty: something is hunting him. With no weapons, you can only hide, run and solve puzzles while the darkness eats away at your sanity. An indie horror classic.',
     cardDesc:'Sin armas, en la oscuridad y perdiendo la cordura.',
@@ -2076,7 +1983,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/414700/ss_69427df3942114a8e0c598e03fc88112f65f7fdc.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/414700/ss_0b3a895b08f4a77e89cb970911c0b0fd213afa4e.1920x1080.jpg',
     ],
-    trailer:'256683630',
     desc:'Blake Langermann, un camarógrafo, busca a su esposa en una zona rural de Arizona dominada por un culto religioso que espera el fin del mundo. Igual que en el primero, no tenés armas: solo una cámara con visión nocturna y tus piernas para escapar.',
     descEn:'Cameraman Blake Langermann searches for his wife in rural Arizona, ruled by a religious cult awaiting the end of the world. Just like the first game, you have no weapons: only a night-vision camera and your legs to escape.',
     cardDesc:'Un culto fanático en el desierto de Arizona.',
@@ -2096,7 +2002,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/239140/ss_1f0dc94f46fa1a953827188188887f6a12911ec2.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/239140/ss_488226f013287012e0feaed2fb7799dbe038fd00.1920x1080.jpg',
     ],
-    trailer:'257022021',
     desc:'En la ciudad de Harran, en cuarentena por un virus zombie, sos Kyle Crane, un agente que se mueve por los techos con parkour. De día cazás y conseguís recursos, pero de noche aparecen los infectados más peligrosos. Cooperativo para cuatro y todas las expansiones incluidas.',
     descEn:'In the quarantined city of Harran, you are Kyle Crane, an agent who moves across rooftops with parkour. By day you scavenge and fight, but at night the deadliest infected come out. Four-player co-op with every expansion included.',
     cardDesc:'Parkour de día, sobrevivir de noche.',
@@ -2118,7 +2023,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2669320/ss_aeeea35bf96fad387b97befd9a5c4b9d8ee2ac1a.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2669320/ss_c8460408705b54e37228cc320a2da1c19e4dc12f.1920x1080.jpg',
     ],
-    trailer:'257059675',
     desc:'El fútbol de EA con más de 17.000 jugadores, 700 equipos y 120 estadios. FC 25 suma el modo Rush 5 contra 5, nuevas tácticas FC IQ y los modos de siempre como Ultimate Team, Carrera y Clubs. Incluye las mejores ligas del mundo y el fútbol femenino.',
     descEn:"EA's football game with over 17,000 players, 700 teams and 120 stadiums. FC 25 adds 5v5 Rush, the new FC IQ tactics and fan favorites like Ultimate Team, Career Mode and Clubs. Includes the world's top leagues and women's football.",
     cardDesc:'El fútbol más real con Rush 5 contra 5.',
@@ -2138,7 +2042,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1811260/ss_a51b0f81035e0b3310f45b8fbfd9e11f467a63a0.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1811260/ss_75d1340c0d96d972fef1d9c6561659090ca936ee.1920x1080.jpg',
     ],
-    trailer:'256942523',
     desc:'La última entrega con el nombre FIFA trae tecnología HyperMotion2, juego cruzado entre plataformas y el Mundial de Qatar 2022 completo. Ultimate Team, modo Carrera, Volta y Pro Clubs, con miles de jugadores y las ligas más importantes del mundo.',
     descEn:"The last game under the FIFA name brings HyperMotion2 technology, cross-play and the full Qatar 2022 World Cup. Ultimate Team, Career Mode, Volta and Pro Clubs, with thousands of players and the world's biggest leagues.",
     cardDesc:'El último FIFA, con el Mundial de Qatar incluido.',
@@ -2158,7 +2061,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/592580/ss_00ebd726996604dc944f8cd4c3dc5fe5e65c3ebd.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/592580/ss_fb812e1b879f387a26e8c671c9bb052622dfab65.1920x1080.jpg',
     ],
-    trailer:'256685122',
     desc:'Pro Evolution Soccer 2018 se centra en el control de la pelota y en una jugabilidad estratégica y realista. Master League renovada, myClub, modo cooperativo y las licencias de clubes como el Barcelona. Ideal para los que extrañan el PES de los buenos tiempos.',
     descEn:'Pro Evolution Soccer 2018 focuses on ball control and strategic, realistic gameplay. A revamped Master League, myClub, co-op mode and licenses for clubs like Barcelona. Perfect for anyone who misses PES in its glory days.',
     cardDesc:'Control de pelota y jugabilidad de PES en su mejor momento.',
@@ -2178,7 +2080,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2878980/ss_40b45c20c14c8996000e81f697bd1d09f26ea5fd.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2878980/ss_0d4dd0f0fdfe67d8b3c641816b53b01a6ba062a0.1920x1080.jpg',
     ],
-    trailer:'257048048',
     desc:'NBA 2K25 trae la tecnología ProPLAY con animaciones de partidos reales, el modo MiCARRERA en The City, MyTEAM y MyGM para manejar una franquicia. Todos los equipos y jugadores de la NBA actual y equipos históricos legendarios.',
     descEn:'NBA 2K25 brings ProPLAY technology built from real game footage, MyCAREER in The City, MyTEAM and MyGM to run a franchise. Every current NBA team and player plus legendary classic teams.',
     cardDesc:'El básquet de la NBA más completo.',
@@ -2217,7 +2118,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2395210/ss_866a178397cc58e5578e39e19c2233b05528d720.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2395210/ss_ccc432a7c5c36283b40dc2460de7f0c40ad29e02.1920x1080.jpg',
     ],
-    trailer:'256971669',
     desc:"Los dos primeros Tony Hawk's Pro Skater rehechos desde cero, con todos los niveles, skaters y trucos originales, más nuevos skaters, modo creador de parques y online. La misma jugabilidad adictiva y la banda sonora punk de siempre, con gráficos modernos.",
     descEn:"The first two Tony Hawk's Pro Skater games rebuilt from the ground up, with every original level, skater and trick, plus new skaters, a park creator and online play. The same addictive gameplay and classic punk soundtrack, with modern graphics.",
     cardDesc:'Los dos THPS clásicos rehechos desde cero.',
@@ -2237,7 +2137,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2252570/ce6e4238dd12ec17f43ad48882f7a72f8e10cddf/ss_ce6e4238dd12ec17f43ad48882f7a72f8e10cddf.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2252570/ss_b2d729b4d4ac31c6f05134ab88b2b11d61f8cac8.1920x1080.jpg',
     ],
-    trailer:'256980530',
     desc:'Convertite en director técnico y manejá todo en tu club: tácticas, fichajes, entrenamientos y la relación con los jugadores y la prensa. Más de 50 países y miles de clubes reales con una base de datos enorme. El simulador de fútbol más completo que existe.',
     descEn:'Become the manager and run everything at your club: tactics, transfers, training and relationships with players and the press. Over 50 countries and thousands of real clubs in a huge database. The most complete football management sim there is.',
     cardDesc:'Dirigí a tu club favorito y llevalo a la gloria.',
@@ -2257,7 +2156,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1942660/ss_b3780730ae55bdda97d4909384c9a2b8a8f26580.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1942660/ss_365fce057a64c24832c9da039e66fdafeebf20d5.1920x1080.jpg',
     ],
-    trailer:'256938239',
     desc:'Subite al ring con las superestrellas de la WWE en el juego de lucha libre más completo. Modo Showcase de John Cena, WarGames por primera vez, MyRISE para crear tu propia carrera y MyGM para manejar tu propia marca. Más de 200 luchadores.',
     descEn:'Step into the ring with WWE Superstars in the most complete wrestling game. A John Cena Showcase, WarGames for the first time, MyRISE to build your own career and MyGM to run your own brand. Over 200 wrestlers.',
     cardDesc:'La lucha libre de la WWE con John Cena.',
@@ -2279,7 +2177,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/ss_ae168a00ab08104ba266dc30232654d4b3c919e5.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/ss_9edd98caaf9357c2f40758f354475a56e356e8b0.1920x1080.jpg',
     ],
-    trailer:'256785003',
     desc:'Un sandbox en 2D donde cavás, construís y peleás contra cientos de enemigos y jefes. Explorá cavernas, biomas, el infierno y el espacio, fabricá miles de objetos y construí tu propio mundo. Cooperativo en línea y una enorme cantidad de contenido gratuito.',
     descEn:'A 2D sandbox where you dig, build and battle hundreds of enemies and bosses. Explore caves, biomes, the underworld and space, craft thousands of items and build your own world. Online co-op and a massive amount of free content.',
     cardDesc:'Cavá, construí, peleá y explorá en 2D.',
@@ -2318,7 +2215,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/ss_9ac899fe2cda15d48b0549bba77ef8c4a090a71c.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/ss_4fa0866709ede3753fdf2745349b528d5e8c4054.1920x1080.jpg',
     ],
-    trailer:'256815967',
     desc:'Heredaste la vieja granja de tu abuelo en Pelican Town. Plantá cultivos, criá animales, pescá, explorá minas, hacete amigo de los vecinos y hasta casate. Un juego relajante y adictivo que se puede jugar en cooperativo con hasta tres amigos.',
     descEn:"You have inherited your grandfather's old farm in Pelican Town. Grow crops, raise animals, fish, explore mines, befriend the townsfolk and even get married. A relaxing, addictive game you can play in co-op with up to three friends.",
     cardDesc:'Dejá la ciudad y armá la granja de tus sueños.',
@@ -2338,7 +2234,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222670/ss_2fc938d99a1e87893852cb2d2113478190607941.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222670/ss_b447d6436d2d00cd5e7c170e509b2246dfc879e8.1920x1080.jpg',
     ],
-    trailer:'256911304',
     desc:'Creá personas con un editor muy completo, construí la casa de tus sueños y controlá sus vidas, trabajos, relaciones y aventuras. Barrios para explorar, emociones que cambian el comportamiento de los Sims y miles de creaciones de la comunidad en la Galería.',
     descEn:'Create people with a detailed editor, build your dream home and control their lives, careers, relationships and adventures. Neighborhoods to explore, emotions that change how Sims behave and thousands of community creations in the Gallery.',
     cardDesc:'Creá Sims, construí casas y controlá sus vidas.',
@@ -2358,7 +2253,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/252490/ss_e825b087b95e51c3534383cfd75ad6e8038147c3.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/252490/ss_0e646f1a70e5cb8eed00efef8adb9579d40d5b2e.1920x1080.jpg',
     ],
-    trailer:'256684736',
     desc:'Empezás desnudo con una piedra y una antorcha en una isla llena de jugadores. Juntá recursos, construí tu base, fabricá armas y defendete de animales, del hambre y sobre todo de otros jugadores. Alianzas, traiciones y raids en un survival multijugador implacable.',
     descEn:'You start naked with a rock and a torch on an island full of players. Gather resources, build your base, craft weapons and defend yourself from animals, hunger and above all other players. Alliances, betrayals and raids in a ruthless multiplayer survival game.',
     cardDesc:'Sobreviví desde cero contra otros jugadores.',
@@ -2378,7 +2272,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/346110/ss_01cbef83fe28d64ee5a3d39a86043fb1e49abd31.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/346110/ss_164a92a53f9bcbb728b391fc0719f9769c2e1249.1920x1080.jpg',
     ],
-    trailer:'256836250',
     desc:'Despertás en una isla misteriosa llena de dinosaurios y criaturas prehistóricas. Cazá, recolectá, construí refugios y domesticá dinosaurios para montarlos y pelear con ellos. Jugá solo o en tribus con otros jugadores. Incluye todas las expansiones de mapas.',
     descEn:'You wake up on a mysterious island teeming with dinosaurs and prehistoric creatures. Hunt, gather, build shelters and tame dinosaurs to ride and fight with. Play solo or in tribes with other players. Includes every map expansion.',
     cardDesc:'Domesticá dinosaurios y sobreviví en una isla.',
@@ -2398,7 +2291,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_970a13f246e33e0df26d93baf9f8e975732adb4b.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_5f2f2ea498cdc632cbffd6cf37c1a09670eb3272.1920x1080.jpg',
     ],
-    trailer:'256706800',
     desc:'Tu nave se estrella en un planeta cubierto de agua y la única forma de sobrevivir es explorar sus profundidades. Juntá recursos, construí bases submarinas y submarinos, y descubrí los secretos del planeta mientras evitás a los leviatanes. Hermoso y aterrador a la vez.',
     descEn:"Your ship crashes on a water-covered planet and the only way to survive is to explore its depths. Gather resources, build underwater bases and submarines, and uncover the planet's secrets while avoiding leviathans. Beautiful and terrifying at once.",
     cardDesc:'Sobreviví bajo el océano de un planeta alienígena.',
@@ -2418,7 +2310,6 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242760/ss_53c615d49c4777144ed7359e4bf7c9eb6838cc8e.1920x1080.jpg',
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242760/ss_772eebf0ce7bdb51546055a36185e8ee46e8acac.1920x1080.jpg',
     ],
-    trailer:'256715589',
     desc:'Sobreviviste a un accidente de avión en una península boscosa, pero tu hijo fue secuestrado por una tribu de caníbales. Construí refugios, cazá, fabricá armas y defendete de noche mientras explorás cuevas oscuras. Survival con terror y cooperativo para hasta 8 jugadores.',
     descEn:'You survived a plane crash on a forested peninsula, but your son was taken by a tribe of cannibals. Build shelters, hunt, craft weapons and defend yourself at night while exploring dark caves. Survival horror with co-op for up to 8 players.',
     cardDesc:'Un accidente aéreo, un bosque y caníbales.',
@@ -2796,19 +2687,7 @@ setApp('evernote',    {link:'https://evernote.com/download'});
 /* ── STATE ── */
 let currentUser=null, currentFilter='todos', lbImages=[], lbIndex=0;
 let homePage=1, appsPage=1, topPage=1, currentAppsFilter='todos', topMode='juegos';
-let currentTier='todos', currentSort='def', appsSort='def';   // filtros extra del catálogo
-/* Juegos del carrusel del Inicio (en este orden). Cambiá los ids cuando quieras. */
-const DESTACADOS=['rdr2','gta5','eldenring','re4r','witcher3'];
 const PER_PAGE=12, TOP_PER_PAGE=15;
-/* Tarjetas por página = siempre filas completas (antes eran 12 fijas y con 5
-   columnas quedaba una fila a medias). Cuenta cuántas columnas entran igual que
-   el CSS (.games-grid: tarjetas de mínimo 230px) y arma ~PER_PAGE en filas llenas. */
-function gridCols(){
-  const w=document.documentElement.clientWidth, m=matchMedia('(max-width:768px)').matches?32:80; // márgenes de .games-grid
-  return Math.max(1,Math.floor((w-m+1.5)/231.5));
-}
-function perPage(){const c=gridCols();return c*Math.max(2,Math.ceil(PER_PAGE/c));}
-let gridPP=0; // tarjetas por página con las que se dibujó la última vez
 // Rating original de cada juego/app (para volver a él si se quitan todos los votos)
 GAMES.forEach(g=>g.baseRating=g.rating); APPS.forEach(a=>a.baseRating=a.rating);
 
@@ -2835,12 +2714,6 @@ const I18N={
     'i.version':'Versión','i.size':'Tamaño','i.lang':'Idioma','i.platform':'Plataforma','i.license':'Licencia',
     'd.dlFree':'↓ Descargar gratis','d.soon':'⏳ Próximamente','d.as':'Como:','d.noReg':'✓ Descarga gratuita · Sin registro','d.prep':'Link de descarga en preparación',
     'd.related':'Juegos relacionados','d.relatedApps':'Apps relacionadas',
-    'lv.bajo':'Requisitos bajos','lv.medio':'Requisitos medios','lv.alto':'Requisitos altos',
-    'sh.hot':'Populares','sh.hotSub':'Los que más se están jugando','sh.bajoSub':'Para PCs de bajos recursos (2 GB de RAM o menos)',
-    'sh.medioSub':'Para PCs intermedias (de 3 a 6 GB de RAM)','sh.altoSub':'Para PC gamer (8 GB de RAM o más)',
-    'sh.new':'Nuevos','sh.newSub':'Lo último que agregamos','sh.apps':'Apps esenciales','sh.appsSub':'Los programas que no pueden faltar en tu PC','sh.all':'Ver todos →',
-    'hs.view':'Ver juego →',
-    'sr.count1':'1 resultado','sr.countN':'{n} resultados','sr.games':'Juegos ({n})','sr.apps':'Aplicaciones ({n})','sr.all':'Ver todos los resultados ({n}) →',
     'r.none':'Sin calificaciones aún','r.count1':'{n} calificación','r.countN':'{n} calificaciones','r.login':'Iniciá sesión para calificar','r.yours':'Tu calificación:','r.remove':'✕ quitar',
     'r.rateGame':'Calificá este juego:','r.rateApp':'Calificá esta app:','r.thanks':'¡Gracias por calificar! ⭐','r.removed':'Calificación removida.',
     's.game':'Juego','s.app':'App','s.none':'Sin resultados para',
@@ -2925,18 +2798,6 @@ const I18N={
     'i.version':'Version','i.size':'Size','i.lang':'Language','i.platform':'Platform','i.license':'License',
     'd.dlFree':'↓ Free download','d.soon':'⏳ Coming soon','d.as':'As:','d.noReg':'✓ Free download · No sign-up','d.prep':'Download link coming soon',
     'd.related':'Related games','d.relatedApps':'Related apps',
-    'lv.bajo':'Low requirements','lv.medio':'Medium requirements','lv.alto':'High requirements',
-    'sh.hot':'Popular','sh.hotSub':'The most played right now','sh.bajoSub':'For low-end PCs (2 GB of RAM or less)',
-    'sh.medioSub':'For mid-range PCs (3 to 6 GB of RAM)','sh.altoSub':'For gaming PCs (8 GB of RAM or more)',
-    'sh.new':'New','sh.newSub':'The latest we added','sh.apps':'Essential apps','sh.appsSub':'The programs every PC needs','sh.all':'View all →',
-    'hs.view':'View game →',
-    'sr.count1':'1 result','sr.countN':'{n} results','sr.games':'Games ({n})','sr.apps':'Apps ({n})','sr.all':'View all results ({n}) →',
-    /* (HTML) */
-    'games.eyebrow':'Full catalog','games.h1':'GA<span class="z">MES</span>','games.tagline':'Every game, with genre and requirement filters.',
-    'filter.tier':'Requirements:','lv.bajoBtn':'💻 Low','lv.medioBtn':'⚙️ Medium','lv.altoBtn':'🚀 High',
-    'sort.label':'Sort:','sort.def':'Featured','sort.rating':'Top rated','sort.new':'Newest','sort.az':'A - Z','sort.dl':'Most downloaded',
-    'sr.eyebrow':'Search results','sr.noneT':'No results','sr.none':"We couldn't find games or apps for that search. Try another word.",
-    'd.trailer':'Trailer','af.tier':'Requirements','af.tierAuto':'Automatic (based on RAM)',
     'r.none':'No ratings yet','r.count1':'{n} rating','r.countN':'{n} ratings','r.login':'Log in to rate','r.yours':'Your rating:','r.remove':'✕ remove',
     'r.rateGame':'Rate this game:','r.rateApp':'Rate this app:','r.thanks':'Thanks for rating! ⭐','r.removed':'Rating removed.',
     's.game':'Game','s.app':'App','s.none':'No results for',
@@ -3012,13 +2873,12 @@ function setLang(l){
   const y=window.scrollY;
   applyLang();
   setFilterLabel(); setAppsLabel();
-  renderSlider(); renderHome(); renderHomeGrid(); renderNovedades(); renderTopDownloaded(); renderAppsGrid(); renderTopDescargasPage();
+  renderHomeGrid(); renderNovedades(); renderTopDownloaded(); renderAppsGrid(); renderTopDescargasPage();
   if(currentUser)refreshHeaderAvatar();
   const act=document.querySelector('.page.active'), p=act?act.id.slice(5):'home';
   if(p==='perfil')renderPerfil();
   if(p==='descargas')renderDescargas();
   if(p==='admin')renderAdmin();
-  if(p==='buscar'&&window._searchQ)showSearchInternal(window._searchQ);
   if(p==='game'&&window._detail){
     if(window._detail.type==='app')showAppInternal(window._detail.id,true); else showGameInternal(window._detail.id,true);
   } else document.title=t('doc.title');
@@ -3047,15 +2907,14 @@ const firebaseConfig = {
 /* App Check (frena bots que usen tu base de datos por fuera de la página).
    Pegá entre las comillas la clave de Fraud Defense (antes reCAPTCHA Enterprise).
    La sacás de Google Cloud → Seguridad → Fraud Defense → Claves. Vacío = desactivado. */
-const APPCHECK_SITE_KEY='6Le-reotAAAAAENx8aKvLCtuFMMLFm_MKFbQXFd5';
+const APPCHECK_SITE_KEY='6Le-reotAAAAAENx8aKvLCtuFMMLFm_MKFbQXFd5 ';
 let FB=false, auth=null, db=null;
 try{
   if(typeof firebase!=='undefined'){
     firebase.initializeApp(firebaseConfig);
-    // En tu PC (localhost) no se activa: ahí el "modo depuración" de App Check bloquea
-    // Firebase hasta registrar un token de prueba. En la página publicada sí se activa.
-    const isLocal=['localhost','127.0.0.1'].includes(location.hostname);
-    if(APPCHECK_SITE_KEY&&firebase.appCheck&&!isLocal){
+    if(APPCHECK_SITE_KEY&&firebase.appCheck){
+      // En tu PC (localhost) usa un token de prueba que se registra en la consola de Firebase
+      if(['localhost','127.0.0.1'].includes(location.hostname))self.FIREBASE_APPCHECK_DEBUG_TOKEN=true;
       firebase.appCheck().activate(new firebase.appCheck.ReCaptchaEnterpriseProvider(APPCHECK_SITE_KEY),true);
     }
     auth=firebase.auth(); auth.languageCode=LANG;
@@ -3574,73 +3433,16 @@ function refreshHeaderAvatar(){
 }
 
 
-/* ════════════════════════════════════════════════════
-   EFECTOS VISUALES
-   · Si la persona tiene activado "reducir animaciones" en su
-     sistema, se desactivan (accesibilidad).
-════════════════════════════════════════════════════ */
-const reduceMotion=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
-let revealObs=null;
-// Aparecer suave al bajar: a todo lo que tenga class="reveal"
-function observeReveal(){
-  const els=document.querySelectorAll('.reveal:not(.in)');
-  if(!revealObs){els.forEach(el=>el.classList.add('in'));return;}
-  els.forEach(el=>revealObs.observe(el));
-}
-function initEffects(){
-  // 1) Secciones que aparecen al bajar + números que cuentan
-  if('IntersectionObserver' in window&&!reduceMotion()){
-    revealObs=new IntersectionObserver(es=>es.forEach(e=>{
-      if(!e.isIntersecting)return;
-      e.target.classList.add('in'); revealObs.unobserve(e.target);
-      e.target.querySelectorAll('.stat-num[data-n]').forEach(countUp);
-    }),{threshold:.12});
-  } else document.querySelectorAll('.stat-num[data-n]').forEach(el=>{el.dataset.done='1';setStat(el,el.dataset.n,el.dataset.s);});
-  observeReveal();
-
-  // 2) Header que se achica al bajar + botón "volver arriba"
-  const hdr=document.querySelector('header'), top=document.getElementById('toTop');
-  const onScroll=()=>{const y=window.scrollY;hdr.classList.toggle('scrolled',y>40);top.classList.toggle('show',y>700);};
-  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
-
-  // 3) Carrusel: avanza cuando termina la barrita del punto activo, se pausa con el mouse, y se puede deslizar con el dedo
-  const sl=document.getElementById('heroSlider');
-  document.getElementById('hsDots').addEventListener('animationend',()=>slideTo(hsIndex+1));
-  let x0=null;
-  sl.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;},{passive:true});
-  sl.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45)slideTo(hsIndex+(dx<0?1:-1));x0=null;},{passive:true});
-
-  // 4) Tarjetas 3D: se inclinan siguiendo el mouse y les pega un brillo (solo con mouse)
-  if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduceMotion()){
-    let card=null, raf=0, ev=null;
-    const reset=c=>{if(c)c.style.transform='';};
-    document.addEventListener('pointermove',e=>{
-      ev=e; if(raf)return;
-      raf=requestAnimationFrame(()=>{
-        raf=0;
-        const c=ev.target.closest?ev.target.closest('.game-card'):null;
-        if(card&&card!==c)reset(card);
-        card=c; if(!c)return;
-        const r=c.getBoundingClientRect(), x=(ev.clientX-r.left)/r.width, y=(ev.clientY-r.top)/r.height;
-        c.style.transform=`perspective(800px) rotateX(${((.5-y)*9).toFixed(2)}deg) rotateY(${((x-.5)*11).toFixed(2)}deg) scale(1.035)`;
-        c.style.setProperty('--mx',(x*100).toFixed(1)+'%'); c.style.setProperty('--my',(y*100).toFixed(1)+'%');
-      });
-    },{passive:true});
-    document.documentElement.addEventListener('mouseleave',()=>{reset(card);card=null;});   // el mouse salió de la ventana
-  }
-}
-
 /* ── INIT ── */
 window.addEventListener('DOMContentLoaded',()=>{
   applyLang(); setFilterLabel(); setAppsLabel();
-  initEffects();   // primero, así las filas que se dibujan después ya aparecen con animación
-  renderSlider(); renderHome(); renderHomeGrid(); renderNovedades(); updateStats();
+  renderHomeGrid(); renderNovedades(); updateStats();
   updateDynamicDates();
   renderTopDownloaded();
   initAuth();
   // Trae contadores, estrellas y juegos agregados por el admin, y vuelve a dibujar
   Promise.all([loadStats(),loadCatalog()]).then(()=>{
-    applySavedRatings(); renderHome(); renderSlider(); renderHomeGrid(); renderNovedades(); renderTopDownloaded(); updateStats();
+    applySavedRatings(); renderHomeGrid(); renderNovedades(); renderTopDownloaded(); updateStats();
     const act=document.querySelector('.page.active');
     if(act&&act.id==='page-topdescargas')renderTopDescargasPage();
     if(act&&act.id==='page-apps')renderAppsGrid();
@@ -3664,9 +3466,7 @@ window.addEventListener('DOMContentLoaded',()=>{
     history.replaceState({page:'game',id:h.slice(6)},'',location.href); showGameInternal(h.slice(6));
   } else if(h.startsWith('app-') && APPS.find(a=>a.id===h.slice(4))){
     history.replaceState({page:'app',id:h.slice(4)},'',location.href); showAppInternal(h.slice(4));
-  } else if(h.startsWith('buscar-') && h.length>7){
-    history.replaceState({page:'buscar',q:h.slice(7)},'',location.href); showSearchInternal(h.slice(7));
-  } else if(['juegos','novedades','apps','topdescargas','contacto','privacidad'].includes(h)){
+  } else if(['novedades','apps','topdescargas','contacto','privacidad'].includes(h)){
     history.replaceState({page:h},'',location.href); goPageInternal(h);
   }
   // Escucha cuando el usuario usa la flechita atrás/adelante
@@ -3675,27 +3475,12 @@ window.addEventListener('DOMContentLoaded',()=>{
     if(!state){ goPageInternal('home'); return; }
     if(state.page==='game' && state.id) showGameInternal(state.id);
     else if(state.page==='app' && state.id) showAppInternal(state.id);
-    else if(state.page==='buscar' && state.q) showSearchInternal(state.q);
     else goPageInternal(state.page||'home');
   });
   // ══════════════════════════════════════════
 
-  // Si cambia el tamaño de la ventana y entran más/menos columnas, rearma las páginas
-  // (mantiene a la vista las mismas tarjetas que estabas viendo)
-  window.addEventListener('resize',()=>{
-    clearTimeout(window._rz);
-    window._rz=setTimeout(()=>{
-      const pp=perPage(); if(!gridPP||pp===gridPP)return;
-      homePage=Math.floor((homePage-1)*gridPP/pp)+1; appsPage=Math.floor((appsPage-1)*gridPP/pp)+1;
-      renderHomeGrid(); renderAppsGrid();
-    },200);
-  });
-
   document.getElementById('searchInput').addEventListener('input',onSearch);
-  document.getElementById('searchInput').addEventListener('keydown',e=>{
-    if(e.key==='Escape')closeSearch();
-    if(e.key==='Enter')goSearch(e.target.value);   // Enter → página con todos los resultados
-  });
+  document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Escape')closeSearch();});
   document.addEventListener('click',e=>{
     if(!document.getElementById('searchInput').closest('.search-wrap').contains(e.target))closeSearch();
     if(!document.getElementById('userArea').contains(e.target))closeDD();
@@ -3713,27 +3498,11 @@ window.addEventListener('DOMContentLoaded',()=>{
 });
 
 function updateStats(){
-  setStat(document.getElementById('statUsers'),USERS_COUNT);
-  setStat(document.getElementById('statGames'),GAMES.length,'+');
-  setStat(document.getElementById('statApps'),APPS.length,'+');
+  document.getElementById('statUsers').textContent=USERS_COUNT;
+  document.getElementById('statGames').textContent=GAMES.length+'+';
+  const sa=document.getElementById('statApps'); if(sa)sa.textContent=APPS.length+'+';
   const a=document.getElementById('aStatUsers'),b=document.getElementById('aStatJuegos'),c=document.getElementById('aStatAdmins');
   if(a)a.textContent=USERS_COUNT; if(b)b.textContent=GAMES.length;
-}
-/* Números del Inicio: cuentan desde 0 cuando aparecen en pantalla (ver initEffects) */
-function setStat(el,n,suffix=''){
-  if(!el)return;
-  el.dataset.n=n; el.dataset.s=suffix;
-  if(el.dataset.done||reduceMotion())el.innerHTML=`${n}${suffix?`<span>${suffix}</span>`:''}`;
-}
-function countUp(el){
-  if(el.dataset.done)return; el.dataset.done='1';
-  const t0=performance.now(), dur=1300;
-  const step=now=>{
-    const p=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-p,3), n=+el.dataset.n||0, s=el.dataset.s||'';   // n y s pueden cambiar mientras cuenta
-    el.innerHTML=`${Math.round(n*e)}${s?`<span>${s}</span>`:''}`;
-    if(p<1)requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
 }
 
 /* ── PAGES ── */
@@ -3743,12 +3512,12 @@ function goPageInternal(name){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const pg=document.getElementById('page-'+name); if(!pg)return;
   pg.classList.add('active');
-  if(name!=='game'){document.title=t('doc.title');document.querySelectorAll('#dTrailer video').forEach(v=>v.pause());} // corta el tráiler al salir
+  if(name!=='game')document.title=t('doc.title');
   document.documentElement.scrollTop=0; document.body.scrollTop=0;
   // Botones del nav: 0 Inicio · 1 Juegos · 2 Aplicaciones · 3 Más Descargados · 4 Novedades
   const navBtns=document.querySelectorAll('nav button');
   navBtns.forEach(b=>b.classList.remove('active'));
-  const navIdx={home:0,juegos:1,apps:2,topdescargas:3,novedades:4}[name];
+  const navIdx={home:0,apps:2,topdescargas:3,novedades:4}[name];
   if(navIdx!==undefined&&navBtns[navIdx])navBtns[navIdx].classList.add('active');
   if(name==='apps'){renderAppsGrid();}
   if(name==='topdescargas'){renderTopDescargasPage();}
@@ -3768,85 +3537,47 @@ function renderGrid(games,containerId='gamesGrid'){
   const grid=document.getElementById(containerId); if(!grid)return;
   grid.innerHTML='';
   if(!games.length){grid.innerHTML=`<div class="no-results"><h3>${t('grid.empty')}</h3><p>${t('grid.emptyG')}</p></div>`;return;}
-  games.forEach((g,i)=>grid.appendChild(gameCard(g,i)));
-}
-// Tarjeta de un juego (la usan la grilla, las filas del Inicio, relacionados y búsqueda)
-function gameCard(g,i){
-  const d=document.createElement('div');
-  d.className='game-card'+(g.img?' skel':''); d.style.animationDelay=`${i*.06}s`;   // skel = brillo de "cargando" hasta que baja la portada
-  const badge=g.isNew?`<span class="c-badge new">${t('badge.new')}</span>`:g.hot?`<span class="c-badge hot">${t('badge.hot')}</span>`:`<span class="c-badge">${gl(g)}</span>`;
-  const coverHtml=g.img?`<img src="${g.img}" alt="${esc(g.title)}" class="cover-img" loading="lazy" onload="this.parentElement.classList.remove('skel')" onerror="this.parentElement.classList.remove('skel');this.style.display='none';this.nextElementSibling.style.display='flex'">`:'' ;
-  d.innerHTML=`${coverHtml}<div class="cover-ph ${g.cov}" style="${g.img?'display:none':''}">${esc(g.short)}</div>${badge}<span class="c-rating">★ ${g.rating}</span><div class="c-title-bar"><h2>${esc(g.title)}</h2><div class="c-yr">${g.year} · ${esc(g.dev)}</div></div><div class="c-hover"><h2>${esc(g.title)}</h2><p>${esc(tr(g,'cardDesc'))}</p><span class="c-cta">${t('cta.game')}</span></div>`;
-  d.onclick=()=>showGame(g.id);
-  return d;
-}
-
-/* ── NIVEL DE REQUISITOS (bajo / medio / alto) ──
-   Si el juego tiene nivel:'bajo'|'medio'|'alto' se usa ese; si no, se calcula por la RAM. */
-const TIER_ICON={bajo:'💻',medio:'⚙️',alto:'🚀'};
-function reqTier(g){
-  if(TIER_ICON[g.nivel])return g.nivel;
-  const r=(g.reqs||[]).find(x=>x.l==='RAM'), m=r&&String(r.v).match(/([\d.]+)\s*(GB|MB)/i);
-  if(!m)return 'medio';
-  const gb=m[2].toUpperCase()==='MB'?m[1]/1024:+m[1];
-  return gb<=2?'bajo':gb<=6?'medio':'alto';
-}
-const tierBadge=g=>{const l=reqTier(g);return `<span class="m-badge tier t-${l}">${TIER_ICON[l]} ${t('lv.'+l)}</span>`;};
-
-/* ── ORDENAR (catálogo de juegos y de apps) ── */
-function sortList(list,mode,isApp){
-  const l=[...list], num=x=>parseFloat(x.rating)||0, dl=x=>DL_CACHE[isApp?'app_'+x.id:x.id]||0;
-  if(mode==='rating')l.sort((a,b)=>num(b)-num(a));
-  else if(mode==='new')l.sort((a,b)=>(b.year||0)-(a.year||0)||num(b)-num(a));
-  else if(mode==='az')l.sort((a,b)=>a.title.localeCompare(b.title,LOC()));
-  else if(mode==='dl')l.sort((a,b)=>dl(b)-dl(a)||num(b)-num(a));
-  return l;   // 'def' = el orden en que están cargados
+  games.forEach((g,i)=>{
+    const d=document.createElement('div');
+    d.className='game-card'; d.style.animationDelay=`${i*.06}s`;
+    const badge=g.isNew?`<span class="c-badge new">${t('badge.new')}</span>`:g.hot?`<span class="c-badge hot">${t('badge.hot')}</span>`:`<span class="c-badge">${gl(g)}</span>`;
+    const coverHtml=g.img?`<img src="${g.img}" alt="${esc(g.title)}" class="cover-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`:'' ;
+    d.innerHTML=`${coverHtml}<div class="cover-ph ${g.cov}" style="${g.img?'display:none':''}">${esc(g.short)}</div>${badge}<span class="c-rating">★ ${g.rating}</span><div class="c-title-bar"><h2>${esc(g.title)}</h2><div class="c-yr">${g.year} · ${esc(g.dev)}</div></div><div class="c-hover"><h2>${esc(g.title)}</h2><p>${esc(tr(g,'cardDesc'))}</p><span class="c-cta">${t('cta.game')}</span></div>`;
+    d.onclick=()=>showGame(g.id);
+    grid.appendChild(d);
+  });
 }
 
 /* ── FILTER ── */
 function setFilter(genre,btn){
   currentFilter=genre;
-  document.querySelectorAll('#filterBar .filter-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('#page-home .filter-btn').forEach(b=>b.classList.remove('active'));
   if(btn)btn.classList.add('active');
-  else document.querySelectorAll('#filterBar .filter-btn').forEach(b=>{if(b.dataset.genre===genre)b.classList.add('active');});
+  else document.querySelectorAll('#page-home .filter-btn').forEach(b=>{if(b.dataset.genre===genre)b.classList.add('active');});
   setFilterLabel();
   homePage=1;
   renderHomeGrid();
   closeSearch();
 }
-function setTier(tier,btn){
-  currentTier=tier; homePage=1;
-  document.querySelectorAll('#tierBar .filter-btn').forEach(b=>b.classList.toggle('active',btn?b===btn:b.dataset.tier===tier));
-  setFilterLabel(); renderHomeGrid();
-}
-function setSort(v){currentSort=v; homePage=1; renderHomeGrid();}
-// Título de la grilla según el género y los requisitos elegidos (en el idioma actual)
-function setFilterLabel(){
-  document.getElementById('gridLabel').textContent=t('g.'+currentFilter)+(currentTier!=='todos'?' · '+t('lv.'+currentTier):'');
-}
+// Título de la grilla según el género elegido (en el idioma actual)
+function setFilterLabel(){document.getElementById('gridLabel').textContent=t('g.'+currentFilter);}
 
-/* ── BOTÓN "INICIO" (menú, logo y pie): vuelve al principio del Inicio ── */
-function goInicio(){goPage('home');}
-
-/* ── BOTÓN "JUEGOS" DEL MENÚ: va al catálogo completo, página 1 y sin filtros ──
-   Las filas del Inicio lo llaman con un filtro ya puesto: goJuegos({tier:'bajo'}) */
-function goJuegos(o={}){
-  currentFilter=o.genre||'todos'; currentTier=o.tier||'todos'; currentSort=o.sort||'def'; homePage=1;
-  document.querySelectorAll('#filterBar .filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.genre===currentFilter));
-  document.querySelectorAll('#tierBar .filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.tier===currentTier));
-  const sg=document.getElementById('sortGames'); if(sg)sg.value=currentSort;
-  setFilterLabel(); renderHomeGrid(); closeSearch();
-  goPage('juegos');
+/* ── BOTÓN "JUEGOS" DEL MENÚ: va al catálogo completo ── */
+function goJuegos(){
+  goPage('home'); setFilter('todos');
+  const navBtns=document.querySelectorAll('nav button');
+  navBtns.forEach(b=>b.classList.remove('active'));
+  if(navBtns[1])navBtns[1].classList.add('active');
+  setTimeout(()=>document.getElementById('filterBar').scrollIntoView({behavior:'smooth',block:'start'}),50);
 }
 
-/* ── GRILLA DE JUEGOS (página Juegos) CON PAGINACIÓN ── */
+/* ── GRILLA HOME CON PAGINACIÓN ── */
 function renderHomeGrid(){
-  const list=sortList(GAMES.filter(g=>(currentFilter==='todos'||g.genre===currentFilter)&&(currentTier==='todos'||reqTier(g)===currentTier)),currentSort);
-  const pp=gridPP=perPage();
-  const pages=Math.max(1,Math.ceil(list.length/pp));
+  const list=currentFilter==='todos'?GAMES:GAMES.filter(g=>g.genre===currentFilter);
+  const pages=Math.max(1,Math.ceil(list.length/PER_PAGE));
   if(homePage>pages)homePage=pages;
-  renderGrid(list.slice((homePage-1)*pp,homePage*pp));
-  renderPagination('paginacion',list.length,homePage,pp,'changeHomePage','juegos');
+  renderGrid(list.slice((homePage-1)*PER_PAGE,homePage*PER_PAGE));
+  renderPagination('paginacion',list.length,homePage,PER_PAGE,'changeHomePage','juegos');
 }
 function changeHomePage(p){
   homePage=p; renderHomeGrid();
@@ -3936,21 +3667,19 @@ function setAppsFilter(cat,btn){
   setAppsLabel();
   renderAppsGrid();
 }
-function setAppsSort(v){appsSort=v; appsPage=1; renderAppsGrid();}
 function setAppsLabel(){
   const c=currentAppsFilter;
   document.getElementById('appsGridLabel').textContent=c==='todos'?t('apps.all'):(LANG==='en'?I18N.en['c.'+c]:APP_CATS[c].label);
 }
 function renderAppsGrid(){
   const grid=document.getElementById('appsGrid'); if(!grid)return;
-  const list=sortList(currentAppsFilter==='todos'?APPS:APPS.filter(a=>a.cat===currentAppsFilter),appsSort,true);
-  const pp=gridPP=perPage();
-  const pages=Math.max(1,Math.ceil(list.length/pp));
+  const list=currentAppsFilter==='todos'?APPS:APPS.filter(a=>a.cat===currentAppsFilter);
+  const pages=Math.max(1,Math.ceil(list.length/PER_PAGE));
   if(appsPage>pages)appsPage=pages;
   grid.innerHTML='';
   if(!list.length){grid.innerHTML=`<div class="no-results"><h3>${t('grid.empty')}</h3><p>${t('grid.emptyA')}</p></div>`;}
-  list.slice((appsPage-1)*pp,appsPage*pp).forEach((a,i)=>grid.appendChild(appCard(a,i)));
-  renderPagination('paginacion-apps',list.length,appsPage,pp,'changeAppsPage','apps');
+  list.slice((appsPage-1)*PER_PAGE,appsPage*PER_PAGE).forEach((a,i)=>grid.appendChild(appCard(a,i)));
+  renderPagination('paginacion-apps',list.length,appsPage,PER_PAGE,'changeAppsPage','apps');
 }
 // Tarjeta de una app (la usan la grilla de apps y "Apps relacionadas")
 function appCard(a,i){
@@ -3995,94 +3724,6 @@ function showApp(id){
   showAppInternal(id);
 }
 
-/* ════════════════════════════════════════════════════
-   INICIO (vidriera): carrusel de destacados + filas por sección
-════════════════════════════════════════════════════ */
-const SHELF_MAX=16;   // tarjetas por fila
-function homeShelves(){
-  const byRating=(a,b)=>(parseFloat(b.rating)||0)-(parseFloat(a.rating)||0);
-  const tier=l=>GAMES.filter(g=>reqTier(g)===l).sort(byRating);
-  return [
-    {id:'hot',  icon:'🔥',title:'sh.hot', sub:'sh.hotSub', items:GAMES.filter(g=>g.hot).sort(byRating)},
-    {id:'bajo', icon:'💻',title:'lv.bajo',sub:'sh.bajoSub',items:tier('bajo')},
-    {id:'medio',icon:'⚙️',title:'lv.medio',sub:'sh.medioSub',items:tier('medio')},
-    {id:'alto', icon:'🚀',title:'lv.alto',sub:'sh.altoSub',items:tier('alto')},
-    {id:'new',  icon:'🆕',title:'sh.new', sub:'sh.newSub', items:GAMES.filter(g=>g.isNew)},
-    {id:'apps', icon:'📱',title:'sh.apps',sub:'sh.appsSub',items:APPS.filter(a=>a.hot).sort(byRating),app:true},
-  ];
-}
-function renderHome(){
-  const box=document.getElementById('homeShelves'); if(!box)return;
-  box.innerHTML='';
-  homeShelves().forEach(s=>{
-    if(!s.items.length)return;
-    const sec=document.createElement('section');
-    sec.className='shelf reveal';
-    sec.innerHTML=`<div class="shelf-head">
-        <div><h2 class="shelf-title">${s.icon} ${t(s.title)}</h2><p class="shelf-sub">${t(s.sub)}</p></div>
-        <div class="shelf-ctrl">
-          <button class="shelf-arrow" onclick="shelfScroll(this,-1)" aria-label="‹">‹</button>
-          <button class="shelf-arrow" onclick="shelfScroll(this,1)" aria-label="›">›</button>
-          <button class="shelf-all" onclick="shelfAll('${s.id}')">${t('sh.all')}</button>
-        </div>
-      </div>
-      <div class="shelf-track"></div>`;
-    const tr=sec.querySelector('.shelf-track');
-    s.items.slice(0,SHELF_MAX).forEach((x,i)=>tr.appendChild(s.app?appCard(x,i):gameCard(x,i)));
-    box.appendChild(sec);
-  });
-  observeReveal();
-}
-// Flechas de cada fila: corre casi una "pantalla" de tarjetas
-function shelfScroll(btn,dir){const tr=btn.closest('.shelf').querySelector('.shelf-track');tr.scrollBy({left:dir*tr.clientWidth*.85,behavior:'smooth'});}
-// "Ver todos" de cada fila
-function shelfAll(id){
-  if(id==='new')return goPage('novedades');
-  if(id==='apps')return goPage('apps');
-  if(TIER_ICON[id])return goJuegos({tier:id});
-  goJuegos({sort:'dl'});   // Populares → catálogo ordenado por más descargados
-}
-
-/* ── CARRUSEL DE DESTACADOS ──
-   Rota solo cuando termina la barrita del punto activo (6 s); se pausa con el
-   mouse encima y no rota si el sistema pide menos animaciones. */
-let hsIndex=0;
-function renderSlider(){
-  const track=document.getElementById('hsTrack'), dots=document.getElementById('hsDots'); if(!track)return;
-  let list=DESTACADOS.map(id=>GAMES.find(g=>g.id===id)).filter(Boolean);
-  if(!list.length)list=GAMES.filter(g=>g.banner).sort((a,b)=>parseFloat(b.rating)-parseFloat(a.rating)).slice(0,5);
-  if(hsIndex>=list.length)hsIndex=0;
-  track.innerHTML=list.map((g,i)=>{
-    // Logo transparente de Steam (mismo lugar que el banner); si no existe se muestra el título
-    const logo=g.banner&&g.banner.includes('/library_hero.jpg')?g.banner.replace('library_hero.jpg','logo.png'):'';
-    return `<div class="hs-slide${i===hsIndex?' active':''}" data-bg="${g.banner||g.img}">
-      <div class="hs-bg"></div><div class="hs-shade"></div>
-      <div class="hs-content">
-        <div class="hs-badges"><span class="m-badge">${gl(g)}</span>${g.isNew?`<span class="m-badge new">${t('badge.new')}</span>`:''}${tierBadge(g)}</div>
-        ${logo?`<img class="hs-logo" src="${logo}" alt="${esc(g.title)}" onerror="this.remove()">`:''}
-        <h2 class="hs-title">${esc(g.title)}</h2>
-        <p class="hs-desc">${esc(tr(g,'cardDesc'))}</p>
-        <div class="hs-meta"><span class="m-rat">★ ${g.rating}</span><span class="m-txt">${g.year} · ${esc(g.dev)}</span></div>
-        <button class="hs-btn" onclick="showGame('${g.id}')">${t('hs.view')}</button>
-      </div>
-    </div>`;
-  }).join('');
-  dots.innerHTML=list.map((g,i)=>`<button class="hs-dot${i===hsIndex?' active':''}" onclick="slideTo(${i},true)" aria-label="${esc(g.title)}"><span></span></button>`).join('');
-  slideTo(hsIndex);
-}
-// Carga la imagen de fondo de una diapositiva recién cuando hace falta (ahorra datos)
-function loadSlideBg(i){
-  const s=document.querySelectorAll('.hs-slide')[i]; if(!s||s.dataset.loaded)return;
-  s.dataset.loaded='1'; s.querySelector('.hs-bg').style.backgroundImage=`url('${s.dataset.bg}')`;
-}
-function slideTo(i){
-  const slides=document.querySelectorAll('.hs-slide'); if(!slides.length)return;
-  hsIndex=(i+slides.length)%slides.length;
-  slides.forEach((s,k)=>s.classList.toggle('active',k===hsIndex));
-  document.querySelectorAll('.hs-dot').forEach((d,k)=>d.classList.toggle('active',k===hsIndex));
-  loadSlideBg(hsIndex); loadSlideBg((hsIndex+1)%slides.length);
-}
-
 /* ── NOVEDADES ── */
 function renderNovedades(){
   const featured=[...GAMES].sort((a,b)=>parseFloat(b.rating)-parseFloat(a.rating)).slice(0,3);
@@ -4113,11 +3754,11 @@ function showGameInternal(id,noTrack){
   window._detail={type:'game',id};
   fillDetail(g,{
     ratingId:id,
-    meta:`<span class="m-badge">${gl(g)}</span>${tierBadge(g)}<span class="m-badge b2">${esc(g.dev)}</span><span class="m-rat">★ ${g.rating}</span><span class="m-txt">${g.year} · PC</span>`,
+    meta:`<span class="m-badge">${gl(g)}</span><span class="m-badge b2">${esc(g.dev)}</span><span class="m-rat">★ ${g.rating}</span><span class="m-txt">${g.year} · PC</span>`,
     info:[{l:t('i.version'),v:tv(g.version)},{l:t('i.size'),v:g.size},{l:t('i.lang'),v:tv(g.lang)},{l:t('i.platform'),v:g.platform}],
     reqsTitle:t('d.reqsMin'),
     boxTitle:t('d.boxGame'),
-    back:{label:t('d.backGames'),page:'juegos'},
+    back:{label:t('d.backGames'),page:'home'},
     onDownload:()=>trackDownload(g),
   });
 }
@@ -4155,7 +3796,6 @@ function fillDetail(g,o){
   renderStarRating(id);
   renderComForm(); renderComList(id); loadComments(id);
   renderRelated(g,id.startsWith('app_'));
-  renderTrailer(g);
 
   lbImages=(g.screenshots||[]).filter(s=>s&&s.trim()!=='');
   const ssBox=document.getElementById('dScreenshots');
@@ -4193,25 +3833,6 @@ function fillDetail(g,o){
 
   goPageInternal('game');
 }
-/* ── TRÁILER ──
-   trailer:'256768283' (número de video de Steam), un link a un .mp4 o 'yt:ID' de YouTube.
-   En celular usa la versión de 480p de Steam para gastar menos datos. */
-function renderTrailer(g){
-  const box=document.getElementById('dTrailer'), tt=document.getElementById('dTrTitle'); if(!box)return;
-  const v=String(g.trailer||''), poster=(g.screenshots||[]).find(Boolean)||g.banner||g.img||'';
-  let html='';
-  if(/^\d+$/.test(v)){
-    const q=matchMedia('(max-width:768px)').matches?'movie480':'movie_max';
-    html=`<video controls preload="none" playsinline poster="${poster}" src="https://cdn.akamai.steamstatic.com/steam/apps/${v}/${q}.mp4"></video>`;
-  } else if(v.startsWith('yt:')){
-    html=`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.slice(3))}" title="${esc(g.title)}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
-  } else if(/^https?:\/\//.test(v)){
-    html=`<video controls preload="none" playsinline poster="${poster}" src="${esc(v)}"></video>`;
-  }
-  box.innerHTML=html;
-  box.style.display=tt.style.display=html?'':'none';
-}
-
 /* ── RELACIONADOS ──
    Al final del detalle: 6 del mismo género (o categoría, si es app) y/o de la
    misma desarrolladora. Suman puntos el género, la desarrolladora y que sean
@@ -4267,7 +3888,10 @@ function onSearch(){
   const raw=document.getElementById('searchInput').value.trim(), q=norm(raw);
   const dd=document.getElementById('searchDD');
   if(!q){dd.classList.remove('open');return;}
-  const {games:res,apps:resApps}=searchMatches(raw);
+  // Busca sin importar tildes ("accion" encuentra "Acción") y en ambos idiomas
+  const hit=(...f)=>f.some(s=>norm(s).includes(q));
+  const res=GAMES.filter(g=>hit(g.title,g.genreLabel,I18N.en['g.'+g.genre],g.dev));
+  const resApps=APPS.filter(a=>hit(a.title,a.catLabel,I18N.en['c.'+a.cat],a.dev));
   dd.innerHTML='';
   if(!res.length&&!resApps.length){dd.innerHTML=`<div class="search-empty">${t('s.none')} "<strong>${esc(raw)}</strong>"</div>`;}
   else{
@@ -4285,46 +3909,10 @@ function onSearch(){
       btn.onclick=()=>{closeSearch();showApp(a.id);};
       dd.appendChild(btn);
     });
-    // Si hay más de los que entran en el desplegable → link a la página de resultados
-    const total=res.length+resApps.length;
-    if(res.length>6||resApps.length>4){
-      const all=document.createElement('button');
-      all.className='sri-all'; all.textContent=t('sr.all',{n:total});
-      all.onclick=()=>goSearch(raw);
-      dd.appendChild(all);
-    }
   }
   dd.classList.add('open');
 }
 function closeSearch(){document.getElementById('searchDD').classList.remove('open');document.getElementById('searchInput').value='';}
-// Busca sin importar tildes ("accion" encuentra "Acción") y en ambos idiomas
-function searchMatches(raw){
-  const q=norm(raw.trim()), hit=(...f)=>f.some(s=>norm(s).includes(q));
-  return {
-    games:GAMES.filter(g=>hit(g.title,g.genreLabel,I18N.en['g.'+g.genre],g.dev)),
-    apps:APPS.filter(a=>hit(a.title,a.catLabel,I18N.en['c.'+a.cat],a.dev)),
-  };
-}
-/* ── PÁGINA DE RESULTADOS (Enter en el buscador) ── */
-function goSearch(raw){
-  const q=String(raw||'').trim(); if(!q)return;
-  history.pushState({page:'buscar',q},'',location.pathname+'#buscar-'+encodeURIComponent(q));
-  showSearchInternal(q);
-}
-function showSearchInternal(q){
-  const {games,apps}=searchMatches(q), n=games.length+apps.length;
-  window._searchQ=q;
-  document.getElementById('srTitle').textContent=`“${q}”`;
-  document.getElementById('srCount').textContent=t(n===1?'sr.count1':'sr.countN',{n});
-  document.getElementById('srGamesWrap').style.display=games.length?'':'none';
-  document.getElementById('srAppsWrap').style.display=apps.length?'':'none';
-  document.getElementById('srEmpty').style.display=n?'none':'';
-  document.getElementById('srGamesLabel').textContent=t('sr.games',{n:games.length});
-  document.getElementById('srAppsLabel').textContent=t('sr.apps',{n:apps.length});
-  renderGrid(games,'srGames');
-  const ga=document.getElementById('srApps'); ga.innerHTML=''; apps.forEach((a,i)=>ga.appendChild(appCard(a,i)));
-  closeSearch(); goPageInternal('buscar');
-}
 
 /* ── MODAL ── */
 function openModal(tab='login'){clearErrs();document.getElementById('mSuccess').classList.remove('show');document.getElementById('fLogin').classList.remove('hidden');document.getElementById('fRegister').classList.add('hidden');document.getElementById('authModal').classList.add('open');switchTab(tab);}
@@ -4472,7 +4060,7 @@ async function adminDeleteGame(id){
   try{
     await db.collection('catalog').doc(id).delete();
     GAMES.splice(GAMES.indexOf(g),1);
-    renderAdminCustom(); updateStats(); renderHomeGrid(); renderHome(); renderNovedades();
+    renderAdminCustom(); updateStats(); renderHomeGrid(); renderNovedades();
     toast(t('ad.gameDeleted'),'info');
   }catch(e){fbWarn(e);toast(t('ad.delFail'),'error');}
 }
@@ -4491,19 +4079,18 @@ async function adminAddGame(){
   const g={title,dev,year,genre,genreLabel:glab[genre]||genre,short:title.substring(0,4).toUpperCase(),rating,size,version,lang:'Español',platform:'PC',cov:cm[genre]||'cov-gta',
     img:/^https?:\/\//.test(img)?img:'',screenshots:shots,desc,descEn,cardDesc:cardesc||desc.substring(0,60)+'...',cardDescEn:cardescEn,link,hot:false,isNew:true,
     added:new Date().toISOString(),reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'2 GHz'},{l:'GPU',v:'512 MB'},{l:'Disco',v:size},{l:'SO',v:'Windows 7+'},{l:'DirectX',v:'v11'}]};
-  const nivel=document.getElementById('af-tier').value; if(nivel)g.nivel=nivel;   // vacío = automático
   // Se guarda en Firebase para que no se pierda al recargar la página
   if(FB){
     try{await db.collection('catalog').doc(id).set(g);}
     catch(e){fbWarn(e);toast(t('ad.addFail'),'error');return;}
   }
   GAMES.push(prepCustomGame({...g,id}));
-  updateStats();renderHomeGrid();renderHome();renderNovedades();renderAdminCustom();
+  updateStats();renderHomeGrid();renderNovedades();renderAdminCustom();
   document.getElementById('adminSuccess').classList.add('show');
   setTimeout(()=>document.getElementById('adminSuccess').classList.remove('show'),3000);
   toast(t('ad.added',{t:title}),'success');clearAdminForm();
 }
-function clearAdminForm(){['af-title','af-dev','af-year','af-version','af-size','af-rating','af-link','af-img','af-ss','af-cardesc','af-desc','af-cardescEn','af-descEn','af-tier'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});}
+function clearAdminForm(){['af-title','af-dev','af-year','af-version','af-size','af-rating','af-link','af-img','af-ss','af-cardesc','af-desc','af-cardescEn','af-descEn'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});}
 
 /* ── TOAST ── */
 function toast(msg,type='info'){
