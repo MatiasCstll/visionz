@@ -16,14 +16,14 @@
 <body>
 
 <header>
-  <div class="logo" onclick="goPage('home')">Visión <span>Z</span></div>
+  <div class="logo" onclick="goInicio()">Visión <span>Z</span></div>
   <div class="search-wrap">
     <span class="search-icon">⌕</span>
     <input type="text" id="searchInput" placeholder="Buscar juegos y apps..." data-i18n-ph="search.ph" autocomplete="off">
     <div class="search-results" id="searchDD"></div>
   </div>
   <nav>
-    <button class="active" onclick="goPage('home')" data-i18n="nav.home">Inicio</button>
+    <button class="active" onclick="goInicio()" data-i18n="nav.home">Inicio</button>
     <button onclick="goJuegos()" data-i18n="nav.games">Juegos</button>
     <button onclick="goPage('apps')" data-i18n="nav.apps">Aplicaciones</button>
     <button onclick="goPage('topdescargas')" data-i18n="nav.top">Más Descargados</button>
@@ -57,19 +57,42 @@
   </div>
 </header>
 
-<!-- ═══════ PAGE: HOME ═══════ -->
+<!-- ═══════ PAGE: HOME (vidriera) ═══════ -->
 <div id="page-home" class="page active">
-  <section class="hero">
+  <!-- Carrusel de destacados (los juegos se eligen en DESTACADOS, en app.js) -->
+  <section class="hero-slider" id="heroSlider">
+    <div class="hs-track" id="hsTrack"></div>
+    <button class="hs-nav hs-prev" onclick="slideTo(hsIndex-1,true)" aria-label="‹">‹</button>
+    <button class="hs-nav hs-next" onclick="slideTo(hsIndex+1,true)" aria-label="›">›</button>
+    <div class="hs-dots" id="hsDots"></div>
+  </section>
+  <!-- Franja con los números del sitio (cuentan hacia arriba al aparecer) -->
+  <section class="hero home-stats reveal">
     <div class="hero-glow"></div><div class="hero-lines"></div>
     <p class="hero-eyebrow" data-i18n="home.eyebrow">Tu sitio de descargas gratuitas</p>
-    <h1>VISION <span class="z">Z</span></h1>
     <p class="hero-tagline" data-i18n="home.tagline">Los mejores juegos clásicos, listos para descargar.</p>
     <div class="hero-stats">
       <div class="stat-item"><div class="stat-num" id="statGames">6<span>+</span></div><div class="stat-label" data-i18n="stat.games">Juegos</div></div>
       <div class="stat-item"><div class="stat-num" id="statApps">0</div><div class="stat-label" data-i18n="stat.apps">Apps</div></div>
       <div class="stat-item"><div class="stat-num" id="statUsers">0</div><div class="stat-label" data-i18n="stat.users">Usuarios</div></div>
-      <div class="stat-item"><div class="stat-num">100<span>%</span></div><div class="stat-label" data-i18n="stat.free">Gratis</div></div>
+      <div class="stat-item"><div class="stat-num" id="statFree" data-n="100" data-s="%">100<span>%</span></div><div class="stat-label" data-i18n="stat.free">Gratis</div></div>
     </div>
+  </section>
+  <!-- Filas por sección: Populares, Requisitos bajos/medios/altos, Nuevos y Apps (se arman en renderHome) -->
+  <div id="homeShelves"></div>
+  <div class="top-section reveal" id="topSection">
+    <div class="section-label" style="padding:0 0 1.5rem" data-i18n="home.top">Lo más descargado</div>
+    <div class="top-list" id="topList"></div>
+  </div>
+</div>
+
+<!-- ═══════ PAGE: JUEGOS (catálogo completo) ═══════ -->
+<div id="page-juegos" class="page">
+  <section class="hero" style="padding:4rem 2.5rem 3rem">
+    <div class="hero-glow"></div>
+    <p class="hero-eyebrow" data-i18n="games.eyebrow">Catálogo completo</p>
+    <h1 style="font-size:clamp(3rem,8vw,7rem)" data-i18n="games.h1">JUE<span class="z">GOS</span></h1>
+    <p class="hero-tagline" data-i18n="games.tagline">Todos los juegos, con filtros por género y requisitos.</p>
   </section>
   <div class="filter-bar" id="filterBar">
     <span class="filter-label" data-i18n="filter.genre">Género:</span>
@@ -85,13 +108,45 @@
     <button class="filter-btn" data-genre="deportes" onclick="setFilter('deportes',this)" data-i18n="g.deportes">Deportes</button>
     <button class="filter-btn" data-genre="sandbox" onclick="setFilter('sandbox',this)" data-i18n="g.sandbox">Sandbox</button>
   </div>
+  <div class="filter-bar" id="tierBar">
+    <span class="filter-label" data-i18n="filter.tier">Requisitos:</span>
+    <button class="filter-btn active" data-tier="todos" onclick="setTier('todos',this)" data-i18n="g.all">Todos</button>
+    <button class="filter-btn" data-tier="bajo" onclick="setTier('bajo',this)" data-i18n="lv.bajoBtn">💻 Bajos</button>
+    <button class="filter-btn" data-tier="medio" onclick="setTier('medio',this)" data-i18n="lv.medioBtn">⚙️ Medios</button>
+    <button class="filter-btn" data-tier="alto" onclick="setTier('alto',this)" data-i18n="lv.altoBtn">🚀 Altos</button>
+    <span class="sort-wrap">
+      <span class="filter-label" data-i18n="sort.label">Ordenar:</span>
+      <select class="sort-select" id="sortGames" onchange="setSort(this.value)">
+        <option value="def" data-i18n="sort.def">Destacados</option>
+        <option value="rating" data-i18n="sort.rating">Mejor calificados</option>
+        <option value="new" data-i18n="sort.new">Más nuevos</option>
+        <option value="az" data-i18n="sort.az">A - Z</option>
+        <option value="dl" data-i18n="sort.dl">Más descargados</option>
+      </select>
+    </span>
+  </div>
   <div class="section-label" id="gridLabel">Todos los juegos</div>
   <div class="games-grid" id="gamesGrid"></div>
   <div id="paginacion"></div>
-  <div class="top-section" id="topSection">
-    <div class="section-label" style="padding:0 0 1.5rem" data-i18n="home.top">Lo más descargado</div>
-    <div class="top-list" id="topList"></div>
+</div>
+
+<!-- ═══════ PAGE: RESULTADOS DE BÚSQUEDA (Enter en el buscador) ═══════ -->
+<div id="page-buscar" class="page">
+  <section class="hero" style="padding:4rem 2.5rem 3rem">
+    <div class="hero-glow"></div>
+    <p class="hero-eyebrow" data-i18n="sr.eyebrow">Resultados de búsqueda</p>
+    <h1 class="sr-title" id="srTitle"></h1>
+    <p class="hero-tagline" id="srCount"></p>
+  </section>
+  <div id="srGamesWrap">
+    <div class="section-label" id="srGamesLabel"></div>
+    <div class="games-grid" id="srGames"></div>
   </div>
+  <div id="srAppsWrap">
+    <div class="section-label" id="srAppsLabel"></div>
+    <div class="games-grid" id="srApps"></div>
+  </div>
+  <div class="no-results sr-empty" id="srEmpty"><h3 data-i18n="sr.noneT">Sin resultados</h3><p data-i18n="sr.none">No encontramos juegos ni apps con esa búsqueda. Probá con otra palabra.</p></div>
 </div>
 
 <!-- ═══════ PAGE: NOVEDADES ═══════ -->
@@ -147,6 +202,15 @@
     <button class="filter-btn" onclick="setAppsFilter('comunicacion',this)" data-i18n="c.comunicacion">Comunicación</button>
     <button class="filter-btn" onclick="setAppsFilter('gaming',this)" data-i18n="c.gaming">Gaming</button>
     <button class="filter-btn" onclick="setAppsFilter('oficina',this)" data-i18n="c.oficina">Oficina</button>
+    <span class="sort-wrap">
+      <span class="filter-label" data-i18n="sort.label">Ordenar:</span>
+      <select class="sort-select" id="sortApps" onchange="setAppsSort(this.value)">
+        <option value="def" data-i18n="sort.def">Destacados</option>
+        <option value="rating" data-i18n="sort.rating">Mejor calificados</option>
+        <option value="az" data-i18n="sort.az">A - Z</option>
+        <option value="dl" data-i18n="sort.dl">Más descargados</option>
+      </select>
+    </span>
   </div>
   <div class="section-label" id="appsGridLabel">Todas las aplicaciones</div>
   <div class="games-grid" id="appsGrid"></div>
@@ -182,6 +246,8 @@
         <div class="star-your" id="dYourRating" style="margin-top:.8rem"></div>
         <div style="margin-top:.7rem;font-size:.75rem;color:var(--muted)" id="dRatePrompt"></div>
       </div>
+      <p class="gd-stitle" id="dTrTitle" data-i18n="d.trailer">Tráiler</p>
+      <div class="trailer" id="dTrailer"></div>
       <p class="gd-stitle" id="dSsTitle" data-i18n="d.ss">Capturas de pantalla</p>
       <div class="screenshots" id="dScreenshots"></div>
       <p class="gd-stitle" id="dReqsTitle">Requisitos mínimos</p>
@@ -238,6 +304,7 @@
       <div class="af-group"><label data-i18n="af.version">Versión</label><input type="text" id="af-version" placeholder="Ej: 1.0 Original" data-i18n-ph="af.ph.version"></div>
       <div class="af-group"><label data-i18n="af.size">Tamaño</label><input type="text" id="af-size" placeholder="Ej: 4.7 GB" data-i18n-ph="af.ph.size"></div>
       <div class="af-group"><label data-i18n="af.rating">Calificación (0-10)</label><input type="text" id="af-rating" placeholder="9.5"></div>
+      <div class="af-group"><label data-i18n="af.tier">Requisitos</label><select id="af-tier"><option value="" data-i18n="af.tierAuto">Automático (según la RAM)</option><option value="bajo" data-i18n="lv.bajoBtn">💻 Bajos</option><option value="medio" data-i18n="lv.medioBtn">⚙️ Medios</option><option value="alto" data-i18n="lv.altoBtn">🚀 Altos</option></select></div>
       <div class="af-group"><label data-i18n="af.link">Link de descarga</label><input type="text" id="af-link" placeholder="https://..."></div>
       <div class="af-group af-full"><label data-i18n="af.img">Portada (URL de la imagen)</label><input type="text" id="af-img" placeholder="https://..."></div>
       <div class="af-group af-full"><label data-i18n="af.ss">Capturas (una URL por línea, hasta 3)</label><textarea id="af-ss" placeholder="https://...&#10;https://...&#10;https://..."></textarea></div>
@@ -327,9 +394,9 @@
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer>
-  <div class="fl" onclick="goPage('home')">Visión <span>Z</span></div>
+  <div class="fl" onclick="goInicio()">Visión <span>Z</span></div>
   <div class="footer-links">
-    <button onclick="goPage('home')" data-i18n="nav.home">Inicio</button>
+    <button onclick="goInicio()" data-i18n="nav.home">Inicio</button>
     <button onclick="goJuegos()" data-i18n="nav.games">Juegos</button>
     <button onclick="goPage('apps')" data-i18n="nav.apps">Aplicaciones</button>
     <button onclick="goPage('topdescargas')" data-i18n="nav.top">Más Descargados</button>
@@ -382,6 +449,8 @@
 </div>
 
 <div class="toast-cont" id="toastCont"></div>
+<!-- Botón "volver arriba" (aparece al bajar) -->
+<button class="to-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="↑">↑</button>
 
 <!-- JS al final del body para que el DOM ya esté cargado -->
 <!-- Firebase (base de datos y login) -->
