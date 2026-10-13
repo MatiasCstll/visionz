@@ -18,6 +18,8 @@
    descEn / cardDescEn → descripciones en inglés
    trailer     → tráiler del detalle: número de video de Steam
                  ('256768283'), un link a un .mp4, o 'yt:ID' de YouTube
+   update      → link del Update / parche del juego. Aparece como un
+                 botón chico debajo de "Descargar" (solo si lo ponés)
    nivel       → requisitos 'bajo', 'medio' o 'alto'. Si no lo ponés
                  se calcula solo por la RAM (≤2 GB bajo, ≤6 GB medio,
                  más de 6 GB alto)
@@ -322,7 +324,7 @@ let GAMES = [
     descEn:'Max Payne is a New York cop who lost everything. On a snowstorm night he sets out for revenge against the mob and a mysterious drug. The game that popularized bullet time and noir-style storytelling.',
     cardDesc:'Bullet time y venganza en Nueva York.',
     cardDescEn:'Bullet time and revenge in New York.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://linksterr.com/r/c1ey6r/', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'256 MB'},{l:'CPU',v:'450 MHz'},{l:'GPU',v:'16 MB DirectX 8'},{l:'Disco',v:'800 MB'},{l:'SO',v:'Windows XP/7/10'},{l:'DirectX',v:'v8.0'}]
   },
   {
@@ -384,7 +386,7 @@ let GAMES = [
     descEn:'The origin of Lara Croft. After a shipwreck, a young Lara is stranded on a mysterious island and must become a survivor. Exploration, tombs, climbing and combat in a spectacular reboot of the series.',
     cardDesc:'El nacimiento de una sobreviviente: Lara Croft.',
     cardDescEn:'The birth of a survivor: Lara Croft.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://exe.io/T0mbR4id3r60TY', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'Dual Core Intel / AMD 1.8 GHz'},{l:'GPU',v:'DirectX 9 (512 MB)'},{l:'Disco',v:'12 GB'},{l:'SO',v:'Windows XP/7/10'},{l:'DirectX',v:'v9.0c'}]
   },
   {
@@ -424,7 +426,7 @@ let GAMES = [
     descEn:'Chell wakes up in the Aperture Science labs and GLaDOS is still there. Solve puzzles with the portal gun in a campaign full of humor and a brilliant two-player co-op.',
     cardDesc:'Puzzles con portales y el humor de GLaDOS.',
     cardDescEn:"Portal puzzles and GLaDOS's humor.",
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://linksterr.com/r/4pty6t/', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'Intel Core 2 Duo 2.0 GHz / AMD Athlon 64 X2'},{l:'GPU',v:'DirectX 9 (128 MB)'},{l:'Disco',v:'8 GB'},{l:'SO',v:'Windows 7/10'},{l:'DirectX',v:'v9.0c'}]
   },
 
@@ -444,7 +446,7 @@ let GAMES = [
     descEn:'Need for Speed Underground 2 takes tuning and street racing to Bayview, an open city to roam at night. Customize your car to the max with neons, body kits and vinyls. A classic that shaped a whole generation.',
     cardDesc:'Tuning, neones y carreras nocturnas en Bayview.',
     cardDescEn:'Tuning, neons and night races in Bayview.',
-    link:'LINK_DEL_JUEGO', hot:true, isNew:false,
+    link:'https://exe.io/N33df0r5p33dUnd3rgr0und2', hot:true, isNew:false,
     reqs:[{l:'RAM',v:'256 MB'},{l:'CPU',v:'Pentium III 933 MHz'},{l:'GPU',v:'32 MB DirectX 9'},{l:'Disco',v:'2.5 GB'},{l:'SO',v:'Windows XP/7/10'},{l:'DirectX',v:'v9.0c'}]
   },
   {
@@ -464,7 +466,7 @@ let GAMES = [
     descEn:'High-speed pursuits in Seacrest County. Play as a racer or a cop, with exotic cars, pursuit tech and remastered graphics. Includes all the original downloadable content.',
     cardDesc:'Corredor o policía. Persecuciones a fondo.',
     cardDescEn:'Racer or cop. Full-throttle pursuits.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:true,
+    link:'https://linksterr.com/r/y48rpz/', hot:false, isNew:true,
     reqs:[{l:'RAM',v:'8 GB'},{l:'CPU',v:'Intel i5-3570 / AMD FX-6350'},{l:'GPU',v:'NVIDIA GTX 660 / AMD Radeon HD 7850'},{l:'Disco',v:'30 GB'},{l:'SO',v:'Windows 10 (64-bit)'},{l:'DirectX',v:'v11'}]
   },
 
@@ -506,7 +508,7 @@ let GAMES = [
     descEn:'Real-time strategy with gods and mythological creatures. Choose between Greeks, Egyptians, Norse and Atlanteans, call down divine powers and send minotaurs, cyclopes and titans into battle.',
     cardDesc:'Dioses, titanes y mitología en guerra.',
     cardDescEn:'Gods, titans and mythology at war.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://exe.io/4g30fMyth0l0gi', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'Intel Core 2 Duo / AMD 1.8 GHz'},{l:'GPU',v:'DirectX 9 (256 MB)'},{l:'Disco',v:'3 GB'},{l:'SO',v:'Windows 7/10'},{l:'DirectX',v:'v9.0c'}]
   },
 
@@ -528,11 +530,11 @@ let GAMES = [
     descEn:'The end of the Mishima saga. Tekken 7 combines classic 3D fighting with new mechanics like Rage Arts and Power Crush. Over 30 characters, a cinematic story mode and competitive online play.',
     cardDesc:'La guerra de los Mishima llega a su fin.',
     cardDescEn:'The Mishima war comes to an end.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://exe.io/T3kk3n7', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'6 GB'},{l:'CPU',v:'Intel Core i3-4160 / AMD equivalente'},{l:'GPU',v:'NVIDIA GTX 660'},{l:'Disco',v:'60 GB'},{l:'SO',v:'Windows 7/8/10 (64-bit)'},{l:'DirectX',v:'v11'}]
   },
   {
-    id:'mkx', title:'Mortal Kombat X', short:'MKX',
+    id:'mkx', title:'Mortal Kombat XL', short:'MKXL',
     genre:'pelea', genreLabel:'Pelea', year:2015, dev:'NetherRealm Studios',
     rating:'8.8', size:'40 GB', version:'XL Edition', lang:'Español', platform:'PC',
     cov:'cov-pelea',
@@ -548,7 +550,7 @@ let GAMES = [
     descEn:'Brutal fights, Fatalities and Brutalities. Mortal Kombat X brings three combat variations per character, a story mode with new warriors and the XL edition with every bonus character like Predator, Alien and Jason.',
     cardDesc:'¡Finish him! Fatalities y combate brutal.',
     cardDescEn:'Finish him! Fatalities and brutal combat.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://linksterr.com/r/74x5kc/', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'3 GB'},{l:'CPU',v:'Intel Core i5-750 / AMD Phenom II X4 965'},{l:'GPU',v:'NVIDIA GTX 460 / AMD Radeon HD 5850'},{l:'Disco',v:'40 GB'},{l:'SO',v:'Windows 7/10 (64-bit)'},{l:'DirectX',v:'v11'}]
   },
   {
@@ -568,7 +570,7 @@ let GAMES = [
     descEn:'The definitive version of Street Fighter IV with 44 fighters and every stage and mode. Ryu, Ken, Chun-Li and company in the 2D fighting game that revived the genre.',
     cardDesc:'Hadouken! 44 luchadores clásicos.',
     cardDescEn:'Hadouken! 44 classic fighters.',
-    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
+    link:'https://linksterr.com/r/rm3tm5/', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'Intel Core 2 Duo 2.0 GHz'},{l:'GPU',v:'NVIDIA GeForce 8600 / ATI Radeon HD 3600'},{l:'Disco',v:'8 GB'},{l:'SO',v:'Windows 7/10'},{l:'DirectX',v:'v9.0c'}]
   },
 
@@ -590,7 +592,7 @@ let GAMES = [
     descEn:'Four survivors against hordes of infected in the American South. 4-player co-op, special infected, melee weapons and the AI Director that makes every run different.',
     cardDesc:'Cooperativo zombie para 4. Nunca dos partidas iguales.',
     cardDescEn:'Zombie co-op for 4. No two games alike.',
-    link:'LINK_DEL_JUEGO', hot:true, isNew:false,
+    link:'https://exe.io/Left4De4d2', hot:true, isNew:false,
     reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'Pentium 4 3.0 GHz'},{l:'GPU',v:'DirectX 9 (128 MB)'},{l:'Disco',v:'13 GB'},{l:'SO',v:'Windows 7/10'},{l:'DirectX',v:'v9.0c'}]
   },
   {
@@ -619,9 +621,9 @@ let GAMES = [
      Reemplazá 'LINK_DEL_JUEGO' por tu link acortado. */
   /* ── ACCIÓN ── */
   {
-    id:'gta5', title:'GTA V', short:'GTAV',
-    genre:'accion', genreLabel:'Acción', year:2015, dev:'Rockstar North',
-    rating:'9.7', size:'120 GB', version:'Completo + Online', lang:'Español', platform:'PC',
+    id:'gta5', title:'Grand Theft Auto V Enhanced', short:'GTAV',
+    genre:'accion', genreLabel:'Acción', year:2025, dev:'Rockstar North',
+    rating:'9.7', size:'105 GB', version:'Enhanced', lang:'Español', platform:'PC',
     cov:'cov-gta',
     img:'https://cdn.cloudflare.steamstatic.com/steam/apps/271590/library_600x900.jpg',
     banner:'https://cdn.cloudflare.steamstatic.com/steam/apps/271590/library_hero.jpg',
@@ -631,12 +633,13 @@ let GAMES = [
       'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/ss_da39c16db175f6973770bae6b91d411251763152.1920x1080.jpg',
     ],
     trailer:'257109786',
-    desc:'Michael, Franklin y Trevor son tres criminales muy distintos que terminan unidos por una serie de golpes cada vez más arriesgados. Los Santos y el condado de Blaine forman uno de los mundos abiertos más grandes y detallados jamás creados, con autos, aviones, misiones secundarias y el modo GTA Online.',
-    descEn:'Michael, Franklin and Trevor are three very different criminals pulled together by a series of increasingly risky heists. Los Santos and Blaine County make up one of the largest and most detailed open worlds ever made, packed with cars, planes, side missions and GTA Online.',
+    desc:'Michael, Franklin y Trevor son tres criminales muy distintos que terminan unidos por una serie de golpes cada vez más arriesgados. Los Santos y el condado de Blaine forman uno de los mundos abiertos más grandes y detallados jamás creados, con autos, aviones, misiones secundarias y el modo GTA Online. La versión Enhanced suma ray tracing, mejores gráficos y tiempos de carga mucho más rápidos.',
+    descEn:'Michael, Franklin and Trevor are three very different criminals pulled together by a series of increasingly risky heists. Los Santos and Blaine County make up one of the largest and most detailed open worlds ever made, packed with cars, planes, side missions and GTA Online. The Enhanced version adds ray tracing, improved graphics and much faster loading times.',
     cardDesc:'Tres criminales, un golpe perfecto y Los Santos.',
     cardDescEn:'Three criminals, one perfect heist, all of Los Santos.',
-    link:'LINK_DEL_JUEGO', hot:true, isNew:false,
-    reqs:[{l:'RAM',v:'4 GB'},{l:'CPU',v:'Intel Core 2 Quad Q6600 / AMD Phenom 9850'},{l:'GPU',v:'NVIDIA 9800 GT 1GB / AMD HD 4870 1GB'},{l:'Disco',v:'120 GB'},{l:'SO',v:'Windows 10 (64-bit)'},{l:'DirectX',v:'v10'}]
+    link:'https://linksterr.com/r/qr6683/', hot:true, isNew:false,
+    update:'https://linksterr.com/r/hu76js/',
+    reqs:[{l:'RAM',v:'8 GB'},{l:'CPU',v:'Intel Core i7-4770 / AMD FX-9590'},{l:'GPU',v:'GTX 1630 4GB / Radeon RX 6400 4GB'},{l:'Disco',v:'105 GB SSD'},{l:'SO',v:'Windows 10 (64-bit)'},{l:'DirectX',v:'v12'}]
   },
   {
     id:'gta4', title:'GTA IV', short:'GTAIV',
@@ -733,7 +736,7 @@ let GAMES = [
     descEn:"Years after New York, Max Payne works as a bodyguard for a wealthy family in São Paulo. When his boss's wife is kidnapped, everything falls apart. Cinematic gunfights, improved bullet time and a dark story with Rockstar's signature style.",
     cardDesc:'Max vuelve, más roto que nunca, en São Paulo.',
     cardDescEn:'Max is back and more broken than ever, in São Paulo.',
-    link:'https://linksterr.com/r/c1ey6r/', hot:false, isNew:false,
+    link:'LINK_DEL_JUEGO', hot:false, isNew:false,
     reqs:[{l:'RAM',v:'2 GB'},{l:'CPU',v:'Intel Dual Core 2.4 GHz / AMD Dual Core 2.6 GHz'},{l:'GPU',v:'NVIDIA 8600 GT 512MB / Radeon HD 3400'},{l:'Disco',v:'35 GB'},{l:'SO',v:'Windows 7/10 (64-bit)'},{l:'DirectX',v:'v9.0c'}]
   },
   {
@@ -2936,7 +2939,7 @@ const I18N={
     'filter.tier':'Requirements:','lv.bajoBtn':'💻 Low','lv.medioBtn':'⚙️ Medium','lv.altoBtn':'🚀 High',
     'sort.label':'Sort:','sort.def':'Featured','sort.rating':'Top rated','sort.new':'Newest','sort.az':'A - Z','sort.dl':'Most downloaded',
     'sr.eyebrow':'Search results','sr.noneT':'No results','sr.none':"We couldn't find games or apps for that search. Try another word.",
-    'd.trailer':'Trailer','af.tier':'Requirements','af.tierAuto':'Automatic (based on RAM)',
+    'd.trailer':'Trailer','af.tier':'Requirements','af.tierAuto':'Automatic (based on RAM)','d.update':'⟳ Download Update',
     'r.none':'No ratings yet','r.count1':'{n} rating','r.countN':'{n} ratings','r.login':'Log in to rate','r.yours':'Your rating:','r.remove':'✕ remove',
     'r.rateGame':'Rate this game:','r.rateApp':'Rate this app:','r.thanks':'Thanks for rating! ⭐','r.removed':'Rating removed.',
     's.game':'Game','s.app':'App','s.none':'No results for',
@@ -4189,6 +4192,9 @@ function fillDetail(g,o){
     btn.href='#'; btn.removeAttribute('target'); btn.classList.add('locked');
     btn.textContent=t('d.soon');
   }
+  // Botón chico del Update (solo si el juego tiene update:'link')
+  const upd=document.getElementById('dlUpd');
+  if(upd){const ok=g.update&&!isPlaceholderLink(g.update);upd.style.display=ok?'':'none';upd.href=ok?g.update:'#';}
   renderDlNote();
 
   goPageInternal('game');

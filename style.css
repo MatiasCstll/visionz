@@ -423,6 +423,8 @@ footer { border-top:1px solid var(--border); padding:2rem 2.5rem; display:flex; 
 
 /* ══ DETALLE: banner horizontal y reporte ══ */
 .ghb-bg-img.wide { object-position:center 30%; filter:brightness(.55) saturate(.9); }
+.dl-upd { display:block; margin-top:.6rem; padding:.6rem; text-align:center; text-decoration:none; border:1px solid var(--border2); color:var(--text2); font-family:'Barlow Condensed',sans-serif; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase; transition:border-color .2s,color .2s,background .2s; }
+.dl-upd:hover { border-color:var(--accent); color:var(--white); background:rgba(232,39,42,.08); }
 .dl-report { display:block; width:100%; margin-top:.9rem; padding-top:.8rem; border:none; border-top:1px solid var(--border); background:none; color:var(--muted); font-family:'Barlow',sans-serif; font-size:.72rem; cursor:pointer; transition:color .2s; }
 .dl-report:hover { color:var(--gold); }
 
